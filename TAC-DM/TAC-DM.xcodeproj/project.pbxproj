@@ -1,0 +1,426 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		621C6C271B626E2F00120ED2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621C6C261B626E2F00120ED2 /* AppDelegate.swift */; };
+		621C6C291B626E2F00120ED2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621C6C281B626E2F00120ED2 /* ViewController.swift */; };
+		621C6C2C1B626E2F00120ED2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 621C6C2A1B626E2F00120ED2 /* Main.storyboard */; };
+		621C6C2E1B626E2F00120ED2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 621C6C2D1B626E2F00120ED2 /* Images.xcassets */; };
+		621C6C311B626E2F00120ED2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 621C6C2F1B626E2F00120ED2 /* LaunchScreen.xib */; };
+		621C6C3D1B626E2F00120ED2 /* TAC_DMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621C6C3C1B626E2F00120ED2 /* TAC_DMTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		621C6C371B626E2F00120ED2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 621C6C191B626E2F00120ED2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 621C6C201B626E2F00120ED2;
+			remoteInfo = "TAC-DM";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		621C6C211B626E2F00120ED2 /* TAC-DM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TAC-DM.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		621C6C251B626E2F00120ED2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		621C6C261B626E2F00120ED2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		621C6C281B626E2F00120ED2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		621C6C2B1B626E2F00120ED2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		621C6C2D1B626E2F00120ED2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		621C6C301B626E2F00120ED2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		621C6C361B626E2F00120ED2 /* TAC-DMTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TAC-DMTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		621C6C3B1B626E2F00120ED2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		621C6C3C1B626E2F00120ED2 /* TAC_DMTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAC_DMTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		621C6C1E1B626E2F00120ED2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		621C6C331B626E2F00120ED2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		621C6C181B626E2F00120ED2 = {
+			isa = PBXGroup;
+			children = (
+				621C6C231B626E2F00120ED2 /* TAC-DM */,
+				621C6C391B626E2F00120ED2 /* TAC-DMTests */,
+				621C6C221B626E2F00120ED2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		621C6C221B626E2F00120ED2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				621C6C211B626E2F00120ED2 /* TAC-DM.app */,
+				621C6C361B626E2F00120ED2 /* TAC-DMTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		621C6C231B626E2F00120ED2 /* TAC-DM */ = {
+			isa = PBXGroup;
+			children = (
+				621C6C261B626E2F00120ED2 /* AppDelegate.swift */,
+				621C6C281B626E2F00120ED2 /* ViewController.swift */,
+				621C6C2A1B626E2F00120ED2 /* Main.storyboard */,
+				621C6C2D1B626E2F00120ED2 /* Images.xcassets */,
+				621C6C2F1B626E2F00120ED2 /* LaunchScreen.xib */,
+				621C6C241B626E2F00120ED2 /* Supporting Files */,
+			);
+			path = "TAC-DM";
+			sourceTree = "<group>";
+		};
+		621C6C241B626E2F00120ED2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				621C6C251B626E2F00120ED2 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		621C6C391B626E2F00120ED2 /* TAC-DMTests */ = {
+			isa = PBXGroup;
+			children = (
+				621C6C3C1B626E2F00120ED2 /* TAC_DMTests.swift */,
+				621C6C3A1B626E2F00120ED2 /* Supporting Files */,
+			);
+			path = "TAC-DMTests";
+			sourceTree = "<group>";
+		};
+		621C6C3A1B626E2F00120ED2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				621C6C3B1B626E2F00120ED2 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		621C6C201B626E2F00120ED2 /* TAC-DM */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 621C6C401B626E2F00120ED2 /* Build configuration list for PBXNativeTarget "TAC-DM" */;
+			buildPhases = (
+				621C6C1D1B626E2F00120ED2 /* Sources */,
+				621C6C1E1B626E2F00120ED2 /* Frameworks */,
+				621C6C1F1B626E2F00120ED2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "TAC-DM";
+			productName = "TAC-DM";
+			productReference = 621C6C211B626E2F00120ED2 /* TAC-DM.app */;
+			productType = "com.apple.product-type.application";
+		};
+		621C6C351B626E2F00120ED2 /* TAC-DMTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 621C6C431B626E2F00120ED2 /* Build configuration list for PBXNativeTarget "TAC-DMTests" */;
+			buildPhases = (
+				621C6C321B626E2F00120ED2 /* Sources */,
+				621C6C331B626E2F00120ED2 /* Frameworks */,
+				621C6C341B626E2F00120ED2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				621C6C381B626E2F00120ED2 /* PBXTargetDependency */,
+			);
+			name = "TAC-DMTests";
+			productName = "TAC-DMTests";
+			productReference = 621C6C361B626E2F00120ED2 /* TAC-DMTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		621C6C191B626E2F00120ED2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = TAC;
+				TargetAttributes = {
+					621C6C201B626E2F00120ED2 = {
+						CreatedOnToolsVersion = 6.3.2;
+					};
+					621C6C351B626E2F00120ED2 = {
+						CreatedOnToolsVersion = 6.3.2;
+						TestTargetID = 621C6C201B626E2F00120ED2;
+					};
+				};
+			};
+			buildConfigurationList = 621C6C1C1B626E2F00120ED2 /* Build configuration list for PBXProject "TAC-DM" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 621C6C181B626E2F00120ED2;
+			productRefGroup = 621C6C221B626E2F00120ED2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				621C6C201B626E2F00120ED2 /* TAC-DM */,
+				621C6C351B626E2F00120ED2 /* TAC-DMTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		621C6C1F1B626E2F00120ED2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				621C6C2C1B626E2F00120ED2 /* Main.storyboard in Resources */,
+				621C6C311B626E2F00120ED2 /* LaunchScreen.xib in Resources */,
+				621C6C2E1B626E2F00120ED2 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		621C6C341B626E2F00120ED2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		621C6C1D1B626E2F00120ED2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				621C6C291B626E2F00120ED2 /* ViewController.swift in Sources */,
+				621C6C271B626E2F00120ED2 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		621C6C321B626E2F00120ED2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				621C6C3D1B626E2F00120ED2 /* TAC_DMTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		621C6C381B626E2F00120ED2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 621C6C201B626E2F00120ED2 /* TAC-DM */;
+			targetProxy = 621C6C371B626E2F00120ED2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		621C6C2A1B626E2F00120ED2 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				621C6C2B1B626E2F00120ED2 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		621C6C2F1B626E2F00120ED2 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				621C6C301B626E2F00120ED2 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		621C6C3E1B626E2F00120ED2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		621C6C3F1B626E2F00120ED2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		621C6C411B626E2F00120ED2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "TAC-DM/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		621C6C421B626E2F00120ED2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "TAC-DM/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		621C6C441B626E2F00120ED2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "TAC-DMTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TAC-DM.app/TAC-DM";
+			};
+			name = Debug;
+		};
+		621C6C451B626E2F00120ED2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "TAC-DMTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TAC-DM.app/TAC-DM";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		621C6C1C1B626E2F00120ED2 /* Build configuration list for PBXProject "TAC-DM" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				621C6C3E1B626E2F00120ED2 /* Debug */,
+				621C6C3F1B626E2F00120ED2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		621C6C401B626E2F00120ED2 /* Build configuration list for PBXNativeTarget "TAC-DM" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				621C6C411B626E2F00120ED2 /* Debug */,
+				621C6C421B626E2F00120ED2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		621C6C431B626E2F00120ED2 /* Build configuration list for PBXNativeTarget "TAC-DMTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				621C6C441B626E2F00120ED2 /* Debug */,
+				621C6C451B626E2F00120ED2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 621C6C191B626E2F00120ED2 /* Project object */;
+}
