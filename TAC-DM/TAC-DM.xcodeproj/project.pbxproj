@@ -13,6 +13,8 @@
 		621C6C2E1B626E2F00120ED2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 621C6C2D1B626E2F00120ED2 /* Images.xcassets */; };
 		621C6C311B626E2F00120ED2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 621C6C2F1B626E2F00120ED2 /* LaunchScreen.xib */; };
 		621C6C3D1B626E2F00120ED2 /* TAC_DMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621C6C3C1B626E2F00120ED2 /* TAC_DMTests.swift */; };
+		6266C75A1B65BCF30058EDC9 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6266C7591B65BCF30058EDC9 /* TabBarController.swift */; };
+		6266C75C1B65BD310058EDC9 /* FrostedSidebar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6266C75B1B65BD310058EDC9 /* FrostedSidebar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,8 @@
 		621C6C361B626E2F00120ED2 /* TAC-DMTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TAC-DMTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		621C6C3B1B626E2F00120ED2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		621C6C3C1B626E2F00120ED2 /* TAC_DMTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAC_DMTests.swift; sourceTree = "<group>"; };
+		6266C7591B65BCF30058EDC9 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		6266C75B1B65BD310058EDC9 /* FrostedSidebar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrostedSidebar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +81,7 @@
 		621C6C231B626E2F00120ED2 /* TAC-DM */ = {
 			isa = PBXGroup;
 			children = (
+				6266C75D1B65BD990058EDC9 /* FrostedSidebar */,
 				621C6C261B626E2F00120ED2 /* AppDelegate.swift */,
 				621C6C281B626E2F00120ED2 /* ViewController.swift */,
 				621C6C2A1B626E2F00120ED2 /* Main.storyboard */,
@@ -110,6 +115,15 @@
 				621C6C3B1B626E2F00120ED2 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6266C75D1B65BD990058EDC9 /* FrostedSidebar */ = {
+			isa = PBXGroup;
+			children = (
+				6266C7591B65BCF30058EDC9 /* TabBarController.swift */,
+				6266C75B1B65BD310058EDC9 /* FrostedSidebar.swift */,
+			);
+			name = FrostedSidebar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,6 +226,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6266C75C1B65BD310058EDC9 /* FrostedSidebar.swift in Sources */,
+				6266C75A1B65BCF30058EDC9 /* TabBarController.swift in Sources */,
 				621C6C291B626E2F00120ED2 /* ViewController.swift in Sources */,
 				621C6C271B626E2F00120ED2 /* AppDelegate.swift in Sources */,
 			);
@@ -411,6 +427,7 @@
 				621C6C421B626E2F00120ED2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		621C6C431B626E2F00120ED2 /* Build configuration list for PBXNativeTarget "TAC-DMTests" */ = {
 			isa = XCConfigurationList;
@@ -419,6 +436,7 @@
 				621C6C451B626E2F00120ED2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
