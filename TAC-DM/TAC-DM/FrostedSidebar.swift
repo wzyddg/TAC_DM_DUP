@@ -239,9 +239,9 @@ public class FrostedSidebar: UIViewController {
         
         override func layoutSubviews() {
             super.layoutSubviews()
-            let inset: CGFloat = bounds.size.height/2
+            let inset: CGFloat = bounds.size.height
             imageView.frame = CGRect(x: 0, y: 0, width: inset, height: inset)
-            imageView.center = CGPoint(x: inset, y: inset)
+            imageView.center = CGPoint(x: inset/2, y: inset/2)
         }
         
         override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
