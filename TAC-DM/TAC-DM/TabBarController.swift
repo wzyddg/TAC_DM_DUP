@@ -21,6 +21,7 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
         
         sidebar = FrostedSidebar(itemImages: [
             UIImage(named: "umbrella")!,
+            UIImage(named: "umbrella")!,
             UIImage(named: "book")!,
             UIImage(named: "device")!,
             UIImage(named: "history")!,
@@ -28,6 +29,7 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
             UIImage(named: "setting")!,
             ],
             colors: [
+                UIColor(red: 240/255, green: 159/255, blue: 254/255, alpha: 0.7),
                 UIColor(red: 240/255, green: 159/255, blue: 254/255, alpha: 0.7),
                 UIColor(red: 255/255, green: 137/255, blue: 167/255, alpha: 0.7),
                 UIColor(red: 126/255, green: 242/255, blue: 195/255, alpha: 0.7),

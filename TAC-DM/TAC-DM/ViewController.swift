@@ -10,15 +10,13 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var menuButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        for button in self.menuButton
-        {
-            button.tintColor = UIColor(patternImage: UIImage(named:"menu icon")!)
-        }
+        menuButton.tintColor = UIColor(patternImage: UIImage(named: "menu icon")!)
     }
-    
-    @IBOutlet var menuButton: [UIButton]!
+   
     @IBAction func onBurger() {
         (tabBarController as! TabBarController).sidebar.showInViewController(self, animated: true)
     }
