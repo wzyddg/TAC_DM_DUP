@@ -16,6 +16,7 @@
 		6266C75A1B65BCF30058EDC9 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6266C7591B65BCF30058EDC9 /* TabBarController.swift */; };
 		6266C75C1B65BD310058EDC9 /* FrostedSidebar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6266C75B1B65BD310058EDC9 /* FrostedSidebar.swift */; };
 		7BECB72A1B82E46000C0D4B8 /* UmbrellaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BECB7291B82E46000C0D4B8 /* UmbrellaViewController.swift */; };
+		7BECB72C1B83203400C0D4B8 /* BookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BECB72B1B83203400C0D4B8 /* BookViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		6266C7591B65BCF30058EDC9 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		6266C75B1B65BD310058EDC9 /* FrostedSidebar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrostedSidebar.swift; sourceTree = "<group>"; };
 		7BECB7291B82E46000C0D4B8 /* UmbrellaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UmbrellaViewController.swift; sourceTree = "<group>"; };
+		7BECB72B1B83203400C0D4B8 /* BookViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 				621C6C261B626E2F00120ED2 /* AppDelegate.swift */,
 				621C6C281B626E2F00120ED2 /* ViewController.swift */,
 				7BECB7291B82E46000C0D4B8 /* UmbrellaViewController.swift */,
+				7BECB72B1B83203400C0D4B8 /* BookViewController.swift */,
 				621C6C2A1B626E2F00120ED2 /* Main.storyboard */,
 				621C6C2D1B626E2F00120ED2 /* Images.xcassets */,
 				621C6C2F1B626E2F00120ED2 /* LaunchScreen.xib */,
@@ -232,6 +235,7 @@
 				6266C75C1B65BD310058EDC9 /* FrostedSidebar.swift in Sources */,
 				6266C75A1B65BCF30058EDC9 /* TabBarController.swift in Sources */,
 				7BECB72A1B82E46000C0D4B8 /* UmbrellaViewController.swift in Sources */,
+				7BECB72C1B83203400C0D4B8 /* BookViewController.swift in Sources */,
 				621C6C291B626E2F00120ED2 /* ViewController.swift in Sources */,
 				621C6C271B626E2F00120ED2 /* AppDelegate.swift in Sources */,
 			);
