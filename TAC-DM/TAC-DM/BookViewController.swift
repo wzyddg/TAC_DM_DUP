@@ -9,46 +9,73 @@
 import UIKit
 
 class BookViewController:UITableViewController,UITableViewDataSource,UITableViewDelegate {
-   
-    let textCellIdentifier = "TextCell"
+
+// MARK:- Test Data
     let testArray = ["《懵逼设计师的自我修养》","《懵的境界》","《懵逼与设计》","《三懵逼》",  "《2015我想和懵逼谈谈》"]
-    
+ 
+// MARK:- Configure UI
     override func viewDidLoad() {
         super.viewDidLoad()
         configureNavBar()
-        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "book background")!)
+        // this api mush better than what i am use before remember it.
+        self.tableView.backgroundView = UIImageView(image: UIImage(named: "book background"))
         self.tableView.delegate = self
         self.tableView.dataSource = self
     }
-    
     
     func configureNavBar()
     {
         self.navigationController?.navigationBar.barTintColor = UIColor(patternImage: UIImage(named: "book background")!)
         self.navigationController?.navigationBar.titleTextAttributes =
-            [NSForegroundColorAttributeName : UIColor.whiteColor(),NSFontAttributeName:UIFont(name: "Hiragino Kaku Gothic ProN", size: 30)!]
+            [NSForegroundColorAttributeName : UIColor.whiteColor(),NSFontAttributeName:UIFont(name: "Hiragino Kaku Gothic ProN", size: 36)!]
     }
-    
-    // MARK:  UITextFieldDelegate Methods
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return testArray.count
-    }
-    
+
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(textCellIdentifier, forIndexPath: indexPath) as! UITableViewCell
-        
+        let cell = tableView.dequeueReusableCellWithIdentifier("TextCell", forIndexPath: indexPath) as! UITableViewCell
         let row = indexPath.row
-        cell.textLabel?.text = testArray[row]
-        
+        if  0 == row % 2
+        {
+            cell.backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(0.65)
+            cell.textLabel?.text = testArray[row/2]
+            cell.textLabel?.backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(0.0)
+            cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
+        }
+        else
+        {
+            cell.backgroundColor = UIColor.clearColor()
+            cell.textLabel?.text = ""
+        }
         return cell
     }
     
-    // MARK:  UITableViewDelegate Methods
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        
-        let row = indexPath.row
-        println("\(testArray[row])")
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        if 0 == indexPath.row % 2
+        {
+            return 75
+        }
+        else
+        {
+            return 5
+        }
+    }
+// MARK:-  UITableViewDelegate Methods 
+// TODO: should return count *2 Here attention
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return testArray.count * 2
+    }
+ 
+    @IBAction func backButton(sender: UIBarButtonItem) {
+        self.navigationController?.navigationBarHidden = true
+        (tabBarController as! TabBarController).sidebar.showInViewController(self, animated: true)
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        let selectedIndex = self.tableView.indexPathForCell(sender as! UITableViewCell)
+        if segue.identifier == "showDetial" {
+            if let destinationVC = segue.destinationViewController as? BookDetail
+            {
+                destinationVC.bookName = testArray[selectedIndex!.row/2]
+            }
+        }
+    }
 }
