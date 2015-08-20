@@ -62,7 +62,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ExX-tJ-IpG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="386" y="-612"/>
+            <point key="canvasLocation" x="-1486" y="-1924"/>
         </scene>
         <!--Item-->
         <scene sceneID="pPH-cI-YRc">
@@ -207,7 +207,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pZE-8W-34V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="386" y="61"/>
+            <point key="canvasLocation" x="-1486" y="-1107"/>
         </scene>
         <!--书籍-->
         <scene sceneID="i12-0l-ZoM">
@@ -313,7 +313,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7BD-Qf-W4S" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1656" y="795"/>
+            <point key="canvasLocation" x="18" y="-365"/>
         </scene>
         <!--书籍-->
         <scene sceneID="olp-pt-0Ck">
@@ -363,7 +363,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0YF-mt-djw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1000" y="795"/>
+            <point key="canvasLocation" x="-720" y="-365"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="mVI-Lb-EwD">
@@ -379,11 +379,203 @@
                         <segue destination="h6h-IP-2Wy" kind="relationship" relationship="viewControllers" id="rJ7-Hd-7Rs"/>
                         <segue destination="4cK-Kr-jkD" kind="relationship" relationship="viewControllers" id="tvm-Sm-OSl"/>
                         <segue destination="WXm-sU-3xH" kind="relationship" relationship="viewControllers" id="m3N-ql-Lbo"/>
+                        <segue destination="LCN-kr-xuF" kind="relationship" relationship="viewControllers" id="p2o-95-JDc"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JTO-Ty-eHn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-378" y="-64"/>
+            <point key="canvasLocation" x="-2346" y="-96"/>
+        </scene>
+        <!--设备-->
+        <scene sceneID="sZY-Fh-cNZ">
+            <objects>
+                <tableViewController id="8F8-Py-yXe" customClass="DeviceViewController" customModule="TAC_DM" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="79" sectionHeaderHeight="22" sectionFooterHeight="22" id="vbR-me-VDd">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DeviceCell" textLabel="Ijc-ZG-lh3" rowHeight="79" style="IBUITableViewCellStyleDefault" id="1gk-6X-bc7">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1gk-6X-bc7" id="S0g-GS-INi">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ijc-ZG-lh3">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="27"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="Dit-rc-mCQ" kind="show" identifier="showDeviceDetail" id="ATK-9r-xxp"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="8F8-Py-yXe" id="85b-bH-kU9"/>
+                            <outlet property="delegate" destination="8F8-Py-yXe" id="fEf-uT-6tI"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="设备" id="s1A-IM-lMG">
+                        <barButtonItem key="leftBarButtonItem" image="back icon in white-1" id="8Nk-6n-8ZY">
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="backAction:" destination="8F8-Py-yXe" id="jqe-lw-Mi2"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GXj-fi-Aix" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-720" y="346"/>
+        </scene>
+        <!--设备-->
+        <scene sceneID="IIG-hb-3c2">
+            <objects>
+                <tableViewController id="Dit-rc-mCQ" customClass="DeviceDetail" customModule="TAC_DM" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="81" sectionHeaderHeight="22" sectionFooterHeight="22" id="jhJ-a7-6zW">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DetailCell" textLabel="7Me-P8-DJ5" rowHeight="81" style="IBUITableViewCellStyleDefault" id="sM6-eH-Vtb">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sM6-eH-Vtb" id="Tg7-J4-RYc">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7Me-P8-DJ5">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="27"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="KRB-XR-TGO" kind="show" identifier="deviceDetailBorrow" id="GNr-JP-keI"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Dit-rc-mCQ" id="aN4-DH-OpG"/>
+                            <outlet property="delegate" destination="Dit-rc-mCQ" id="Lh8-ZJ-f2E"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="设备" id="04A-m6-oe5">
+                        <barButtonItem key="leftBarButtonItem" image="back icon in white-1" id="cWE-ZU-Qkx">
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="backAction:" destination="Dit-rc-mCQ" id="kKe-9B-cnI"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fpo-R4-ywq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="8" y="346"/>
+        </scene>
+        <!--设备-->
+        <scene sceneID="73W-WV-vbX">
+            <objects>
+                <viewController id="KRB-XR-TGO" customClass="DeviceDetailBorrow" customModule="TAC_DM" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dWo-ej-hYh"/>
+                        <viewControllerLayoutGuide type="bottom" id="FEL-NN-Xms"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="e16-W5-aeg">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XNT-sT-XPO">
+                                <rect key="frame" x="64" y="47" width="69" height="26"/>
+                                <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="26"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="姓名：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kac-qB-wlz">
+                                <rect key="frame" x="64" y="145" width="90" height="30"/>
+                                <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="30"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kDD-KG-wc9">
+                                <rect key="frame" x="64" y="347" width="473" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0gP-NL-1tl">
+                                <rect key="frame" x="64" y="207" width="473" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FiX-GG-Nu9">
+                                <rect key="frame" x="224" y="473" width="150" height="42"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="30"/>
+                                <state key="normal" title="提交">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="submitAction" destination="PBp-DG-bwj" eventType="touchUpInside" id="xe8-3R-2wX"/>
+                                    <action selector="submitAction" destination="KRB-XR-TGO" eventType="touchUpInside" id="yrF-Ja-YE5"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="手机号码：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Snf-tI-DLf">
+                                <rect key="frame" x="64" y="285" width="150" height="30"/>
+                                <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="30"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="设备名:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZwO-sj-Y5o">
+                                <rect key="frame" x="64" y="-15" width="97.5" height="30"/>
+                                <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="30"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="kDD-KG-wc9" firstAttribute="height" secondItem="0gP-NL-1tl" secondAttribute="height" id="0Jy-Va-pMD"/>
+                            <constraint firstItem="FiX-GG-Nu9" firstAttribute="top" secondItem="kDD-KG-wc9" secondAttribute="bottom" constant="96" id="5OQ-up-XCv"/>
+                            <constraint firstItem="Snf-tI-DLf" firstAttribute="top" secondItem="0gP-NL-1tl" secondAttribute="bottom" constant="48" id="9Hm-F0-Uvl"/>
+                            <constraint firstItem="Snf-tI-DLf" firstAttribute="leading" secondItem="ZwO-sj-Y5o" secondAttribute="leading" id="9Th-mh-FxY"/>
+                            <constraint firstItem="FiX-GG-Nu9" firstAttribute="centerX" secondItem="kDD-KG-wc9" secondAttribute="centerX" constant="-1.5" id="EQb-Ng-dvZ"/>
+                            <constraint firstItem="kDD-KG-wc9" firstAttribute="leading" secondItem="e16-W5-aeg" secondAttribute="leadingMargin" constant="48" id="Ky3-L7-aRN"/>
+                            <constraint firstItem="Kac-qB-wlz" firstAttribute="leading" secondItem="0gP-NL-1tl" secondAttribute="leading" id="NEP-4J-4h0"/>
+                            <constraint firstItem="0gP-NL-1tl" firstAttribute="top" secondItem="Kac-qB-wlz" secondAttribute="bottom" constant="32" id="Tyj-fc-9x8"/>
+                            <constraint firstItem="FiX-GG-Nu9" firstAttribute="width" secondItem="Snf-tI-DLf" secondAttribute="width" id="Yug-Gx-RJF"/>
+                            <constraint firstItem="kDD-KG-wc9" firstAttribute="width" secondItem="0gP-NL-1tl" secondAttribute="width" id="csv-mT-yL8"/>
+                            <constraint firstItem="Snf-tI-DLf" firstAttribute="leading" secondItem="XNT-sT-XPO" secondAttribute="leading" id="hNZ-yC-s15"/>
+                            <constraint firstAttribute="centerX" secondItem="kDD-KG-wc9" secondAttribute="centerX" constant="-0.5" id="huz-t2-80d"/>
+                            <constraint firstItem="XNT-sT-XPO" firstAttribute="top" secondItem="ZwO-sj-Y5o" secondAttribute="bottom" constant="32" id="jwy-xb-4wG"/>
+                            <constraint firstItem="Kac-qB-wlz" firstAttribute="top" secondItem="XNT-sT-XPO" secondAttribute="bottom" constant="72" id="k59-dJ-XyU"/>
+                            <constraint firstItem="0gP-NL-1tl" firstAttribute="leading" secondItem="Snf-tI-DLf" secondAttribute="leading" id="osg-Zk-9M5"/>
+                            <constraint firstItem="kDD-KG-wc9" firstAttribute="top" secondItem="Snf-tI-DLf" secondAttribute="bottom" constant="32" id="qKn-rD-RJW"/>
+                            <constraint firstAttribute="centerY" secondItem="Snf-tI-DLf" secondAttribute="centerY" id="ts1-9v-Yeg"/>
+                            <constraint firstItem="kDD-KG-wc9" firstAttribute="leading" secondItem="Snf-tI-DLf" secondAttribute="leading" id="yD9-kn-GbG"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="设备" id="NCZ-3M-tdA">
+                        <barButtonItem key="leftBarButtonItem" image="back icon in white-1" id="mOz-7m-4S3">
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="backAction:" destination="KRB-XR-TGO" id="pxh-js-r5p"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="deviceName" destination="XNT-sT-XPO" id="9us-zy-Hzd"/>
+                        <outlet property="nameText" destination="0gP-NL-1tl" id="cqZ-SM-ewi"/>
+                        <outlet property="phoneText" destination="kDD-KG-wc9" id="J20-8N-U4T"/>
+                        <outlet property="submitButton" destination="FiX-GG-Nu9" id="TM6-pb-PGJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Q0T-MF-FQL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="727" y="346"/>
         </scene>
         <!--Item-->
         <scene sceneID="IPw-1p-8QF">
@@ -402,7 +594,26 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ACd-n0-vTw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="386" y="795"/>
+            <point key="canvasLocation" x="-1486" y="-365"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="Yrp-m4-gUc">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LCN-kr-xuF" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="wOa-48-fVl"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="fI4-lA-GPw">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="8F8-Py-yXe" kind="relationship" relationship="rootViewController" id="HcZ-It-7CK"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5BQ-qo-JmN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1486" y="346"/>
         </scene>
     </scenes>
     <resources>

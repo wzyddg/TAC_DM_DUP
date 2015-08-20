@@ -19,6 +19,7 @@ class BookViewController:UITableViewController,UITableViewDataSource,UITableView
         configureNavBar()
         // this api mush better than what i am use before remember it.
         self.tableView.backgroundView = UIImageView(image: UIImage(named: "book background"))
+        self.navigationController?.navigationBarHidden = false
         self.tableView.delegate = self
         self.tableView.dataSource = self
     }

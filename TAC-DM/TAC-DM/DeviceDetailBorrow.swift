@@ -1,5 +1,5 @@
 //
-//  BookDetail.swift
+//  DeviceDetailBorrow.swift
 //  TAC-DM
 //
 //  Created by Harold Liu on 8/20/15.
@@ -8,32 +8,30 @@
 
 import UIKit
 
-class BookDetail : UIViewController,UIAlertViewDelegate,UITextFieldDelegate
-{
+class DeviceDetailBorrow:UIViewController , UITextFieldDelegate , UIAlertViewDelegate {
     
-    var bookName = ""
+    var borrowDeviceName = ""
     
+    @IBOutlet weak var deviceName: UILabel!
+    @IBOutlet weak var nameText: UITextField!
+    @IBOutlet weak var phoneText: UITextField!
     @IBOutlet weak var submitButton: UIButton!
-    @IBOutlet weak var selectedBookName: UILabel!
-    
-    @IBOutlet weak var nameTextField: UITextField!
-    @IBOutlet weak var phoneTextField: UITextField!
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBarHidden = false
         configureUI()
-        selectedBookName.text = bookName
+        deviceName.text = borrowDeviceName
     }
     
     func configureUI ()
     {
-        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "book background")!)
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "device background")!)
         self.submitButton.layer.cornerRadius = 8.0
-        self.nameTextField.delegate = self
-        self.phoneTextField.delegate = self
+        self.nameText.delegate = self
+        self.phoneText.delegate = self
     }
-    
+
 // MARK:- Keyboard Dismiss
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         if let touch = touches.first as? UITouch {
@@ -46,21 +44,22 @@ class BookDetail : UIViewController,UIAlertViewDelegate,UITextFieldDelegate
         textField.resignFirstResponder()
         return true
     }
-    
-// MARK:- Button Action
-    @IBAction func submitAction() {
-        let alertVC = UIAlertController(title: "确认信息",
-            message: "姓名:  \(nameTextField.text) \n 联系方式:  \(phoneTextField.text) \n 所借物品:  \(bookName)",
-            preferredStyle: UIAlertControllerStyle.Alert)
-        alertVC.addAction(UIAlertAction(title: "确认信息", style: UIAlertActionStyle.Default, handler: dealConfirmAction))
-        alertVC.addAction(UIAlertAction(title: "取消", style: UIAlertActionStyle.Cancel, handler: nil))
-        self.presentViewController(alertVC, animated: true, completion: nil)
-        
-    }
+
     
     @IBAction func backAction(sender: AnyObject) {
         self.navigationController?.popViewControllerAnimated(true)
     }
+    
+    @IBAction func submitAction() {
+        let alertVC = UIAlertController(title: "确认信息",
+            message: "姓名:  \(nameText.text) \n 联系方式:  \(phoneText.text) \n 所借物品:  \(borrowDeviceName)",
+            preferredStyle: UIAlertControllerStyle.Alert)
+        alertVC.addAction(UIAlertAction(title: "确认信息", style: UIAlertActionStyle.Default, handler: dealConfirmAction))
+        alertVC.addAction(UIAlertAction(title: "取消", style: UIAlertActionStyle.Cancel, handler: nil))
+        self.presentViewController(alertVC, animated: true, completion: nil)
+
+    }
+    
 // MARK:- TODO: Here
     func dealConfirmAction (alert:UIAlertAction!)
     {
