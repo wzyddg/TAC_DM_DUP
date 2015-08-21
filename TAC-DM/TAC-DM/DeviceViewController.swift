@@ -10,11 +10,11 @@ import UIKit
 
 class DeviceViewController: UITableViewController , UITableViewDataSource , UITableViewDelegate
 {
-    
+// MARK:-TODO: TEST DATA
     var testArray = ["懵逼的iPad","懵逼的Mac","懵逼的Apple watch","懵逼的iPhone","懵逼的iPod","懵逼"]
     
     
-    
+// MARK:-Configure UI
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
@@ -37,7 +37,9 @@ class DeviceViewController: UITableViewController , UITableViewDataSource , UITa
         {
             cell.backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(0.6)
             cell.textLabel?.backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(0.0)
+            // TODO: ADD DATA
             cell.textLabel?.text = testArray[indexPath.row/2 ]
+            // -----end----
             cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
         }
         else
@@ -61,7 +63,7 @@ class DeviceViewController: UITableViewController , UITableViewDataSource , UITa
             return 5
         }
     }
-    
+//MARK:-TODO: ADD DATA *2 ATTENTION
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return testArray.count * 2;
     }

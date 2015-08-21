@@ -10,17 +10,17 @@ import UIKit
 
 class DeviceDetail: UITableViewController,UITableViewDelegate,UITableViewDataSource {
     
-    
+//MARK:-TODO: ADD REAL DATA
     var testArray = ["懵逼的iPad-white","懵逼的iPad-black","懵逼的iPad-懵逼土豪金"]
 
     var deviceName = ""
+//MARK:- Configure UI
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBarHidden = false
         self.title = deviceName
         self.tableView.backgroundView = UIImageView (image: UIImage(named: "device background"))
     }
-    
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("DetailCell") as! UITableViewCell
@@ -29,7 +29,9 @@ class DeviceDetail: UITableViewController,UITableViewDelegate,UITableViewDataSou
         {
             cell.backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(0.6)
             cell.textLabel?.backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(0.0)
+            // TODO: ADD REAL DATA
             cell.textLabel?.text = testArray[indexPath.row/2 ]
+            // ----END----
             cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
         }
         else
@@ -53,7 +55,8 @@ class DeviceDetail: UITableViewController,UITableViewDelegate,UITableViewDataSou
             return 5
         }
     }
-    
+
+//MARK:-TODO: ADD DATA *2 ATTENTION
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return testArray.count * 2;
     }
@@ -62,8 +65,7 @@ class DeviceDetail: UITableViewController,UITableViewDelegate,UITableViewDataSou
     @IBAction func backAction(sender: AnyObject) {
         self.navigationController?.popViewControllerAnimated(true)
     }
-    
-    
+        
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         
         let selectedIndex = self.tableView.indexPathForCell(sender as! UITableViewCell)

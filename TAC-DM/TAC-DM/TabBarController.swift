@@ -20,7 +20,7 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
         moreNavigationController.navigationBar.hidden = true
         
         sidebar = FrostedSidebar(itemImages: [
-            UIImage(named: "umbrella")!,
+            UIImage(named: "home button icon")!,
             UIImage(named: "umbrella")!,
             UIImage(named: "book")!,
             UIImage(named: "device")!,
