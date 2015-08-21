@@ -22,6 +22,8 @@
 		7B90B2FA1B86C3C1009A251F /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B90B2F91B86C3C1009A251F /* HistoryViewController.swift */; };
 		7B90B2FC1B86DA13009A251F /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B90B2FB1B86DA13009A251F /* HistoryTableViewCell.swift */; };
 		7B90B2FE1B870F60009A251F /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B90B2FD1B870F60009A251F /* MoreViewController.swift */; };
+		7B90B3001B87524F009A251F /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B90B2FF1B87524F009A251F /* SettingViewController.swift */; };
+		7B90B3021B875EAE009A251F /* SettingEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B90B3011B875EAE009A251F /* SettingEntryViewController.swift */; };
 		7BECB72A1B82E46000C0D4B8 /* UmbrellaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BECB7291B82E46000C0D4B8 /* UmbrellaViewController.swift */; };
 		7BECB72C1B83203400C0D4B8 /* BookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BECB72B1B83203400C0D4B8 /* BookViewController.swift */; };
 /* End PBXBuildFile section */
@@ -56,6 +58,8 @@
 		7B90B2F91B86C3C1009A251F /* HistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		7B90B2FB1B86DA13009A251F /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
 		7B90B2FD1B870F60009A251F /* MoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
+		7B90B2FF1B87524F009A251F /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		7B90B3011B875EAE009A251F /* SettingEntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingEntryViewController.swift; sourceTree = "<group>"; };
 		7BECB7291B82E46000C0D4B8 /* UmbrellaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UmbrellaViewController.swift; sourceTree = "<group>"; };
 		7BECB72B1B83203400C0D4B8 /* BookViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -157,6 +161,8 @@
 				7B90B2F91B86C3C1009A251F /* HistoryViewController.swift */,
 				7B90B2FB1B86DA13009A251F /* HistoryTableViewCell.swift */,
 				7B90B2FD1B870F60009A251F /* MoreViewController.swift */,
+				7B90B2FF1B87524F009A251F /* SettingViewController.swift */,
+				7B90B3011B875EAE009A251F /* SettingEntryViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -266,6 +272,7 @@
 				6266C75A1B65BCF30058EDC9 /* TabBarController.swift in Sources */,
 				7B37F17C1B8620D800A106C4 /* DeviceDetail.swift in Sources */,
 				7BECB72A1B82E46000C0D4B8 /* UmbrellaViewController.swift in Sources */,
+				7B90B3001B87524F009A251F /* SettingViewController.swift in Sources */,
 				7BECB72C1B83203400C0D4B8 /* BookViewController.swift in Sources */,
 				7B90B2FA1B86C3C1009A251F /* HistoryViewController.swift in Sources */,
 				7B90B2FC1B86DA13009A251F /* HistoryTableViewCell.swift in Sources */,
@@ -273,6 +280,7 @@
 				7B37F1791B86173500A106C4 /* DeviceViewController.swift in Sources */,
 				621C6C291B626E2F00120ED2 /* ViewController.swift in Sources */,
 				7B47E6C51B85D04500849551 /* BookDetail.swift in Sources */,
+				7B90B3021B875EAE009A251F /* SettingEntryViewController.swift in Sources */,
 				621C6C271B626E2F00120ED2 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
