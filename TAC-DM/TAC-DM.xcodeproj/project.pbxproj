@@ -19,6 +19,9 @@
 		7B37F17C1B8620D800A106C4 /* DeviceDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B37F17B1B8620D800A106C4 /* DeviceDetail.swift */; };
 		7B37F17E1B8628A800A106C4 /* DeviceDetailBorrow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B37F17D1B8628A800A106C4 /* DeviceDetailBorrow.swift */; };
 		7B47E6C51B85D04500849551 /* BookDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B47E6C41B85D04500849551 /* BookDetail.swift */; };
+		7B90B2FA1B86C3C1009A251F /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B90B2F91B86C3C1009A251F /* HistoryViewController.swift */; };
+		7B90B2FC1B86DA13009A251F /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B90B2FB1B86DA13009A251F /* HistoryTableViewCell.swift */; };
+		7B90B2FE1B870F60009A251F /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B90B2FD1B870F60009A251F /* MoreViewController.swift */; };
 		7BECB72A1B82E46000C0D4B8 /* UmbrellaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BECB7291B82E46000C0D4B8 /* UmbrellaViewController.swift */; };
 		7BECB72C1B83203400C0D4B8 /* BookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BECB72B1B83203400C0D4B8 /* BookViewController.swift */; };
 /* End PBXBuildFile section */
@@ -50,6 +53,9 @@
 		7B37F17B1B8620D800A106C4 /* DeviceDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceDetail.swift; sourceTree = "<group>"; };
 		7B37F17D1B8628A800A106C4 /* DeviceDetailBorrow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceDetailBorrow.swift; sourceTree = "<group>"; };
 		7B47E6C41B85D04500849551 /* BookDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookDetail.swift; sourceTree = "<group>"; };
+		7B90B2F91B86C3C1009A251F /* HistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		7B90B2FB1B86DA13009A251F /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
+		7B90B2FD1B870F60009A251F /* MoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
 		7BECB7291B82E46000C0D4B8 /* UmbrellaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UmbrellaViewController.swift; sourceTree = "<group>"; };
 		7BECB72B1B83203400C0D4B8 /* BookViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -148,6 +154,9 @@
 				7B37F1781B86173500A106C4 /* DeviceViewController.swift */,
 				7B37F17B1B8620D800A106C4 /* DeviceDetail.swift */,
 				7B37F17D1B8628A800A106C4 /* DeviceDetailBorrow.swift */,
+				7B90B2F91B86C3C1009A251F /* HistoryViewController.swift */,
+				7B90B2FB1B86DA13009A251F /* HistoryTableViewCell.swift */,
+				7B90B2FD1B870F60009A251F /* MoreViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -253,10 +262,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				6266C75C1B65BD310058EDC9 /* FrostedSidebar.swift in Sources */,
+				7B90B2FE1B870F60009A251F /* MoreViewController.swift in Sources */,
 				6266C75A1B65BCF30058EDC9 /* TabBarController.swift in Sources */,
 				7B37F17C1B8620D800A106C4 /* DeviceDetail.swift in Sources */,
 				7BECB72A1B82E46000C0D4B8 /* UmbrellaViewController.swift in Sources */,
 				7BECB72C1B83203400C0D4B8 /* BookViewController.swift in Sources */,
+				7B90B2FA1B86C3C1009A251F /* HistoryViewController.swift in Sources */,
+				7B90B2FC1B86DA13009A251F /* HistoryTableViewCell.swift in Sources */,
 				7B37F17E1B8628A800A106C4 /* DeviceDetailBorrow.swift in Sources */,
 				7B37F1791B86173500A106C4 /* DeviceViewController.swift in Sources */,
 				621C6C291B626E2F00120ED2 /* ViewController.swift in Sources */,
