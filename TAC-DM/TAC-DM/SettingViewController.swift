@@ -16,8 +16,17 @@ class SettingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureUI()
+    }
+    
+    func configureUI ()
+    {
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "setting background")!)
         submitButton.layer.cornerRadius = 8.0
+        self.navigationController?.navigationBar.barTintColor = UIColor(patternImage: UIImage(named: "setting background")!)
+        self.navigationController?.navigationBar.titleTextAttributes =
+         [NSForegroundColorAttributeName : UIColor.brownColor(),
+            NSFontAttributeName : UIFont (name: "Hiragino Kaku Gothic ProN", size: 36)!]
     }
     
 // MARK:- KeyBoard Dismiss
@@ -34,11 +43,11 @@ class SettingViewController: UIViewController {
     }
     
     @IBAction func submitAction() {
+       // MARK:- TODO: Change password
         if passWord.text == "123"
         {
-            println("next")
             let settingsEntryController = storyboard?.instantiateViewControllerWithIdentifier("SettingEntryScene") as! UIViewController
-            self.presentViewController(settingsEntryController, animated: true, completion: nil)
+            self.navigationController?.pushViewController(settingsEntryController, animated: true)
         }
         else
         {
@@ -49,8 +58,9 @@ class SettingViewController: UIViewController {
             self.presentViewController(alertVC, animated: true, completion: nil)
         }
     }
-// MARK:- FIXME: BUG Here fix tomorrow
-    @IBAction func backAction() {
+
+    @IBAction func back(sender: AnyObject) {
         (tabBarController as! TabBarController).sidebar.showInViewController(self, animated: true)
+        
     }
 }

@@ -382,7 +382,7 @@
                         <segue destination="LCN-kr-xuF" kind="relationship" relationship="viewControllers" id="p2o-95-JDc"/>
                         <segue destination="XAb-Pv-btu" kind="relationship" relationship="viewControllers" id="IG7-hH-9HZ"/>
                         <segue destination="I8G-ht-iPu" kind="relationship" relationship="viewControllers" id="2hY-l5-aBX"/>
-                        <segue destination="Yce-YK-2X2" kind="relationship" relationship="viewControllers" id="uAO-KE-1rj"/>
+                        <segue destination="QU2-PZ-9cD" kind="relationship" relationship="viewControllers" id="uAO-KE-1rj"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JTO-Ty-eHn" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -841,9 +841,135 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4fD-fm-ecU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1486" y="1862"/>
+            <point key="canvasLocation" x="-1486" y="1814"/>
         </scene>
-        <!--Item-->
+        <!--设置-->
+        <scene sceneID="XL4-nC-v5m">
+            <objects>
+                <viewController storyboardIdentifier="SettingAddNewThing" id="1sm-uR-tsM" customClass="SettingAddNewThing" customModule="TAC_DM" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="uTf-ZP-z0R"/>
+                        <viewControllerLayoutGuide type="bottom" id="pCz-fh-J22"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5P9-b9-m9J">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="数量 :" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IHa-cj-2O0">
+                                <rect key="frame" x="88" y="239" width="78" height="30"/>
+                                <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="30"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="出版社 :" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SFS-co-EA1">
+                                <rect key="frame" x="88" y="363" width="107.5" height="30"/>
+                                <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="30"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="书名：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8fy-Os-2Qm">
+                                <rect key="frame" x="88" y="-9" width="90" height="30"/>
+                                <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="30"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="作者：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Pz-9r-TtR">
+                                <rect key="frame" x="88" y="115" width="90" height="30"/>
+                                <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="30"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="400-AN-42Z">
+                                <rect key="frame" x="88" y="161" width="424" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IPS-oO-5nO">
+                                <rect key="frame" x="88" y="409" width="424" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vnv-VS-nFi">
+                                <rect key="frame" x="88" y="285" width="424" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vot-1E-m8o">
+                                <rect key="frame" x="88" y="37" width="424" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m77-hO-SaC">
+                                <rect key="frame" x="255" y="535" width="90" height="42"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="30"/>
+                                <state key="normal" title="提交">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="submitAction" destination="1sm-uR-tsM" eventType="touchUpInside" id="vpi-J8-IzV"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="vot-1E-m8o" firstAttribute="leading" secondItem="Vnv-VS-nFi" secondAttribute="leading" id="8SJ-in-DIs"/>
+                            <constraint firstItem="SFS-co-EA1" firstAttribute="leading" secondItem="Vnv-VS-nFi" secondAttribute="leading" id="8hg-BQ-yP4"/>
+                            <constraint firstItem="SFS-co-EA1" firstAttribute="top" secondItem="Vnv-VS-nFi" secondAttribute="bottom" constant="48" id="8i6-D8-SOh"/>
+                            <constraint firstItem="IPS-oO-5nO" firstAttribute="top" secondItem="SFS-co-EA1" secondAttribute="bottom" constant="16" id="8om-Pp-vtV"/>
+                            <constraint firstItem="IHa-cj-2O0" firstAttribute="top" secondItem="400-AN-42Z" secondAttribute="bottom" constant="48" id="P0e-wX-QG6"/>
+                            <constraint firstAttribute="centerX" secondItem="Vnv-VS-nFi" secondAttribute="centerX" id="TH2-LE-cXl"/>
+                            <constraint firstItem="Vnv-VS-nFi" firstAttribute="width" secondItem="400-AN-42Z" secondAttribute="width" id="Utp-hZ-XhQ"/>
+                            <constraint firstItem="vot-1E-m8o" firstAttribute="width" secondItem="Vnv-VS-nFi" secondAttribute="width" id="VyJ-cJ-GLo"/>
+                            <constraint firstItem="Vnv-VS-nFi" firstAttribute="leading" secondItem="400-AN-42Z" secondAttribute="leading" id="a3d-hT-Pdc"/>
+                            <constraint firstItem="Vnv-VS-nFi" firstAttribute="top" secondItem="IHa-cj-2O0" secondAttribute="bottom" constant="16" id="aVg-ee-vcx"/>
+                            <constraint firstAttribute="centerX" secondItem="m77-hO-SaC" secondAttribute="centerX" id="bbg-Vx-qBX"/>
+                            <constraint firstItem="8fy-Os-2Qm" firstAttribute="leading" secondItem="Vnv-VS-nFi" secondAttribute="leading" id="cEx-gF-NAw"/>
+                            <constraint firstItem="400-AN-42Z" firstAttribute="top" secondItem="3Pz-9r-TtR" secondAttribute="bottom" constant="16" id="cQe-e3-4wU"/>
+                            <constraint firstItem="Vnv-VS-nFi" firstAttribute="leading" secondItem="5P9-b9-m9J" secondAttribute="leadingMargin" constant="72" id="hNE-y0-AOa"/>
+                            <constraint firstItem="SFS-co-EA1" firstAttribute="width" secondItem="m77-hO-SaC" secondAttribute="width" id="iMA-z3-Fge"/>
+                            <constraint firstItem="Vnv-VS-nFi" firstAttribute="leading" secondItem="IHa-cj-2O0" secondAttribute="leading" id="jeF-PX-Eqy"/>
+                            <constraint firstItem="IPS-oO-5nO" firstAttribute="leading" secondItem="Vnv-VS-nFi" secondAttribute="leading" id="mWq-Lr-rMS"/>
+                            <constraint firstItem="3Pz-9r-TtR" firstAttribute="leading" secondItem="Vnv-VS-nFi" secondAttribute="leading" id="oJw-0f-Fgd"/>
+                            <constraint firstItem="IPS-oO-5nO" firstAttribute="width" secondItem="Vnv-VS-nFi" secondAttribute="width" id="reu-qJ-nhw"/>
+                            <constraint firstItem="8fy-Os-2Qm" firstAttribute="width" secondItem="m77-hO-SaC" secondAttribute="width" id="sMA-wQ-KLs"/>
+                            <constraint firstItem="3Pz-9r-TtR" firstAttribute="top" secondItem="vot-1E-m8o" secondAttribute="bottom" constant="48" id="smL-ya-jvg"/>
+                            <constraint firstAttribute="centerY" secondItem="Vnv-VS-nFi" secondAttribute="centerY" id="tid-EB-3TM"/>
+                            <constraint firstItem="m77-hO-SaC" firstAttribute="top" secondItem="IPS-oO-5nO" secondAttribute="bottom" constant="96" id="ttq-q7-rux"/>
+                            <constraint firstItem="vot-1E-m8o" firstAttribute="top" secondItem="8fy-Os-2Qm" secondAttribute="bottom" constant="16" id="wev-Ei-W4x"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="iMA-z3-Fge"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" title="设置" id="Ai1-mG-plL">
+                        <barButtonItem key="leftBarButtonItem" image="back icon in brown-1" id="ICx-rK-zgI">
+                            <color key="tintColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="backAction:" destination="1sm-uR-tsM" id="P7B-Qg-ddG"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="fourthDeriText" destination="IPS-oO-5nO" id="yh3-hX-WvY"/>
+                        <outlet property="fourthLabel" destination="SFS-co-EA1" id="xww-Em-94i"/>
+                        <outlet property="nameLabel" destination="8fy-Os-2Qm" id="pZV-A1-bmF"/>
+                        <outlet property="nameText" destination="vot-1E-m8o" id="fso-aa-KAZ"/>
+                        <outlet property="secondLabel" destination="3Pz-9r-TtR" id="rR0-xV-0Gn"/>
+                        <outlet property="secondeDeriText" destination="400-AN-42Z" id="KcS-AE-o5f"/>
+                        <outlet property="submitButton" destination="m77-hO-SaC" id="6UT-2Q-c3i"/>
+                        <outlet property="thridDeriText" destination="Vnv-VS-nFi" id="6Kz-9F-1W4"/>
+                        <outlet property="thridLabel" destination="IHa-cj-2O0" id="JX5-zH-goX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tqt-UV-813" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1670" y="2530"/>
+        </scene>
+        <!--设置-->
         <scene sceneID="S7s-Te-hMk">
             <objects>
                 <viewController storyboardIdentifier="SettingVC" id="Yce-YK-2X2" customClass="SettingViewController" customModule="TAC_DM" customModuleProvider="target" sceneMemberID="viewController">
@@ -881,38 +1007,26 @@
                                     <action selector="submitAction" destination="Yce-YK-2X2" eventType="touchUpInside" id="35y-4t-qhH"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="设置" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3dm-IA-szQ">
-                                <rect key="frame" x="264" y="20" width="72" height="36"/>
-                                <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="36"/>
-                                <color key="textColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DjH-tZ-cBp">
-                                <rect key="frame" x="24" y="20" width="43" height="43"/>
-                                <state key="normal" image="back icon in brown-1">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="backAction" destination="Yce-YK-2X2" eventType="touchUpInside" id="JpO-gT-Gof"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.99215686270000003" green="0.69411764710000001" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="3dm-IA-szQ" secondAttribute="centerX" constant="-0.5" id="4Hf-sy-2Wt"/>
                             <constraint firstAttribute="centerX" secondItem="hFY-g7-hT2" secondAttribute="centerX" id="AUy-ea-C2G"/>
                             <constraint firstItem="QJj-BV-ITF" firstAttribute="top" secondItem="g46-b5-mMP" secondAttribute="bottom" constant="32" id="Esh-Bi-5hE"/>
-                            <constraint firstItem="3dm-IA-szQ" firstAttribute="top" secondItem="DjH-tZ-cBp" secondAttribute="top" id="Ipp-5z-qri"/>
                             <constraint firstAttribute="centerY" secondItem="hFY-g7-hT2" secondAttribute="centerY" id="Rg5-gx-UrB"/>
                             <constraint firstItem="hFY-g7-hT2" firstAttribute="centerX" secondItem="QJj-BV-ITF" secondAttribute="centerX" id="Sub-Ml-wZ0"/>
                             <constraint firstItem="QJj-BV-ITF" firstAttribute="leading" secondItem="DQL-hJ-gGQ" secondAttribute="leadingMargin" constant="50" id="ZBO-We-Tvk"/>
                             <constraint firstItem="hFY-g7-hT2" firstAttribute="top" secondItem="QJj-BV-ITF" secondAttribute="bottom" constant="64" id="e9e-AZ-4Cy"/>
-                            <constraint firstItem="3dm-IA-szQ" firstAttribute="top" secondItem="62V-FP-xIl" secondAttribute="bottom" id="fJJ-Gx-o0k"/>
                             <constraint firstItem="g46-b5-mMP" firstAttribute="leading" secondItem="QJj-BV-ITF" secondAttribute="leading" id="fOZ-pv-rlq"/>
-                            <constraint firstItem="DjH-tZ-cBp" firstAttribute="leading" secondItem="DQL-hJ-gGQ" secondAttribute="leadingMargin" constant="8" id="khn-Np-GaO"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="B8a-ZS-fhR"/>
+                    <navigationItem key="navigationItem" title="设置" id="0l7-kS-Vh9">
+                        <barButtonItem key="leftBarButtonItem" image="back icon in brown-1" id="Wv5-oW-X8N">
+                            <color key="tintColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="back:" destination="Yce-YK-2X2" id="0pr-ZG-YX6"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="passWord" destination="QJj-BV-ITF" id="uyz-Cc-V30"/>
                         <outlet property="submitButton" destination="hFY-g7-hT2" id="P2l-oY-x9o"/>
@@ -920,9 +1034,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FG9-0k-1X1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1486" y="2514"/>
+            <point key="canvasLocation" x="-674" y="2514"/>
         </scene>
-        <!--Item-->
+        <!--设置-->
         <scene sceneID="ECA-B6-G8g">
             <objects>
                 <viewController storyboardIdentifier="SettingEntryScene" id="UIG-ys-fIZ" customClass="SettingEntryViewController" customModule="TAC_DM" customModuleProvider="target" sceneMemberID="viewController">
@@ -934,28 +1048,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="设置" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hdK-zS-u5T">
-                                <rect key="frame" x="264" y="20" width="72" height="36"/>
-                                <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="36"/>
-                                <color key="textColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T3a-j1-YgU">
-                                <rect key="frame" x="24" y="20" width="43" height="43"/>
-                                <state key="normal" image="back icon in brown-1">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="backAction" destination="UIG-ys-fIZ" eventType="touchUpInside" id="hTg-re-rCH"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Cw-Oo-Dy9">
                                 <rect key="frame" x="213" y="-31" width="175" height="179"/>
                                 <state key="normal" image="umbrella icon in brown">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="umbAction" destination="UIG-ys-fIZ" eventType="touchUpInside" id="NCJ-e6-4OR"/>
+                                    <segue destination="6qj-hm-BK8" kind="show" identifier="toSettingChangeVC" id="9jn-fc-e13"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5BI-B9-M0A">
@@ -963,29 +1062,38 @@
                                 <state key="normal" image="book icon in brown">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="rQL-wz-AJU" kind="show" identifier="bookSettingTableVC" id="1Eo-89-pVW"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O6m-L2-Ix7">
                                 <rect key="frame" x="213" y="451" width="175" height="175"/>
                                 <state key="normal" image="device icon in brown">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="rQL-wz-AJU" kind="show" identifier="deviceSettingTableVC" id="27f-HO-Qfh"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.99215686270000003" green="0.69411764710000001" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="hdK-zS-u5T" firstAttribute="top" secondItem="T3a-j1-YgU" secondAttribute="top" id="0xc-sH-mO0"/>
                             <constraint firstItem="O6m-L2-Ix7" firstAttribute="top" secondItem="5BI-B9-M0A" secondAttribute="bottom" constant="64" id="DSv-qJ-rqH"/>
                             <constraint firstAttribute="centerY" secondItem="5BI-B9-M0A" secondAttribute="centerY" id="GKU-vo-s4a"/>
                             <constraint firstItem="O6m-L2-Ix7" firstAttribute="centerX" secondItem="5BI-B9-M0A" secondAttribute="centerX" id="GPT-0W-4Ef"/>
-                            <constraint firstItem="T3a-j1-YgU" firstAttribute="leading" secondItem="gSb-ks-KiF" secondAttribute="leadingMargin" constant="8" id="KOv-Ix-m3X"/>
-                            <constraint firstItem="hdK-zS-u5T" firstAttribute="top" secondItem="05Y-5B-bEi" secondAttribute="bottom" id="Qpz-CR-SGd"/>
                             <constraint firstItem="5BI-B9-M0A" firstAttribute="top" secondItem="4Cw-Oo-Dy9" secondAttribute="bottom" constant="64" id="Skx-wh-3xu"/>
                             <constraint firstAttribute="centerX" secondItem="5BI-B9-M0A" secondAttribute="centerX" constant="-0.5" id="Xak-IK-XGw"/>
-                            <constraint firstAttribute="centerX" secondItem="hdK-zS-u5T" secondAttribute="centerX" constant="-0.5" id="dQx-qD-zcD"/>
                             <constraint firstItem="5BI-B9-M0A" firstAttribute="centerX" secondItem="4Cw-Oo-Dy9" secondAttribute="centerX" id="dmh-pB-hpJ"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="g67-9Z-ikx"/>
+                    <navigationItem key="navigationItem" title="设置" id="aiA-jR-L41">
+                        <barButtonItem key="leftBarButtonItem" image="back icon in brown-1" id="80h-dJ-VYx">
+                            <color key="tintColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="backAction:" destination="UIG-ys-fIZ" id="xFQ-SW-MRl"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outletCollection property="typeButtons" destination="4Cw-Oo-Dy9" collectionClass="NSMutableArray" id="Fcq-Hg-FWH"/>
                         <outletCollection property="typeButtons" destination="5BI-B9-M0A" collectionClass="NSMutableArray" id="ZcX-4k-QP6"/>
@@ -994,7 +1102,193 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MPd-bF-w5h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-751" y="2514"/>
+            <point key="canvasLocation" x="61" y="2514"/>
+        </scene>
+        <!--设置-->
+        <scene sceneID="RY2-AW-3Oc">
+            <objects>
+                <tableViewController id="rQL-wz-AJU" customClass="SettingTableView" customModule="TAC_DM" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="92" sectionHeaderHeight="22" sectionFooterHeight="22" id="Wzc-H1-bYN">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="TextCell" textLabel="0OP-b7-f8U" rowHeight="92" style="IBUITableViewCellStyleDefault" id="4Tf-8m-6gJ">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4Tf-8m-6gJ" id="D44-2b-Eag">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0OP-b7-f8U">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="30"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="rQL-wz-AJU" id="9S8-Ca-Z45"/>
+                            <outlet property="delegate" destination="rQL-wz-AJU" id="jf1-KR-8uG"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="设置" id="yUb-6t-Ncf">
+                        <barButtonItem key="leftBarButtonItem" image="back icon in brown-1" id="nnW-zc-tJk">
+                            <color key="tintColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="backAction:" destination="rQL-wz-AJU" id="Ala-BV-kbK"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="eyh-IM-xqf">
+                            <color key="tintColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <segue destination="1sm-uR-tsM" kind="show" identifier="addNewThing" id="iAF-cb-882"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="y8E-aI-nuw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="61" y="3259"/>
+        </scene>
+        <!--设置-->
+        <scene sceneID="xx4-av-vz0">
+            <objects>
+                <tableViewController storyboardIdentifier="SettingDeviceDetail" id="1fE-EI-3XV" customClass="SettingDeviceDetailTableViewController" customModule="TAC_DM" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="92" sectionHeaderHeight="22" sectionFooterHeight="22" id="r35-8o-pq5">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="deviceCell" textLabel="NVG-A2-HpY" rowHeight="92" style="IBUITableViewCellStyleDefault" id="6a2-PK-zde">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6a2-PK-zde" id="ojY-ul-dMy">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="NVG-A2-HpY">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="30"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="1fE-EI-3XV" id="mxe-A9-ZiG"/>
+                            <outlet property="delegate" destination="1fE-EI-3XV" id="OLy-uB-ueH"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="设置" id="ul8-48-5wa">
+                        <barButtonItem key="leftBarButtonItem" image="back icon in brown-1" id="NIf-gT-zGo">
+                            <color key="tintColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="backAction:" destination="1fE-EI-3XV" id="NNb-Tq-qcY"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8rE-33-AgB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="902" y="3259"/>
+        </scene>
+        <!--设置-->
+        <scene sceneID="l7u-2C-is4">
+            <objects>
+                <viewController storyboardIdentifier="SettingChangeViewController" id="6qj-hm-BK8" customClass="SettingChangeViewController" customModule="TAC_DM" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="IPx-xA-xjB"/>
+                        <viewControllerLayoutGuide type="bottom" id="lyO-47-rp3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="knY-uM-2Ok">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="总数： 10" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wvk-sc-WQS">
+                                <rect key="frame" x="222" y="149" width="167.5" height="36"/>
+                                <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="36"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="借出 ： 7" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HQu-R2-S2J">
+                                <rect key="frame" x="222" y="281" width="156" height="36"/>
+                                <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="36"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="未借 ： 3" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Syk-Yp-Jz3">
+                                <rect key="frame" x="222" y="413" width="156" height="36"/>
+                                <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="36"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fls-s7-pZl">
+                                <rect key="frame" x="296" y="494" width="256" height="42"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="256" id="tas-jF-tDI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="30"/>
+                                <state key="normal" title="修改">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="changeAction" destination="6qj-hm-BK8" eventType="touchUpInside" id="J7h-I0-8ka"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.44705882349999998" green="0.63137254899999995" blue="0.53725490200000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="HQu-R2-S2J" firstAttribute="top" secondItem="Wvk-sc-WQS" secondAttribute="bottom" constant="96" id="78b-82-ETL"/>
+                            <constraint firstItem="Syk-Yp-Jz3" firstAttribute="top" secondItem="HQu-R2-S2J" secondAttribute="bottom" constant="96" id="DVY-Ls-oQm"/>
+                            <constraint firstItem="Syk-Yp-Jz3" firstAttribute="leading" secondItem="HQu-R2-S2J" secondAttribute="leading" id="KAu-AH-MQ0"/>
+                            <constraint firstItem="fls-s7-pZl" firstAttribute="trailing" secondItem="knY-uM-2Ok" secondAttribute="trailingMargin" constant="-32" id="dMB-QQ-zzm"/>
+                            <constraint firstAttribute="centerX" secondItem="HQu-R2-S2J" secondAttribute="centerX" constant="-0.5" id="ket-W0-gUD"/>
+                            <constraint firstItem="Wvk-sc-WQS" firstAttribute="leading" secondItem="HQu-R2-S2J" secondAttribute="leading" id="wkG-7D-PHZ"/>
+                            <constraint firstAttribute="centerY" secondItem="HQu-R2-S2J" secondAttribute="centerY" constant="0.5" id="xIr-f4-Kev"/>
+                            <constraint firstItem="lyO-47-rp3" firstAttribute="top" secondItem="fls-s7-pZl" secondAttribute="bottom" constant="64" id="zRd-AU-ig6"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="设置" id="t5k-z1-NXV">
+                        <barButtonItem key="leftBarButtonItem" image="back icon in brown-1" id="4MP-aE-Cbc">
+                            <color key="tintColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="backAction:" destination="6qj-hm-BK8" id="U07-QA-719"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="borrowLabel" destination="HQu-R2-S2J" id="yCr-Gi-xZN"/>
+                        <outlet property="changeButton" destination="fls-s7-pZl" id="Z90-Tj-Coa"/>
+                        <outlet property="remainLabel" destination="Syk-Yp-Jz3" id="Jh5-j9-OMh"/>
+                        <outlet property="totalLabel" destination="Wvk-sc-WQS" id="Ual-8l-cqD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pj6-Kk-BLU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="902" y="2514"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="7Al-Ki-eFA">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="QU2-PZ-9cD" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="B8a-ZS-fhR"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ekk-5a-79U">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Yce-YK-2X2" kind="relationship" relationship="rootViewController" id="HcK-Iw-qXU"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="waH-3x-2W7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1486" y="2514"/>
         </scene>
     </scenes>
     <resources>
@@ -1007,4 +1301,7 @@
         <image name="menu icon" width="55" height="37"/>
         <image name="umbrella icon in brown" width="175" height="179"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="27f-HO-Qfh"/>
+    </inferredMetricsTieBreakers>
 </document>

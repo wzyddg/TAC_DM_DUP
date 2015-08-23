@@ -70,7 +70,7 @@ class DeviceViewController: UITableViewController , UITableViewDataSource , UITa
     
     
     @IBAction func backAction(sender: AnyObject) {
-        self.navigationController?.navigationBarHidden = true
+//        self.navigationController?.navigationBarHidden = true
         (tabBarController as! TabBarController).sidebar.showInViewController(self, animated: true)
     }
     

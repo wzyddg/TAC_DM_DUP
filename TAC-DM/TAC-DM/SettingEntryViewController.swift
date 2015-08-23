@@ -8,6 +8,8 @@
 
 import UIKit
 
+// MARK:- NO NEED TO CHAGNE THIS CONTROLLER
+
 class SettingEntryViewController: UIViewController {
    
     
@@ -26,16 +28,39 @@ class SettingEntryViewController: UIViewController {
         }
     }
     
-    @IBAction func umbAction() {
+    
+    @IBAction func backAction(sender: AnyObject) {
+        self.navigationController?.popViewControllerAnimated(true)
     }
     
-    
-    
-    
-    @IBAction func backAction() {
-        let settingVC = storyboard?.instantiateViewControllerWithIdentifier("SettingVC") as! UIViewController
-        self.presentViewController(settingVC, animated: true, completion: nil)
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "toSettingChangeVC"
+        {
+            if let nextVC = segue.destinationViewController as? SettingChangeViewController
+            {
+                nextVC.title = "Setting Umbrella"
+            }
+        }
+        
+        if segue.identifier == "bookSettingTableVC"
+        {
+            if let nextVC = segue.destinationViewController as? SettingTableView
+            {
+                nextVC.title = "Setting Book"
+                nextVC.isBook = true
+            }
+        }
+        
+        if segue.identifier == "deviceSettingTableVC"
+        {
+            if let nextVC = segue.destinationViewController as? SettingTableView
+            {
+                nextVC.title = "Setting Device"
+                nextVC.isBook = false
+            }
+        }
+        
+        
     }
-    
     
 }

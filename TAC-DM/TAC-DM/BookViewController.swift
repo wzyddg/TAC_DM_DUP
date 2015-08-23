@@ -66,7 +66,7 @@ class BookViewController:UITableViewController,UITableViewDataSource,UITableView
     }
  
     @IBAction func backButton(sender: UIBarButtonItem) {
-        self.navigationController?.navigationBarHidden = true
+  //      self.navigationController?.navigationBarHidden = true
         (tabBarController as! TabBarController).sidebar.showInViewController(self, animated: true)
     }
     
