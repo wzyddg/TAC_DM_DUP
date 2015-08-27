@@ -30,6 +30,8 @@
 		7BC6BC141B89E8A4001DE465 /* SettingDeviceDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC6BC131B89E8A4001DE465 /* SettingDeviceDetailTableViewController.swift */; };
 		7BECB72A1B82E46000C0D4B8 /* UmbrellaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BECB7291B82E46000C0D4B8 /* UmbrellaViewController.swift */; };
 		7BECB72C1B83203400C0D4B8 /* BookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BECB72B1B83203400C0D4B8 /* BookViewController.swift */; };
+		87071C231B8E437E00495EDB /* ItemInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87071C221B8E437E00495EDB /* ItemInfo.swift */; };
+		87071C251B8E45AD00495EDB /* BorrowRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87071C241B8E45AD00495EDB /* BorrowRecord.swift */; };
 		EF59C2771B8ABDEE00711A83 /* TAC-DM.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EF59C2751B8ABDEE00711A83 /* TAC-DM.xcdatamodeld */; };
 		EF59C27A1B8ABE2D00711A83 /* DBModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF59C2791B8ABE2D00711A83 /* DBModel.swift */; };
 		EF59C27C1B8AC8FB00711A83 /* BorrowInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF59C27B1B8AC8FB00711A83 /* BorrowInfo.swift */; };
@@ -73,6 +75,8 @@
 		7BC6BC131B89E8A4001DE465 /* SettingDeviceDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingDeviceDetailTableViewController.swift; sourceTree = "<group>"; };
 		7BECB7291B82E46000C0D4B8 /* UmbrellaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UmbrellaViewController.swift; sourceTree = "<group>"; };
 		7BECB72B1B83203400C0D4B8 /* BookViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookViewController.swift; sourceTree = "<group>"; };
+		87071C221B8E437E00495EDB /* ItemInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemInfo.swift; sourceTree = "<group>"; };
+		87071C241B8E45AD00495EDB /* BorrowRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorrowRecord.swift; sourceTree = "<group>"; };
 		EF59C2761B8ABDEE00711A83 /* TAC-DM.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "TAC-DM.xcdatamodel"; sourceTree = "<group>"; };
 		EF59C2791B8ABE2D00711A83 /* DBModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBModel.swift; sourceTree = "<group>"; };
 		EF59C27B1B8AC8FB00711A83 /* BorrowInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorrowInfo.swift; sourceTree = "<group>"; };
@@ -192,6 +196,8 @@
 			children = (
 				EF59C27B1B8AC8FB00711A83 /* BorrowInfo.swift */,
 				EF59C2791B8ABE2D00711A83 /* DBModel.swift */,
+				87071C221B8E437E00495EDB /* ItemInfo.swift */,
+				87071C241B8E45AD00495EDB /* BorrowRecord.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -306,6 +312,7 @@
 				7B90B3001B87524F009A251F /* SettingViewController.swift in Sources */,
 				7BECB72C1B83203400C0D4B8 /* BookViewController.swift in Sources */,
 				EF59C27A1B8ABE2D00711A83 /* DBModel.swift in Sources */,
+				87071C231B8E437E00495EDB /* ItemInfo.swift in Sources */,
 				7B90B2FA1B86C3C1009A251F /* HistoryViewController.swift in Sources */,
 				EF59C2771B8ABDEE00711A83 /* TAC-DM.xcdatamodeld in Sources */,
 				7B90B2FC1B86DA13009A251F /* HistoryTableViewCell.swift in Sources */,
@@ -318,6 +325,7 @@
 				7BC6BC0E1B8985EA001DE465 /* SettingChangeViewController.swift in Sources */,
 				7B90B3021B875EAE009A251F /* SettingEntryViewController.swift in Sources */,
 				621C6C271B626E2F00120ED2 /* AppDelegate.swift in Sources */,
+				87071C251B8E45AD00495EDB /* BorrowRecord.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
