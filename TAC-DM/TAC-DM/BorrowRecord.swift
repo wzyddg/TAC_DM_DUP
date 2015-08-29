@@ -12,13 +12,13 @@ import Foundation
 class BorrowRecord: NSObject {
     
     var borrowerName: String = ""
-    var borrowerTele: String = ""
-    var itemId: Int32 = 0
-    var borrowThing: String = ""
-    var borrowThingInfo: String = ""
+    var tele: String = ""
+    var itemId: Int = 0
+    var itemName: String = ""
+    var itemInfo: String = ""
     var borrowDate: NSDate
-    var borrowNum: NSNumber = 0.0
     var returnDate: NSDate
+    var number: Int = 0
     
     override init(){
         borrowDate = NSDate.new()

@@ -10,7 +10,7 @@ import UIKit
 import Foundation
 
 class ItemInfo: NSObject {
-    var itemId: NSNumber = 0.0
+    var itemId: Int = 0
     var itemName: String = ""
     var itemDescription: String = ""
     var itemType: String = ""
