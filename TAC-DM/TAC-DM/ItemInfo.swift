@@ -14,6 +14,7 @@ class ItemInfo: NSObject {
     var itemName: String = ""
     var itemDescription: String = ""
     var itemType: String = ""
-    //umbrella ipad book
+    //umbrella apple book
     var itemCount: Int = 0
+    var itemLeftCount: Int = 0
 }

@@ -16,7 +16,7 @@ class BorrowRecord: NSObject {
     var tele: String = ""
     var itemId: Int = 0
     var itemName: String = ""
-    var itemInfo: String = ""
+    var itemDescription: String = ""
     var borrowDate: NSDate
     var returnDate: NSDate
     var number: Int = 0
