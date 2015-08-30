@@ -11,6 +11,7 @@ import Foundation
 
 class BorrowRecord: NSObject {
     
+    var recordId: Int = 0
     var borrowerName: String = ""
     var tele: String = ""
     var itemId: Int = 0
