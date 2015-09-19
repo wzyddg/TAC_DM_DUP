@@ -32,6 +32,22 @@
 		7BECB72C1B83203400C0D4B8 /* BookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BECB72B1B83203400C0D4B8 /* BookViewController.swift */; };
 		87071C231B8E437E00495EDB /* ItemInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87071C221B8E437E00495EDB /* ItemInfo.swift */; };
 		87071C251B8E45AD00495EDB /* BorrowRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87071C241B8E45AD00495EDB /* BorrowRecord.swift */; };
+		A455A5181BA6E5ED00ABD68A /* Documentation.html in Resources */ = {isa = PBXBuildFile; fileRef = A455A4F71BA6E5ED00ABD68A /* Documentation.html */; };
+		A455A5191BA6E5ED00ABD68A /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = A455A4F91BA6E5ED00ABD68A /* GCDAsyncSocket.m */; };
+		A455A51A1BA6E5ED00ABD68A /* GCDAsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = A455A4FB1BA6E5ED00ABD68A /* GCDAsyncUdpSocket.m */; };
+		A455A51B1BA6E5ED00ABD68A /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A455A4FC1BA6E5ED00ABD68A /* Info.plist */; };
+		A455A51C1BA6E5ED00ABD68A /* AsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = A455A4FF1BA6E5ED00ABD68A /* AsyncSocket.m */; };
+		A455A51D1BA6E5ED00ABD68A /* AsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = A455A5011BA6E5ED00ABD68A /* AsyncUdpSocket.m */; };
+		A455A51E1BA6E5ED00ABD68A /* Documentation.html in Resources */ = {isa = PBXBuildFile; fileRef = A455A5021BA6E5ED00ABD68A /* Documentation.html */; };
+		A455A51F1BA6E5ED00ABD68A /* DDAbstractDatabaseLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = A455A5061BA6E5ED00ABD68A /* DDAbstractDatabaseLogger.m */; };
+		A455A5201BA6E5ED00ABD68A /* DDASLLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = A455A5081BA6E5ED00ABD68A /* DDASLLogger.m */; };
+		A455A5211BA6E5ED00ABD68A /* DDFileLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = A455A50A1BA6E5ED00ABD68A /* DDFileLogger.m */; };
+		A455A5221BA6E5ED00ABD68A /* DDLog.m in Sources */ = {isa = PBXBuildFile; fileRef = A455A50D1BA6E5ED00ABD68A /* DDLog.m */; };
+		A455A5231BA6E5ED00ABD68A /* DDTTYLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = A455A50F1BA6E5ED00ABD68A /* DDTTYLogger.m */; };
+		A455A5241BA6E5ED00ABD68A /* DDContextFilterLogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = A455A5121BA6E5ED00ABD68A /* DDContextFilterLogFormatter.m */; };
+		A455A5251BA6E5ED00ABD68A /* DDDispatchQueueLogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = A455A5141BA6E5ED00ABD68A /* DDDispatchQueueLogFormatter.m */; };
+		A455A5261BA6E5ED00ABD68A /* DDMultiFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = A455A5161BA6E5ED00ABD68A /* DDMultiFormatter.m */; };
+		A455A5271BA6E5ED00ABD68A /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = A455A5171BA6E5ED00ABD68A /* README.txt */; };
 		EF59C2771B8ABDEE00711A83 /* TAC-DM.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EF59C2751B8ABDEE00711A83 /* TAC-DM.xcdatamodeld */; };
 		EF59C27A1B8ABE2D00711A83 /* DBModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF59C2791B8ABE2D00711A83 /* DBModel.swift */; };
 		EF59C27C1B8AC8FB00711A83 /* BorrowInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF59C27B1B8AC8FB00711A83 /* BorrowInfo.swift */; };
@@ -77,6 +93,36 @@
 		7BECB72B1B83203400C0D4B8 /* BookViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookViewController.swift; sourceTree = "<group>"; };
 		87071C221B8E437E00495EDB /* ItemInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemInfo.swift; sourceTree = "<group>"; };
 		87071C241B8E45AD00495EDB /* BorrowRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorrowRecord.swift; sourceTree = "<group>"; };
+		A455A4F71BA6E5ED00ABD68A /* Documentation.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Documentation.html; sourceTree = "<group>"; };
+		A455A4F81BA6E5ED00ABD68A /* GCDAsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncSocket.h; sourceTree = "<group>"; };
+		A455A4F91BA6E5ED00ABD68A /* GCDAsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncSocket.m; sourceTree = "<group>"; };
+		A455A4FA1BA6E5ED00ABD68A /* GCDAsyncUdpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncUdpSocket.h; sourceTree = "<group>"; };
+		A455A4FB1BA6E5ED00ABD68A /* GCDAsyncUdpSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncUdpSocket.m; sourceTree = "<group>"; };
+		A455A4FC1BA6E5ED00ABD68A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A455A4FE1BA6E5ED00ABD68A /* AsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncSocket.h; sourceTree = "<group>"; };
+		A455A4FF1BA6E5ED00ABD68A /* AsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncSocket.m; sourceTree = "<group>"; };
+		A455A5001BA6E5ED00ABD68A /* AsyncUdpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncUdpSocket.h; sourceTree = "<group>"; };
+		A455A5011BA6E5ED00ABD68A /* AsyncUdpSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncUdpSocket.m; sourceTree = "<group>"; };
+		A455A5021BA6E5ED00ABD68A /* Documentation.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Documentation.html; sourceTree = "<group>"; };
+		A455A5051BA6E5ED00ABD68A /* DDAbstractDatabaseLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDAbstractDatabaseLogger.h; sourceTree = "<group>"; };
+		A455A5061BA6E5ED00ABD68A /* DDAbstractDatabaseLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDAbstractDatabaseLogger.m; sourceTree = "<group>"; };
+		A455A5071BA6E5ED00ABD68A /* DDASLLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDASLLogger.h; sourceTree = "<group>"; };
+		A455A5081BA6E5ED00ABD68A /* DDASLLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDASLLogger.m; sourceTree = "<group>"; };
+		A455A5091BA6E5ED00ABD68A /* DDFileLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDFileLogger.h; sourceTree = "<group>"; };
+		A455A50A1BA6E5ED00ABD68A /* DDFileLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDFileLogger.m; sourceTree = "<group>"; };
+		A455A50B1BA6E5ED00ABD68A /* DDLog+LOGV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DDLog+LOGV.h"; sourceTree = "<group>"; };
+		A455A50C1BA6E5ED00ABD68A /* DDLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDLog.h; sourceTree = "<group>"; };
+		A455A50D1BA6E5ED00ABD68A /* DDLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDLog.m; sourceTree = "<group>"; };
+		A455A50E1BA6E5ED00ABD68A /* DDTTYLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDTTYLogger.h; sourceTree = "<group>"; };
+		A455A50F1BA6E5ED00ABD68A /* DDTTYLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDTTYLogger.m; sourceTree = "<group>"; };
+		A455A5111BA6E5ED00ABD68A /* DDContextFilterLogFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDContextFilterLogFormatter.h; sourceTree = "<group>"; };
+		A455A5121BA6E5ED00ABD68A /* DDContextFilterLogFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDContextFilterLogFormatter.m; sourceTree = "<group>"; };
+		A455A5131BA6E5ED00ABD68A /* DDDispatchQueueLogFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDDispatchQueueLogFormatter.h; sourceTree = "<group>"; };
+		A455A5141BA6E5ED00ABD68A /* DDDispatchQueueLogFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDDispatchQueueLogFormatter.m; sourceTree = "<group>"; };
+		A455A5151BA6E5ED00ABD68A /* DDMultiFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDMultiFormatter.h; sourceTree = "<group>"; };
+		A455A5161BA6E5ED00ABD68A /* DDMultiFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDMultiFormatter.m; sourceTree = "<group>"; };
+		A455A5171BA6E5ED00ABD68A /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
+		A455A5281BA6E91E00ABD68A /* asyncSocket-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "asyncSocket-Bridging-Header.h"; sourceTree = "<group>"; };
 		EF59C2761B8ABDEE00711A83 /* TAC-DM.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "TAC-DM.xcdatamodel"; sourceTree = "<group>"; };
 		EF59C2791B8ABE2D00711A83 /* DBModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBModel.swift; sourceTree = "<group>"; };
 		EF59C27B1B8AC8FB00711A83 /* BorrowInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorrowInfo.swift; sourceTree = "<group>"; };
@@ -121,6 +167,7 @@
 		621C6C231B626E2F00120ED2 /* TAC-DM */ = {
 			isa = PBXGroup;
 			children = (
+				A455A4F41BA6E5ED00ABD68A /* asyncSocket */,
 				EF59C2781B8ABE0800711A83 /* Model */,
 				6266C75D1B65BD990058EDC9 /* FrostedSidebar */,
 				7B37F17A1B86203600A106C4 /* ViewController */,
@@ -130,6 +177,7 @@
 				621C6C2F1B626E2F00120ED2 /* LaunchScreen.xib */,
 				621C6C241B626E2F00120ED2 /* Supporting Files */,
 				EF59C2751B8ABDEE00711A83 /* TAC-DM.xcdatamodeld */,
+				A455A5281BA6E91E00ABD68A /* asyncSocket-Bridging-Header.h */,
 			);
 			path = "TAC-DM";
 			sourceTree = "<group>";
@@ -189,6 +237,82 @@
 				7BC6BC0D1B8985EA001DE465 /* SettingChangeViewController.swift */,
 			);
 			name = ViewController;
+			sourceTree = "<group>";
+		};
+		A455A4F41BA6E5ED00ABD68A /* asyncSocket */ = {
+			isa = PBXGroup;
+			children = (
+				A455A4F61BA6E5ED00ABD68A /* GCD */,
+				A455A4FC1BA6E5ED00ABD68A /* Info.plist */,
+				A455A4FD1BA6E5ED00ABD68A /* RunLoop */,
+				A455A5031BA6E5ED00ABD68A /* Vendor */,
+			);
+			path = asyncSocket;
+			sourceTree = "<group>";
+		};
+		A455A4F61BA6E5ED00ABD68A /* GCD */ = {
+			isa = PBXGroup;
+			children = (
+				A455A4F71BA6E5ED00ABD68A /* Documentation.html */,
+				A455A4F81BA6E5ED00ABD68A /* GCDAsyncSocket.h */,
+				A455A4F91BA6E5ED00ABD68A /* GCDAsyncSocket.m */,
+				A455A4FA1BA6E5ED00ABD68A /* GCDAsyncUdpSocket.h */,
+				A455A4FB1BA6E5ED00ABD68A /* GCDAsyncUdpSocket.m */,
+			);
+			path = GCD;
+			sourceTree = "<group>";
+		};
+		A455A4FD1BA6E5ED00ABD68A /* RunLoop */ = {
+			isa = PBXGroup;
+			children = (
+				A455A4FE1BA6E5ED00ABD68A /* AsyncSocket.h */,
+				A455A4FF1BA6E5ED00ABD68A /* AsyncSocket.m */,
+				A455A5001BA6E5ED00ABD68A /* AsyncUdpSocket.h */,
+				A455A5011BA6E5ED00ABD68A /* AsyncUdpSocket.m */,
+				A455A5021BA6E5ED00ABD68A /* Documentation.html */,
+			);
+			path = RunLoop;
+			sourceTree = "<group>";
+		};
+		A455A5031BA6E5ED00ABD68A /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				A455A5041BA6E5ED00ABD68A /* CocoaLumberjack */,
+			);
+			path = Vendor;
+			sourceTree = "<group>";
+		};
+		A455A5041BA6E5ED00ABD68A /* CocoaLumberjack */ = {
+			isa = PBXGroup;
+			children = (
+				A455A5051BA6E5ED00ABD68A /* DDAbstractDatabaseLogger.h */,
+				A455A5061BA6E5ED00ABD68A /* DDAbstractDatabaseLogger.m */,
+				A455A5071BA6E5ED00ABD68A /* DDASLLogger.h */,
+				A455A5081BA6E5ED00ABD68A /* DDASLLogger.m */,
+				A455A5091BA6E5ED00ABD68A /* DDFileLogger.h */,
+				A455A50A1BA6E5ED00ABD68A /* DDFileLogger.m */,
+				A455A50B1BA6E5ED00ABD68A /* DDLog+LOGV.h */,
+				A455A50C1BA6E5ED00ABD68A /* DDLog.h */,
+				A455A50D1BA6E5ED00ABD68A /* DDLog.m */,
+				A455A50E1BA6E5ED00ABD68A /* DDTTYLogger.h */,
+				A455A50F1BA6E5ED00ABD68A /* DDTTYLogger.m */,
+				A455A5101BA6E5ED00ABD68A /* Extensions */,
+			);
+			path = CocoaLumberjack;
+			sourceTree = "<group>";
+		};
+		A455A5101BA6E5ED00ABD68A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A455A5111BA6E5ED00ABD68A /* DDContextFilterLogFormatter.h */,
+				A455A5121BA6E5ED00ABD68A /* DDContextFilterLogFormatter.m */,
+				A455A5131BA6E5ED00ABD68A /* DDDispatchQueueLogFormatter.h */,
+				A455A5141BA6E5ED00ABD68A /* DDDispatchQueueLogFormatter.m */,
+				A455A5151BA6E5ED00ABD68A /* DDMultiFormatter.h */,
+				A455A5161BA6E5ED00ABD68A /* DDMultiFormatter.m */,
+				A455A5171BA6E5ED00ABD68A /* README.txt */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		EF59C2781B8ABE0800711A83 /* Model */ = {
@@ -283,8 +407,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				621C6C2C1B626E2F00120ED2 /* Main.storyboard in Resources */,
+				A455A51E1BA6E5ED00ABD68A /* Documentation.html in Resources */,
 				621C6C311B626E2F00120ED2 /* LaunchScreen.xib in Resources */,
 				621C6C2E1B626E2F00120ED2 /* Images.xcassets in Resources */,
+				A455A51B1BA6E5ED00ABD68A /* Info.plist in Resources */,
+				A455A5271BA6E5ED00ABD68A /* README.txt in Resources */,
+				A455A5181BA6E5ED00ABD68A /* Documentation.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,20 +432,30 @@
 			files = (
 				6266C75C1B65BD310058EDC9 /* FrostedSidebar.swift in Sources */,
 				7B90B2FE1B870F60009A251F /* MoreViewController.swift in Sources */,
+				A455A5251BA6E5ED00ABD68A /* DDDispatchQueueLogFormatter.m in Sources */,
 				6266C75A1B65BCF30058EDC9 /* TabBarController.swift in Sources */,
 				7B37F17C1B8620D800A106C4 /* DeviceDetail.swift in Sources */,
 				EF59C27C1B8AC8FB00711A83 /* BorrowInfo.swift in Sources */,
 				7BECB72A1B82E46000C0D4B8 /* UmbrellaViewController.swift in Sources */,
+				A455A5191BA6E5ED00ABD68A /* GCDAsyncSocket.m in Sources */,
 				7BC6BC101B89946E001DE465 /* SettingTableView.swift in Sources */,
 				7B90B3001B87524F009A251F /* SettingViewController.swift in Sources */,
 				7BECB72C1B83203400C0D4B8 /* BookViewController.swift in Sources */,
+				A455A51F1BA6E5ED00ABD68A /* DDAbstractDatabaseLogger.m in Sources */,
 				EF59C27A1B8ABE2D00711A83 /* DBModel.swift in Sources */,
+				A455A5221BA6E5ED00ABD68A /* DDLog.m in Sources */,
 				87071C231B8E437E00495EDB /* ItemInfo.swift in Sources */,
+				A455A51C1BA6E5ED00ABD68A /* AsyncSocket.m in Sources */,
+				A455A5231BA6E5ED00ABD68A /* DDTTYLogger.m in Sources */,
+				A455A5201BA6E5ED00ABD68A /* DDASLLogger.m in Sources */,
+				A455A5241BA6E5ED00ABD68A /* DDContextFilterLogFormatter.m in Sources */,
 				7B90B2FA1B86C3C1009A251F /* HistoryViewController.swift in Sources */,
 				EF59C2771B8ABDEE00711A83 /* TAC-DM.xcdatamodeld in Sources */,
 				7B90B2FC1B86DA13009A251F /* HistoryTableViewCell.swift in Sources */,
 				7BC6BC141B89E8A4001DE465 /* SettingDeviceDetailTableViewController.swift in Sources */,
 				7B37F17E1B8628A800A106C4 /* DeviceDetailBorrow.swift in Sources */,
+				A455A5261BA6E5ED00ABD68A /* DDMultiFormatter.m in Sources */,
+				A455A5211BA6E5ED00ABD68A /* DDFileLogger.m in Sources */,
 				7B37F1791B86173500A106C4 /* DeviceViewController.swift in Sources */,
 				621C6C291B626E2F00120ED2 /* ViewController.swift in Sources */,
 				7B47E6C51B85D04500849551 /* BookDetail.swift in Sources */,
@@ -325,7 +463,9 @@
 				7BC6BC0E1B8985EA001DE465 /* SettingChangeViewController.swift in Sources */,
 				7B90B3021B875EAE009A251F /* SettingEntryViewController.swift in Sources */,
 				621C6C271B626E2F00120ED2 /* AppDelegate.swift in Sources */,
+				A455A51A1BA6E5ED00ABD68A /* GCDAsyncUdpSocket.m in Sources */,
 				87071C251B8E45AD00495EDB /* BorrowRecord.swift in Sources */,
+				A455A51D1BA6E5ED00ABD68A /* AsyncUdpSocket.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -457,6 +597,7 @@
 				INFOPLIST_FILE = "TAC-DM/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "TAC-DM/asyncSocket-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -468,6 +609,7 @@
 				INFOPLIST_FILE = "TAC-DM/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "TAC-DM/asyncSocket-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
