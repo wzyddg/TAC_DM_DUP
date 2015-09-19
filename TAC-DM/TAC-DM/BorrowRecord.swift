@@ -22,7 +22,7 @@ class BorrowRecord: NSObject {
     var number: Int = 0
     
     override init(){
-        borrowDate = NSDate.new()
-        returnDate = NSDate.new()
+        borrowDate = NSDate()
+        returnDate = NSDate()
     }
 }
