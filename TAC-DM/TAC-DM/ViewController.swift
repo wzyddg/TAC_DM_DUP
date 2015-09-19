@@ -15,9 +15,14 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         menuButton.tintColor = UIColor(patternImage: UIImage(named: "menu icon")!)
-        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "Background")!)
+        
     }
    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "Background")!)
+    }
+    
     @IBAction func onBurger() {
         (tabBarController as! TabBarController).sidebar.showInViewController(self, animated: true)
     }

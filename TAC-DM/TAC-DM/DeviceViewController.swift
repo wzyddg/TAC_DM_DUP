@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DeviceViewController: UITableViewController , UITableViewDataSource , UITableViewDelegate
+class DeviceViewController: UITableViewController
 {
 // MARK:-TODO: TEST DATA
     var testArray = ["懵逼的iPad","懵逼的Mac","懵逼的Apple watch","懵逼的iPhone","懵逼的iPod","懵逼"]
@@ -21,9 +21,14 @@ class DeviceViewController: UITableViewController , UITableViewDataSource , UITa
         self.navigationController?.navigationBarHidden = false
     }
     
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        self.tableView.backgroundView = UIImageView(image: UIImage(named: "device background"))
+    }
+    
     func configureUI ()
     {
-        self.tableView.backgroundView = UIImageView(image: UIImage(named: "device background"))
         self.navigationController?.navigationBar.barTintColor = UIColor(patternImage: UIImage(named: "device background")!)
         self.navigationController?.navigationBar.titleTextAttributes =
             [NSForegroundColorAttributeName : UIColor.whiteColor(),
@@ -31,7 +36,7 @@ class DeviceViewController: UITableViewController , UITableViewDataSource , UITa
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("DeviceCell") as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("DeviceCell")! as UITableViewCell
         
         if 0 == indexPath.row % 2
         {

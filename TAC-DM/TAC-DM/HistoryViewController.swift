@@ -8,7 +8,7 @@
 
 import  UIKit
 
-class HistoryViewController: UITableViewController , UITableViewDataSource , UITableViewDelegate ,UIAlertViewDelegate{
+class HistoryViewController: UITableViewController,UIAlertViewDelegate{
 
 // MARK:-TODO: change the test data to real
 // 建议将每条记录写成一个struct， 里面有它的属性
@@ -99,7 +99,7 @@ class HistoryViewController: UITableViewController , UITableViewDataSource , UIT
         
             alert.addAction(UIAlertAction(title: "确认",
                 style: UIAlertActionStyle.Default,
-                handler: {(alert: UIAlertAction!) in cell.statusImg.image = UIImage(named: "checked icon"); self.dealWithAction()}))
+                handler: {(alert: UIAlertAction) in cell.statusImg.image = UIImage(named: "checked icon"); self.dealWithAction()}))
             alert.addAction(UIAlertAction(title: "取消",
                 style: UIAlertActionStyle.Cancel,
                 handler: nil))
@@ -113,6 +113,6 @@ class HistoryViewController: UITableViewController , UITableViewDataSource , UIT
     func dealWithAction()
     {
         status  == true
-        println("action here")
+        print("action here")
     }
 }

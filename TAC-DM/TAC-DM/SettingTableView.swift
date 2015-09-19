@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SettingTableView: UITableViewController ,UITableViewDataSource , UITableViewDelegate{
+class SettingTableView: UITableViewController {
 
 // MARK:- TODO: CHANGE THE TEST DATA TO REAL
     var testData = ["懵逼iPad","懵逼iPhone","懵逼Mac","懵逼watch"]
@@ -33,7 +33,7 @@ class SettingTableView: UITableViewController ,UITableViewDataSource , UITableVi
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("TextCell") as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("TextCell")! as UITableViewCell
         
         if 0 == indexPath.row%2
         {
@@ -61,7 +61,7 @@ class SettingTableView: UITableViewController ,UITableViewDataSource , UITableVi
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if isBook
         {
-            let changeViewController = storyboard?.instantiateViewControllerWithIdentifier("SettingChangeViewController") as! UIViewController
+            let changeViewController = storyboard!.instantiateViewControllerWithIdentifier("SettingChangeViewController") as UIViewController
             changeViewController.title = testData [indexPath.row/2]
             self.navigationController?.pushViewController(changeViewController, animated: true)
         }

@@ -36,7 +36,7 @@ class SettingChangeViewController: UIViewController {
     
 // MARK:- TODO : Change action don't know do what
     @IBAction func changeAction() {
-         println("change action")
+         print("change action")
         
     }
     

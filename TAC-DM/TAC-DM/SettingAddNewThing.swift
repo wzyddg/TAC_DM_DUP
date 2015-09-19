@@ -45,8 +45,8 @@ class SettingAddNewThing: UIViewController {
     }
     
 // MARK:- KeyBoard Dismiss
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
-        if let touch = touches.first as? UITouch {
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        if let touch = touches.first {
             self.view.endEditing(true)
         }
         super.touchesBegan(touches , withEvent:event)

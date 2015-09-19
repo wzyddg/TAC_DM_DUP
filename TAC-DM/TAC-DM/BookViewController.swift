@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BookViewController:UITableViewController,UITableViewDataSource,UITableViewDelegate {
+class BookViewController:UITableViewController {
 
 // MARK:- Test Data
     let testArray = ["《懵逼设计师的自我修养》","《懵的境界》","《懵逼与设计》","《三懵逼》",  "《2015我想和懵逼谈谈》"]
@@ -17,13 +17,17 @@ class BookViewController:UITableViewController,UITableViewDataSource,UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
         configureNavBar()
-        // this api mush better than what i am use before remember it.
-        self.tableView.backgroundView = UIImageView(image: UIImage(named: "book background"))
+        
         self.navigationController?.navigationBarHidden = false
         self.tableView.delegate = self
         self.tableView.dataSource = self
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        // this api mush better than what i am use before remember it.
+        self.tableView.backgroundView = UIImageView(image: UIImage(named: "book background"))
+    }
     func configureNavBar()
     {
         self.navigationController?.navigationBar.barTintColor = UIColor(patternImage: UIImage(named: "book background")!)
@@ -32,7 +36,7 @@ class BookViewController:UITableViewController,UITableViewDataSource,UITableView
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("TextCell", forIndexPath: indexPath) as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("TextCell", forIndexPath: indexPath) 
         let row = indexPath.row
         if  0 == row % 2
         {

@@ -36,7 +36,7 @@ class SettingDeviceDetailTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("deviceCell") as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("deviceCell")! as UITableViewCell
         
         if 0 == indexPath.row%2
         {
@@ -56,7 +56,7 @@ class SettingDeviceDetailTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
-        let nextVC = storyboard?.instantiateViewControllerWithIdentifier("SettingChangeViewController") as! UIViewController
+        let nextVC = storyboard!.instantiateViewControllerWithIdentifier("SettingChangeViewController") as UIViewController
         nextVC.title = testData[indexPath.row/2]
         self.navigationController?.pushViewController(nextVC, animated: true)
     }

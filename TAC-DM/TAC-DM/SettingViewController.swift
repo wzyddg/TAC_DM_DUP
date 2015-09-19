@@ -30,8 +30,8 @@ class SettingViewController: UIViewController {
     }
     
 // MARK:- KeyBoard Dismiss
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
-        if let touch = touches.first as? UITouch {
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        if let touch = touches.first {
             self.view.endEditing(true)
         }
         super.touchesBegan(touches , withEvent:event)
@@ -46,7 +46,7 @@ class SettingViewController: UIViewController {
        // MARK:- TODO: Change password
         if passWord.text == "123"
         {
-            let settingsEntryController = storyboard?.instantiateViewControllerWithIdentifier("SettingEntryScene") as! UIViewController
+            let settingsEntryController = storyboard!.instantiateViewControllerWithIdentifier("SettingEntryScene")
             self.navigationController?.pushViewController(settingsEntryController, animated: true)
         }
         else

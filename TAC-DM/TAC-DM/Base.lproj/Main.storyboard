@@ -17,8 +17,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ga2-fH-dL5">
-                                <rect key="frame" x="24" y="28" width="55" height="37"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ga2-fH-dL5">
+                                <rect key="frame" x="16" y="28" width="55" height="37"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="40" id="tsv-dt-U7R"/>
                                 </constraints>
@@ -35,10 +35,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Ga2-fH-dL5" firstAttribute="top" secondItem="pZU-Ga-muE" secondAttribute="bottom" constant="8" id="3Mf-ig-KFT"/>
+                            <constraint firstItem="Ga2-fH-dL5" firstAttribute="top" secondItem="pZU-Ga-muE" secondAttribute="bottom" constant="8" symbolic="YES" id="3Mf-ig-KFT"/>
                             <constraint firstItem="Ga2-fH-dL5" firstAttribute="top" secondItem="pZU-Ga-muE" secondAttribute="bottom" constant="8" id="Bnh-aU-b8O"/>
                             <constraint firstItem="Ga2-fH-dL5" firstAttribute="leading" secondItem="yDk-x3-j44" secondAttribute="leadingMargin" id="Ktd-5e-Xhg"/>
-                            <constraint firstItem="Ga2-fH-dL5" firstAttribute="leading" secondItem="yDk-x3-j44" secondAttribute="leadingMargin" constant="8" id="c4c-dL-diW"/>
+                            <constraint firstItem="Ga2-fH-dL5" firstAttribute="leading" secondItem="yDk-x3-j44" secondAttribute="leadingMargin" id="c4c-dL-diW"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -100,7 +100,7 @@
                                 </variation>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" alpha="0.80000001192092896" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" clearsOnBeginEditing="YES" minimumFontSize="30" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Ykh-6X-2lp">
-                                <rect key="frame" x="67" y="69" width="466" height="40"/>
+                                <rect key="frame" x="67" y="109" width="466" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="nt6-O4-gGu"/>
                                 </constraints>
@@ -131,7 +131,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="姓名：               " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u7Y-yL-sSc">
-                                <rect key="frame" x="67" y="27" width="208" height="26"/>
+                                <rect key="frame" x="67" y="75" width="208" height="26"/>
                                 <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="26"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -158,7 +158,7 @@
                             <constraint firstItem="fMu-1T-dWL" firstAttribute="leading" secondItem="Ykh-6X-2lp" secondAttribute="leading" id="6zW-q9-0wK"/>
                             <constraint firstItem="w3V-kP-5Qk" firstAttribute="top" secondItem="Zcp-sl-lWh" secondAttribute="top" id="7RN-nO-DUs"/>
                             <constraint firstItem="7hh-pd-RF0" firstAttribute="top" secondItem="8bc-er-CiS" secondAttribute="bottom" constant="48" id="7TS-zQ-67T"/>
-                            <constraint firstItem="fMu-1T-dWL" firstAttribute="top" secondItem="Ykh-6X-2lp" secondAttribute="bottom" constant="48" id="D3m-I2-V4x"/>
+                            <constraint firstItem="fMu-1T-dWL" firstAttribute="top" secondItem="Ykh-6X-2lp" secondAttribute="bottom" constant="8" symbolic="YES" id="D3m-I2-V4x"/>
                             <constraint firstItem="8bc-er-CiS" firstAttribute="leading" secondItem="7hh-pd-RF0" secondAttribute="leading" id="DvK-C6-e3s"/>
                             <constraint firstItem="fMu-1T-dWL" firstAttribute="leading" secondItem="8bc-er-CiS" secondAttribute="leading" id="EQE-os-PBw"/>
                             <constraint firstItem="M5P-g8-TQF" firstAttribute="top" secondItem="vZV-nX-Jju" secondAttribute="bottom" constant="64" id="Kf1-qp-NrA"/>
@@ -174,7 +174,7 @@
                             <constraint firstItem="Ykh-6X-2lp" firstAttribute="height" secondItem="8bc-er-CiS" secondAttribute="height" id="aMQ-z6-BJf"/>
                             <constraint firstItem="Zcp-sl-lWh" firstAttribute="leading" secondItem="Itb-me-rca" secondAttribute="leadingMargin" id="b9E-xJ-ov1"/>
                             <constraint firstAttribute="centerY" secondItem="vZV-nX-Jju" secondAttribute="centerY" constant="-127" id="cah-OM-RO6"/>
-                            <constraint firstItem="Ykh-6X-2lp" firstAttribute="top" secondItem="u7Y-yL-sSc" secondAttribute="bottom" constant="16" id="fUo-NJ-55f"/>
+                            <constraint firstItem="Ykh-6X-2lp" firstAttribute="top" secondItem="u7Y-yL-sSc" secondAttribute="bottom" constant="8" symbolic="YES" id="fUo-NJ-55f"/>
                             <constraint firstItem="w3V-kP-5Qk" firstAttribute="top" secondItem="Jhi-2K-77d" secondAttribute="bottom" id="gGq-pP-tGE"/>
                             <constraint firstAttribute="centerX" secondItem="w3V-kP-5Qk" secondAttribute="centerX" constant="-0.5" id="jfV-Ke-ME8"/>
                             <constraint firstItem="8bc-er-CiS" firstAttribute="leading" secondItem="Itb-me-rca" secondAttribute="leadingMargin" constant="51" id="jiv-hx-Wjc"/>
@@ -353,6 +353,17 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="qfR-qN-7Ei">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <attributedString key="attributedTitle">
+                            <fragment content="正在刷新">
+                                <attributes>
+                                    <font key="NSFont" size="11" name="STHeitiSC-Light"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                    </refreshControl>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0YF-mt-djw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -33,8 +33,8 @@ class DeviceDetailBorrow:UIViewController , UITextFieldDelegate , UIAlertViewDel
     }
 
 // MARK:- Keyboard Dismiss
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
-        if let touch = touches.first as? UITouch {
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        if let touch = touches.first{
             self.view.endEditing(true)
         }
         super.touchesBegan(touches , withEvent:event)
@@ -63,6 +63,6 @@ class DeviceDetailBorrow:UIViewController , UITextFieldDelegate , UIAlertViewDel
 // MARK:- TODO: Here
     func dealConfirmAction (alert:UIAlertAction!)
     {
-        println("action here")
+        print("action here")
     }
 }

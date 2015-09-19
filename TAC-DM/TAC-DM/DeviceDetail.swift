@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DeviceDetail: UITableViewController,UITableViewDelegate,UITableViewDataSource {
+class DeviceDetail: UITableViewController {
     
 //MARK:-TODO: ADD REAL DATA
     var testArray = ["懵逼的iPad-white","懵逼的iPad-black","懵逼的iPad-懵逼土豪金"]
@@ -23,7 +23,7 @@ class DeviceDetail: UITableViewController,UITableViewDelegate,UITableViewDataSou
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("DetailCell") as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("DetailCell")! as UITableViewCell
         
         if 0 == indexPath.row % 2
         {

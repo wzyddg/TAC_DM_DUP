@@ -26,17 +26,22 @@ class BookDetail : UIViewController,UIAlertViewDelegate,UITextFieldDelegate
         selectedBookName.text = bookName
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "book background")!)
+    }
+    
     func configureUI ()
     {
-        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "book background")!)
+       
         self.submitButton.layer.cornerRadius = 8.0
         self.nameTextField.delegate = self
         self.phoneTextField.delegate = self
     }
     
 // MARK:- Keyboard Dismiss
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
-        if let touch = touches.first as? UITouch {
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        if let touch = touches.first  {
             self.view.endEditing(true)
         }
         super.touchesBegan(touches , withEvent:event)
@@ -64,6 +69,6 @@ class BookDetail : UIViewController,UIAlertViewDelegate,UITextFieldDelegate
 // MARK:- TODO: Here
     func dealConfirmAction (alert:UIAlertAction!)
     {
-        println("action here")
+        print("action here")
     }
 }

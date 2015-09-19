@@ -19,18 +19,23 @@ class UmbrellaViewController: UIViewController,UIAlertViewDelegate,UITextFieldDe
         super.viewDidLoad()
         configureUI()
     }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "umbrella background")!)
+    }
 // MARK:- UI configure
     private func configureUI ()
     {
         submitButton.layer.cornerRadius = 8.0
-        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "umbrella background")!)
+       
         self.nameText.delegate   = self
         self.phoneText.delegate  =  self
         self.numberText.delegate = self
     }
 // MARK:- KeyBoard
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
-        if let touch = touches.first as? UITouch {
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        if let touch = touches.first {
             self.view.endEditing(true)
         }
         super.touchesBegan(touches , withEvent:event)
@@ -57,6 +62,6 @@ class UmbrellaViewController: UIViewController,UIAlertViewDelegate,UITextFieldDe
     
     func dealConfirmAction (alert:UIAlertAction!)
     {
-        println("action here")
+        print("action here")
     }
 }
