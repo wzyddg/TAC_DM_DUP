@@ -15,7 +15,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         menuButton.tintColor = UIColor(patternImage: UIImage(named: "menu icon")!)
-        
     }
    
     override func viewDidLayoutSubviews() {
