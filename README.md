@@ -29,12 +29,13 @@ Harold Liu
 ###1.获取设备列表
 
 传给服务器:[1|设备种类]   
-现阶段支持的设备种类有如下:book,umbrella,ios这三种，全小写，任何不是这三种的字符串都会被认为是无效而传回空:[]
-eg:[1|ios]
+现阶段支持的设备种类有如下:book,umbrella,apple这三种，全小写，其他字符串如果在数据库内没有对应数据会传回空:[]
+eg:[1|apple]
 
 传回客户端:[设备id,设备名称,设备描述,设备类型,设备数量,剩余数量|设备id,设备名称,设备描述...]
-eg:[1,iPad#1,TAC iPad,ios,1,1|4,iPad Air#4,TAC iPad,ios,1,1]
+eg:[1,iPad#1,TAC iPad,apple,1,1|4,iPad Air#4,TAC iPad,apple,1,1]
 用|做不同条目间的分隔符，下同。
+在apple类别的type属性会使用形如apple_applewatch的方式，来表明此物是apple类别，而二级类别为apple watch。
 传回的数据只包含可借用【数量大于1】且在数据库内有登记的物品。
 
 
