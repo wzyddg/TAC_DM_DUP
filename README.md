@@ -20,7 +20,7 @@ Harold Liu
 # DM-Model Detail
 所有接口都在DMModel类中有定义，使用的时候不需要关心后台的协议和接口代码等等，也就是说app开发人员可以不理会下面Back-End Detail之后的内容。
 
-使用方式：每一个ViewController都需要有一个自己的DMModel的实例，因为我们不同的VC对后台会请求不同的数据。虽然可以使用AsyncSocket的tag功能来实现单例模式，但是这容易混乱且不是现阶段的主要问题。不要使用DMModel()初始化方法，要使用DMModel的静态方法getInstance()，这样便于以后需求放缓之后改变为单例模式。
+使用方式：每一个ViewController都需要有一个自己的DMModel的实例，因为我们不同的ViewController对后台会请求不同的数据。虽然可以使用AsyncSocket的tag功能来实现单例模式，但是这容易混乱且不是现阶段的主要问题。不要使用DMModel()初始化方法，要使用DMModel的静态方法getInstance()，这样便于以后需求放缓之后改变为单例模式。
 
 在每个ViewController拥有自己的DMModel实例后，记得将该实例的delegate设置为self，以便进行回调。
 
@@ -49,7 +49,7 @@ Harold Liu
 这几个接口都没有返回值，在使用的时候，请让ViewController实现实现DMDelegate，并添加
 
     func getRequiredInfo(Info: String)
-方法，这个Info就是AsyncSocket与后台通信后获取到的数据，而且已经去掉了两端的'['和']'，请放心使用并在这哥函数里对数据进行处理。在获取到这个回调的Info之前可以用ProgressHUD之类的控件来阻止用户误操作。
+方法，这个Info就是AsyncSocket与后台通信后获取到的数据，而且已经去掉了两端的'['和']'，请放心使用并在这个方法里对数据进行处理。在获取到这个回调的Info之前可以用ProgressHUD之类的控件来阻止用户误操作。
 
 # Back-End Detail
 所有传给服务器的信息和传回的信息都用[]（半角的方括号）来封锁两端，若没有后半]则认为信息不完整，需要再向对方索取，然后和之前的信息拼接起来。
