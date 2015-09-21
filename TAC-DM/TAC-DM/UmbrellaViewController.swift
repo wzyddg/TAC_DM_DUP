@@ -20,9 +20,6 @@ class UmbrellaViewController: UIViewController,UIAlertViewDelegate,UITextFieldDe
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
-        dmModel=DMModel()
-        dmModel.delegate=self
-        dmModel.getDeviceList("apple")
     }
     
     override func viewDidLayoutSubviews() {
