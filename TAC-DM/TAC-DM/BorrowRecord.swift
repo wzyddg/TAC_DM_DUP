@@ -3,7 +3,7 @@
 //  TAC-DM
 //
 //  Created by Shepard Wang on 15/8/27.
-//  Copyright (c) 2015年 TAC. All rights reserved.
+//  Copyright (c) 2015 TAC. All rights reserved.
 //
 
 import UIKit

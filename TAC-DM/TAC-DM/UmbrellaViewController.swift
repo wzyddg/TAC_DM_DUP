@@ -8,16 +8,21 @@
 
 import UIKit
 
-class UmbrellaViewController: UIViewController,UIAlertViewDelegate,UITextFieldDelegate {
+class UmbrellaViewController: UIViewController,UIAlertViewDelegate,UITextFieldDelegate,DMDelegate {
 
     @IBOutlet weak var submitButton: UIButton!
     @IBOutlet weak var nameText: UITextField!
     @IBOutlet weak var phoneText: UITextField!
     @IBOutlet weak var numberText: UITextField!
     
+    var dmModel: DMModel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
+        dmModel=DMModel()
+        dmModel.delegate=self
+        dmModel.getDeviceList("apple")
     }
     
     override func viewDidLayoutSubviews() {
@@ -63,5 +68,10 @@ class UmbrellaViewController: UIViewController,UIAlertViewDelegate,UITextFieldDe
     func dealConfirmAction (alert:UIAlertAction!)
     {
         print("action here")
+    }
+    
+// MARK:- Call Back Func
+    func getRequiredInfo(Info: String) {
+        print("Umb got msg:"+Info)
     }
 }
