@@ -31,7 +31,7 @@ Harold Liu
     
     func getDevice(itemId:String)
     
-    func getRecordList(recordId:String)
+    func getRecord(recordId:String)
     
     func borrowItem(borrowerName:String , tele:String , itemId:String , itemName:String , itemDescription:String , number:Int)
     

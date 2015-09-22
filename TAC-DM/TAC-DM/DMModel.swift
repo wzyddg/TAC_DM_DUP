@@ -17,20 +17,9 @@ protocol DMDelegate:NSObjectProtocol{
 
 class DMModel: NSObject, AsyncSocketDelegate {
     
-//    var socketServer:DMModel? = nil
     var socket:AsyncSocket? = nil
     var delegate:DMDelegate? = nil
     var sendData:NSData? = nil
-    
-//    func sharedSocketServer() -> DMModel {
-//        if let server = socketServer {
-//            return server
-//        } else {
-//            socketServer = DMModel()
-//            return socketServer!
-//        }
-//    }
-    //abandoned
     
     static func getInstance()->DMModel{
         let instance = DMModel()
@@ -47,6 +36,9 @@ class DMModel: NSObject, AsyncSocketDelegate {
         }
         do{
             try socket!.connectToHost("10.60.41.55", onPort: 8222)
+            
+            //测试连接
+            print("socket连接成功")
         }
         catch{
             delegate?.getRequiredInfo("failed")
@@ -60,14 +52,19 @@ class DMModel: NSObject, AsyncSocketDelegate {
         print("didConnectToHost:"+host+" through port:"+"\(port)")
         
         //通过定时器不断发送消息，来检测长连接
-        delegate?.getRequiredInfo("connect successful!")
+        //个人感觉连接成功就不需要调用getRequiredInfo，只需要在接收消息后回调getRequiredInfo即可
+        //delegate?.getRequiredInfo("connect successful!")
+        
+        //向服务器写入数据
         socket?.writeData(sendData, withTimeout: -1, tag: 0)
     }
     
     
     //发送消息成功之后回调
     func onSocket(sock: AsyncSocket!, didWriteDataWithTag tag: Int) {
-        print("write successful!")
+        print("data write successful!")
+        
+        //向服务器请求数据?
         socket?.readDataWithTimeout(-1, tag: 0)
     }
     
@@ -75,10 +72,11 @@ class DMModel: NSObject, AsyncSocketDelegate {
     //接受消息成功之后回调
     func onSocket(sock: AsyncSocket!, didReadData data: NSData!, withTag tag: Int) {
         var msg = String.init(data: data, encoding: NSUTF8StringEncoding)
-        msg = (msg! as NSString).substringWithRange(NSMakeRange(1, (msg! as NSString).length-2))
+        msg = (msg! as NSString).substringWithRange(NSMakeRange(1, (msg! as NSString).length-3))
+        print("服务器传回的消息:\(msg!)")
         delegate?.getRequiredInfo(msg!)
         socket?.disconnect()
-    }
+        }
     
     //MARK:- functions
     func getDeviceList(type:String){
@@ -92,6 +90,8 @@ class DMModel: NSObject, AsyncSocketDelegate {
         let sendString = "[2]\r\n"
         sendData = sendString.dataUsingEncoding(NSUTF8StringEncoding)
         startConnectSocket()
+        
+        print("RecordList:\(sendData!.description)")
     }
     
     func getDevice(itemId:String){
@@ -100,7 +100,7 @@ class DMModel: NSObject, AsyncSocketDelegate {
         startConnectSocket()
     }
     
-    func getRecordList(recordId:String){
+    func getRecord(recordId:String){
         let sendString = "[4|"+recordId+"]\r\n"
         sendData = sendString.dataUsingEncoding(NSUTF8StringEncoding)
         startConnectSocket()
@@ -115,6 +115,7 @@ class DMModel: NSObject, AsyncSocketDelegate {
         startConnectSocket()
     }
     
+    //这个函数干嘛用的
     func returnItem(recordId:String){
         let sendString = "[6|"+recordId+"]\r\n"
         sendData = sendString.dataUsingEncoding(NSUTF8StringEncoding)
@@ -139,36 +140,4 @@ class DMModel: NSObject, AsyncSocketDelegate {
         startConnectSocket()
     }
     
-    
-    
-    //    func SocketOpen(address:String, port:Int) -> Int {
-    //
-    //        return 0;
-    //    }
-    
-    // 心跳连接
-    //        func checkLongConnectByServe() {
-    //
-    //        }
-    
-    // 断开连接
-    //    func cutOffSocket() {
-    //
-    //    }
-    
-    // Wi-Fi断开后断开socket
-    //    func onSocket(sock:AsyncSocket, willDisconnectWithError err:NSError) {
-    //
-    //    }
-    
-    
-    // 重新连接
-    //    func onSocketDidDisconnect(sock:AsyncSocket) {
-    //
-    //    }
-    
-    // 发送消息
-    //    func sendMessage(message:String) {
-    //
-    //    }
 }
