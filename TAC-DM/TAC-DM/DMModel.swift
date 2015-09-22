@@ -50,11 +50,7 @@ class DMModel: NSObject, AsyncSocketDelegate {
     //连接主机成功之后回调
     func onSocket(sock: AsyncSocket!, didConnectToHost host: String!, port: UInt16) {
         print("didConnectToHost:"+host+" through port:"+"\(port)")
-        
-        //通过定时器不断发送消息，来检测长连接
-        //个人感觉连接成功就不需要调用getRequiredInfo，只需要在接收消息后回调getRequiredInfo即可
-        //delegate?.getRequiredInfo("connect successful!")
-        
+                
         //向服务器写入数据
         socket?.writeData(sendData, withTimeout: -1, tag: 0)
     }
@@ -73,7 +69,6 @@ class DMModel: NSObject, AsyncSocketDelegate {
     func onSocket(sock: AsyncSocket!, didReadData data: NSData!, withTag tag: Int) {
         var msg = String.init(data: data, encoding: NSUTF8StringEncoding)
         msg = (msg! as NSString).substringWithRange(NSMakeRange(1, (msg! as NSString).length-3))
-        print("服务器传回的消息:\(msg!)")
         delegate?.getRequiredInfo(msg!)
         socket?.disconnect()
         }
@@ -86,6 +81,7 @@ class DMModel: NSObject, AsyncSocketDelegate {
         
     }
     
+    //借东西历史记录
     func getRecordList(){
         let sendString = "[2]\r\n"
         sendData = sendString.dataUsingEncoding(NSUTF8StringEncoding)
@@ -94,12 +90,14 @@ class DMModel: NSObject, AsyncSocketDelegate {
         print("RecordList:\(sendData!.description)")
     }
     
+    //根据设备号得到设备详情
     func getDevice(itemId:String){
         let sendString = "[3|"+itemId+"]\r\n"
         sendData = sendString.dataUsingEncoding(NSUTF8StringEncoding)
         startConnectSocket()
     }
     
+    //具体某一次借东西的详细情况
     func getRecord(recordId:String){
         let sendString = "[4|"+recordId+"]\r\n"
         sendData = sendString.dataUsingEncoding(NSUTF8StringEncoding)

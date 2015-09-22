@@ -22,9 +22,7 @@ class UmbrellaViewController: UIViewController,UIAlertViewDelegate,UITextFieldDe
         configureUI()
         
         dmModel = DMModel.getInstance()
-//        dmModel.startConnectSocket()
-        
-        print("连接完成")
+        dmModel.delegate = self
     }
     
     override func viewDidLayoutSubviews() {
@@ -71,14 +69,13 @@ class UmbrellaViewController: UIViewController,UIAlertViewDelegate,UITextFieldDe
     
     func dealConfirmAction (alert:UIAlertAction!) {
         
-//        dmModel.borrowItem("huoteng", tele: "123", itemId: "3", itemName: "umbrella", itemDescription: "hello", number: 1)
-        
-        print("umbrella~action here")
-        
+        if let borrowNum = Int(numberText.text!) {
+            dmModel.borrowItem(nameText.text!, tele: phoneText.text!, itemId: "3", itemName: "Umbrella", itemDescription: "", number: borrowNum)
+        }
     }
     
 // MARK:- Call Back Func
     func getRequiredInfo(Info: String) {
-        print("Umb got msg:"+Info)
+        print("借伞时得到服务器的返回值:\(Info)")
     }
 }

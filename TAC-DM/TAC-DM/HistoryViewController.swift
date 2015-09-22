@@ -8,17 +8,21 @@
 
 import  UIKit
 
-class HistoryViewController: UITableViewController,UIAlertViewDelegate{
+class HistoryViewController: UITableViewController,UIAlertViewDelegate, DMDelegate{
 
 // MARK:-TODO: change the test data to real
 // 建议将每条记录写成一个struct， 里面有它的属性
     var testData = ["懵逼","懵逼","懵逼"]
     var status = false
+    var dmModel: DMModel!
 
 // MARK:- Configure UI
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
+        
+        dmModel = DMModel.getInstance()
+        dmModel.delegate = self
     }
     
     func configureUI ()
@@ -110,9 +114,18 @@ class HistoryViewController: UITableViewController,UIAlertViewDelegate{
     }
     
 // MARK:-TODO: update the status of database
-    func dealWithAction()
-    {
+    func dealWithAction() {
+        //这是什么鬼。。。
         status  == true
-        print("action here")
+        
+        dmModel.getRecordList()
+    }
+    
+    func getRequiredInfo(Info: String) {
+        //得到历史列表
+        print("History is :\(Info)")
+        
+        //将借阅历史填入tableView
+        
     }
 }

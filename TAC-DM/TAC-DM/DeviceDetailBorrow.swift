@@ -8,9 +8,10 @@
 
 import UIKit
 
-class DeviceDetailBorrow:UIViewController , UITextFieldDelegate , UIAlertViewDelegate {
+class DeviceDetailBorrow:UIViewController , UITextFieldDelegate , UIAlertViewDelegate, DMDelegate {
     
     var borrowDeviceName = ""
+    var dmModel:DMModel!
     
     @IBOutlet weak var deviceName: UILabel!
     @IBOutlet weak var nameText: UITextField!
@@ -22,6 +23,9 @@ class DeviceDetailBorrow:UIViewController , UITextFieldDelegate , UIAlertViewDel
         super.viewDidLoad()
         configureUI()
         deviceName.text = borrowDeviceName
+        
+        dmModel = DMModel.getInstance()
+        dmModel.delegate = self
     }
     
     func configureUI ()
@@ -60,9 +64,11 @@ class DeviceDetailBorrow:UIViewController , UITextFieldDelegate , UIAlertViewDel
 
     }
     
-// MARK:- TODO: Here
-    func dealConfirmAction (alert:UIAlertAction!)
-    {
-        print("action here")
+    func dealConfirmAction (alert:UIAlertAction!) {
+        dmModel.borrowItem(nameText.text!, tele: phoneText.text!, itemId: "意思是ID需要从后台获取？", itemName: borrowDeviceName, itemDescription: "描述哪里来？！！！", number: 1)
+    }
+    
+    func getRequiredInfo(Info: String) {
+        
     }
 }
