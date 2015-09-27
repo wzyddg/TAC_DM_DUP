@@ -8,8 +8,9 @@
 
 import UIKit
 
-class BookViewController:UITableViewController {
+class BookViewController:UITableViewController, DMDelegate {
 
+    var dmModel: DMModel!
 // MARK:- Test Data
     let testArray = ["《懵逼设计师的自我修养》","《懵的境界》","《懵逼与设计》","《三懵逼》",  "《2015我想和懵逼谈谈》"]
  
@@ -21,6 +22,12 @@ class BookViewController:UITableViewController {
         self.navigationController?.navigationBarHidden = false
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        
+        dmModel = DMModel.getInstance()
+        dmModel.delegate = self
+        
+        //向数据库发送得到所有书籍的请求
+        dmModel.getDeviceList("book")
     }
     
     override func viewDidLayoutSubviews() {
@@ -82,5 +89,13 @@ class BookViewController:UITableViewController {
                 destinationVC.bookName = testArray[selectedIndex!.row/2]
             }
         }
+    }
+    
+    //请求图书列表
+    func getRequiredInfo(Info: String) {
+        //将图书列表放入tableView
+        print("图书列表:\(Info)")
+        
+//        var bookList = Info.
     }
 }
