@@ -8,13 +8,15 @@
 
 import UIKit
 
-class MoreViewController: UIViewController ,UITextFieldDelegate,UIAlertViewDelegate{
+class MoreViewController: UIViewController ,UITextFieldDelegate,UIAlertViewDelegate, DMDelegate{
 
     @IBOutlet weak var submitButton: UIButton!
     @IBOutlet weak var deviceName: UITextField!
     @IBOutlet weak var deviceDescri: UITextField!
     @IBOutlet weak var nameText: UITextField!
     @IBOutlet weak var phoneText: UITextField!
+    
+    var dmModel:DMModel!
  
 // MARK:- Configure UI
     override func viewDidLoad() {
@@ -24,6 +26,9 @@ class MoreViewController: UIViewController ,UITextFieldDelegate,UIAlertViewDeleg
         deviceName.delegate =   self
         nameText.delegate =     self
         phoneText.delegate =    self
+        
+        dmModel = DMModel.getInstance()
+        dmModel.delegate = self
     }
     
     func configureUI ()
@@ -51,7 +56,7 @@ class MoreViewController: UIViewController ,UITextFieldDelegate,UIAlertViewDeleg
     
     @IBAction func submitAction() {
         let alertVC = UIAlertController(title: "确认信息",
-            message: "姓名:  \(nameText.text) \n 联系方式:  \(phoneText.text) \n 所借物品:  \(deviceName.text)",
+            message: "姓名:  \(nameText.text!) \n 联系方式:  \(phoneText.text!) \n 所借物品:  \(deviceName.text!)",
             preferredStyle: UIAlertControllerStyle.Alert)
         alertVC.addAction(UIAlertAction(title: "确认信息", style: UIAlertActionStyle.Default, handler: dealWithSubmit))
         alertVC.addAction(UIAlertAction(title: "取消", style: UIAlertActionStyle.Cancel, handler: nil))
@@ -60,7 +65,11 @@ class MoreViewController: UIViewController ,UITextFieldDelegate,UIAlertViewDeleg
 // MARK:-TODO: Here
     func dealWithSubmit(alert:UIAlertAction!)
     {
-        print("action here")
+        dmModel.borrowItem(nameText.text!, tele: phoneText.text!, itemId: "", itemName: deviceName.text!, itemDescription: deviceDescri.text!, number: 1)
+    }
+    
+    func getRequiredInfo(Info: String) {
+        //借阅成功或者失败做出响应
     }
     
 }
