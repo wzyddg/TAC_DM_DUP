@@ -12,9 +12,10 @@ class HistoryViewController: UITableViewController,UIAlertViewDelegate, DMDelega
 
 // MARK:-TODO: change the test data to real
 // 建议将每条记录写成一个struct， 里面有它的属性
-    var testData = ["懵逼","懵逼","懵逼"]
+//    var testData = ["懵逼","懵逼","懵逼"]
     var status = false
     var dmModel: DMModel!
+    var borrowRecords:[String] = []
 
 // MARK:- Configure UI
     override func viewDidLoad() {
@@ -45,19 +46,18 @@ class HistoryViewController: UITableViewController,UIAlertViewDelegate, DMDelega
             cell.nameLabel?.backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(0.0)
             cell.typeLabel?.backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(0.0)
             cell.timeLabel?.backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(0.0)
-            // MARK:- TODO
-            // ----- start------
-            cell.nameLabel?.text = testData[indexPath.row/2]
-            cell.typeLabel?.text = "懵逼的iPad mini"
-            cell.timeLabel?.text = "2015/7/23"
-            //------- end ------
-            if status
-            {
-                cell.statusImg.image = UIImage(named: "checked icon")
-            }
-            else
-            {
-                cell.statusImg.image = UIImage(named: "unchecked icon")
+
+            if borrowRecords.count > 0 {
+                let recordInfo = borrowRecords[indexPath.row/2].componentsSeparatedByString(",")
+                
+                cell.nameLabel?.text = recordInfo[1]
+                cell.typeLabel?.text = recordInfo[4]
+                cell.timeLabel?.text = recordInfo[6]
+                if recordInfo[7] != "0" {
+                    cell.statusImg.image = UIImage(named: "checked icon")
+                } else {
+                    cell.statusImg.image = UIImage(named: "unchecked icon")
+                }
             }
         }
         else
@@ -85,7 +85,7 @@ class HistoryViewController: UITableViewController,UIAlertViewDelegate, DMDelega
     }
 //TODO:- ADD DATA *2 ATTENTION
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return testData.count * 2
+        return borrowRecords.count * 2
     }
     
     @IBAction func backAction(sender: AnyObject) {
@@ -98,14 +98,15 @@ class HistoryViewController: UITableViewController,UIAlertViewDelegate, DMDelega
         let cell = tableView.cellForRowAtIndexPath(indexPath) as! HistoryTableViewCell
         if status == false
         {
+            let recordInfo = borrowRecords[indexPath.row/2].componentsSeparatedByString(",")
         
             let alert = UIAlertController(title: "确认归还？",
-            message: "姓名:\(cell.nameLabel.text!) \n 电话号码: 123 \n 设备: \(cell.typeLabel.text!) \n ",
+            message: "姓名:\(cell.nameLabel.text!) \n 电话号码: \(recordInfo[2]) \n 设备: \(cell.typeLabel.text!) \n ",
             preferredStyle: UIAlertControllerStyle.Alert)
         
             alert.addAction(UIAlertAction(title: "确认",
                 style: UIAlertActionStyle.Default,
-                handler: {(alert: UIAlertAction) in cell.statusImg.image = UIImage(named: "checked icon"); self.dealWithAction()}))
+                handler: {(alert: UIAlertAction) in cell.statusImg.image = UIImage(named: "checked icon"); self.dealWithAction(recordInfo[0])}))
             alert.addAction(UIAlertAction(title: "取消",
                 style: UIAlertActionStyle.Cancel,
                 handler: nil))
@@ -116,18 +117,25 @@ class HistoryViewController: UITableViewController,UIAlertViewDelegate, DMDelega
     }
     
 // MARK:-TODO: update the status of database
-    func dealWithAction() {
-        //这是什么鬼。。。
+    func dealWithAction(recordId:String) {
         status  == true
         
-        dmModel.getRecordList()
+        dmModel.returnItem(recordId)
     }
     
     func getRequiredInfo(Info: String) {
-        //得到历史列表
-        print("History is :\(Info)")
         
-        //将借阅历史填入tableView
-        
+        if (Info == "1" || Info == "0") {
+            //归还物品成功或者失败action
+            
+        } else {
+            borrowRecords = Info.componentsSeparatedByString("|")
+            
+            for record in borrowRecords {
+                print("Record:\(record)")
+            }
+            
+            self.tableView.reloadData()
+        }
     }
 }
