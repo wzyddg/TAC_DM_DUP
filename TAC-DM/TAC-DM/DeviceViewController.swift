@@ -8,17 +8,22 @@
 
 import UIKit
 
-class DeviceViewController: UITableViewController
-{
+class DeviceViewController: UITableViewController, DMDelegate {
 // MARK:-TODO: TEST DATA
-    var testArray = ["iPad","Mac","Apple watch","iPhone","iPod"]
-    
+//    var testArray = ["iPad","Mac","Apple watch","iPhone","iPod"]
+    var dmModel:DMModel!
+    var deviceTypeList:[String] = []
     
 // MARK:-Configure UI
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
         self.navigationController?.navigationBarHidden = false
+        
+        dmModel = DMModel.getInstance()
+        dmModel.delegate = self
+        
+        dmModel.getDeviceType()
     }
     
     
@@ -43,7 +48,7 @@ class DeviceViewController: UITableViewController
             cell.backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(0.6)
             cell.textLabel?.backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(0.0)
             // TODO: ADD DATA
-            cell.textLabel?.text = testArray[indexPath.row/2 ]
+            cell.textLabel?.text = deviceTypeList[indexPath.row/2 ]
             // -----end----
             cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
         }
@@ -70,7 +75,7 @@ class DeviceViewController: UITableViewController
     }
 //MARK:-TODO: ADD DATA *2 ATTENTION
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return testArray.count * 2;
+        return deviceTypeList.count * 2;
     }
     
     
@@ -86,9 +91,22 @@ class DeviceViewController: UITableViewController
         {
             if let destinationVC = segue.destinationViewController as? DeviceDetail
             {
-                destinationVC.deviceName = testArray[selectedIndex!.row/2]
+                destinationVC.deviceName = deviceTypeList[selectedIndex!.row/2]
             }
         }
+    }
+    
+    func getRequiredInfo(Info: String) {
+        print("设备种类:\(Info)")
+        
+        let typeList = Info.componentsSeparatedByString("|")
+        for type in typeList {
+            if type.hasPrefix("apple_") {
+                deviceTypeList.append(type)
+            }
+        }
+        
+        self.tableView.reloadData()
     }
     
 }

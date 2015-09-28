@@ -11,7 +11,6 @@ import UIKit
 class DeviceDetail: UITableViewController, DMDelegate {
     
 //MARK:-TODO: ADD REAL DATA
-//    var testArray = ["懵逼的iPad-white","懵逼的iPad-black","懵逼的iPad-懵逼土豪金"]
     
     var ipadNameArray:[String] = []
     var deviceName = ""
@@ -27,20 +26,8 @@ class DeviceDetail: UITableViewController, DMDelegate {
         
         dmModel = DMModel.getInstance()
         dmModel.delegate = self
-//        switch deviceName {
-//        case "iPad":
-//            print("iPad")
-//            dmModel.getDeviceList("apple_ipad")
-//        case "iPhone":
-//            print("iPhone")
-//            dmModel.getDeviceList("apple_iphone")
-//        case "Mac":
-//            print("Mac")
-////            dmModel.getDeviceList(")
-//        default:
-//            print("")
-//        }
-        dmModel.getDeviceList("apple_ipad")
+
+        dmModel.getDeviceList(deviceName)
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -50,10 +37,7 @@ class DeviceDetail: UITableViewController, DMDelegate {
         {
             cell.backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(0.6)
             cell.textLabel?.backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(0.0)
-            // TODO: ADD REAL DATA
-//            cell.textLabel?.text = testArray[indexPath.row/2 ]
             cell.textLabel?.text = ipadNameArray[indexPath.row/2]
-            // ----END----
             cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
         }
         else
@@ -80,7 +64,6 @@ class DeviceDetail: UITableViewController, DMDelegate {
 
 //MARK:-TODO: ADD DATA *2 ATTENTION
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return testArray.count * 2
         return ipadNameArray.count*2
     }
     
@@ -95,8 +78,6 @@ class DeviceDetail: UITableViewController, DMDelegate {
         if segue.identifier == "deviceDetailBorrow"
         {
             if let destinationVC = segue.destinationViewController as? DeviceDetailBorrow {
-//                destinationVC.borrowDeviceName = testArray[selectedIndex!.row/2]
-//                destinationVC.borrowDeviceName = ipadNameArray[selectedIndex!.row/2]
                 let borrowDevice = ipadList![selectedIndex!.row/2].componentsSeparatedByString(",")
                 destinationVC.borrowDeviceID = borrowDevice[0]
                 destinationVC.borrowDeviceName = borrowDevice[1]

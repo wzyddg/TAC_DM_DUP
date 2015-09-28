@@ -23,6 +23,8 @@ class HistoryViewController: UITableViewController,UIAlertViewDelegate, DMDelega
         
         dmModel = DMModel.getInstance()
         dmModel.delegate = self
+        
+        dmModel.getRecordList()
     }
     
     func configureUI ()

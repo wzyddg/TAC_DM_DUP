@@ -58,7 +58,7 @@ class DeviceDetailBorrow:UIViewController , UITextFieldDelegate , UIAlertViewDel
     
     @IBAction func submitAction() {
         let alertVC = UIAlertController(title: "确认信息",
-            message: "姓名:  \(nameText.text) \n 联系方式:  \(phoneText.text) \n 所借物品:  \(borrowDeviceName)",
+            message: "姓名:  \(nameText.text!) \n 联系方式:  \(phoneText.text!) \n 所借物品:  \(borrowDeviceName!)",
             preferredStyle: UIAlertControllerStyle.Alert)
         alertVC.addAction(UIAlertAction(title: "确认信息", style: UIAlertActionStyle.Default, handler: dealConfirmAction))
         alertVC.addAction(UIAlertAction(title: "取消", style: UIAlertActionStyle.Cancel, handler: nil))
@@ -71,6 +71,6 @@ class DeviceDetailBorrow:UIViewController , UITextFieldDelegate , UIAlertViewDel
     }
     
     func getRequiredInfo(Info: String) {
-        
+        //设备借阅成功或者失败给出反馈
     }
 }
