@@ -11,7 +11,7 @@ import UIKit
 class DeviceViewController: UITableViewController
 {
 // MARK:-TODO: TEST DATA
-    var testArray = ["懵逼的iPad","懵逼的Mac","懵逼的Apple watch","懵逼的iPhone","懵逼的iPod","懵逼"]
+    var testArray = ["iPad","Mac","Apple watch","iPhone","iPod"]
     
     
 // MARK:-Configure UI

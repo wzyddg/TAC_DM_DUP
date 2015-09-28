@@ -10,9 +10,9 @@ import UIKit
 
 class BookViewController:UITableViewController, DMDelegate {
 
-    var dmModel: DMModel!
-// MARK:- Test Data
-    let testArray = ["《懵逼设计师的自我修养》","《懵的境界》","《懵逼与设计》","《三懵逼》",  "《2015我想和懵逼谈谈》"]
+    var dmModel: DMModel!    
+    var bookList:[String]?
+    var bookNameArray:[String] = []
  
 // MARK:- Configure UI
     override func viewDidLoad() {
@@ -48,7 +48,7 @@ class BookViewController:UITableViewController, DMDelegate {
         if  0 == row % 2
         {
             cell.backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(0.65)
-            cell.textLabel?.text = testArray[row/2]
+            cell.textLabel?.text = bookNameArray[row/2]
             cell.textLabel?.backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(0.0)
             cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
         }
@@ -73,7 +73,7 @@ class BookViewController:UITableViewController, DMDelegate {
 // MARK:-  UITableViewDelegate Methods 
 // TODO: should return count *2 Here attention
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return testArray.count * 2
+        return bookNameArray.count * 2
     }
  
     @IBAction func backButton(sender: UIBarButtonItem) {
@@ -86,7 +86,11 @@ class BookViewController:UITableViewController, DMDelegate {
         if segue.identifier == "showDetial" {
             if let destinationVC = segue.destinationViewController as? BookDetail
             {
-                destinationVC.bookName = testArray[selectedIndex!.row/2]
+//                destinationVC.bookName = bookNameArray[selectedIndex!.row/2]
+                let book = bookList![selectedIndex!.row/2].componentsSeparatedByString(",")
+                destinationVC.borrowBookId = book[0]
+                destinationVC.borrowBookName = book[1]
+                destinationVC.borrowBookDescription = book[2]
             }
         }
     }
@@ -96,6 +100,13 @@ class BookViewController:UITableViewController, DMDelegate {
         //将图书列表放入tableView
         print("图书列表:\(Info)")
         
-//        var bookList = Info.
+        bookList = Info.componentsSeparatedByString("|")
+        
+        for book in bookList! {
+            let bookName = book.componentsSeparatedByString(",")
+            bookNameArray.append(bookName[1])
+        }
+        
+        self.tableView.reloadData()
     }
 }

@@ -11,7 +11,9 @@ import UIKit
 class BookDetail : UIViewController,UIAlertViewDelegate,UITextFieldDelegate,DMDelegate
 {
     
-    var bookName = ""
+    var borrowBookName = ""
+    var borrowBookId:String?
+    var borrowBookDescription:String?
     var dmModel:DMModel!
     
     @IBOutlet weak var submitButton: UIButton!
@@ -24,7 +26,7 @@ class BookDetail : UIViewController,UIAlertViewDelegate,UITextFieldDelegate,DMDe
         super.viewDidLoad()
         self.navigationController?.navigationBarHidden = false
         configureUI()
-        selectedBookName.text = bookName
+        selectedBookName.text = borrowBookName
         
         dmModel = DMModel.getInstance()
         dmModel.delegate = self
@@ -59,7 +61,7 @@ class BookDetail : UIViewController,UIAlertViewDelegate,UITextFieldDelegate,DMDe
 // MARK:- Button Action
     @IBAction func submitAction() {
         let alertVC = UIAlertController(title: "确认信息",
-            message: "姓名:  \(nameTextField.text!) \n 联系方式:  \(phoneTextField.text!) \n 所借物品:  \(bookName)",
+            message: "姓名:  \(nameTextField.text!) \n 联系方式:  \(phoneTextField.text!) \n 所借物品:  \(borrowBookName)",
             preferredStyle: UIAlertControllerStyle.Alert)
         alertVC.addAction(UIAlertAction(title: "确认信息", style: UIAlertActionStyle.Default, handler: dealConfirmAction))
         alertVC.addAction(UIAlertAction(title: "取消", style: UIAlertActionStyle.Cancel, handler: nil))
@@ -73,7 +75,7 @@ class BookDetail : UIViewController,UIAlertViewDelegate,UITextFieldDelegate,DMDe
 
     func dealConfirmAction (alert:UIAlertAction!) {
         
-        dmModel.borrowItem(nameTextField.text!, tele: phoneTextField.text!, itemId: "", itemName: bookName, itemDescription: bookName, number: 1)
+        dmModel.borrowItem(nameTextField.text!, tele: phoneTextField.text!, itemId: borrowBookId!, itemName: borrowBookName, itemDescription: borrowBookDescription!, number: 1)
     }
     
     func getRequiredInfo(Info: String) {
