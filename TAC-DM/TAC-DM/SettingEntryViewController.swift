@@ -10,14 +10,22 @@ import UIKit
 
 // MARK:- NO NEED TO CHAGNE THIS CONTROLLER
 
-class SettingEntryViewController: UIViewController {
+class SettingEntryViewController: UIViewController, DMDelegate {
    
     
     @IBOutlet var typeButtons: [UIButton]!
+
+    var dmModel:DMModel!
+    var umbrellaInfo:BorrowItem?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
+        
+        dmModel = DMModel.getInstance()
+        dmModel.delegate = self
+        
+        dmModel.getDevice("3")
     }
 
     func configureUI()
@@ -34,11 +42,18 @@ class SettingEntryViewController: UIViewController {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "toSettingChangeVC"
-        {
-            if let nextVC = segue.destinationViewController as? SettingChangeViewController
-            {
-                nextVC.title = "Setting Umbrella"
+        if segue.identifier == "toSettingChangeVC" {
+            if let nextVC = segue.destinationViewController as? SettingChangeViewController {
+                
+                if let umbrella = umbrellaInfo {
+                    nextVC.title = "Setting Umbrella"
+                    nextVC.itemId = umbrella.id
+                    nextVC.itemCount = umbrella.count
+                    nextVC.itemLeftCount = umbrella.leftCount
+                    
+                } else {
+                    nextVC.title = "无法获得雨伞信息，请后退刷新界面"
+                }
             }
         }
         
@@ -61,6 +76,14 @@ class SettingEntryViewController: UIViewController {
         }
         
         
+    }
+    
+    func getRequiredInfo(Info: String) {
+        print("umbrella:\(Info)")
+        
+        let itemInfo = Info.componentsSeparatedByString(",")
+        
+        umbrellaInfo = BorrowItem(id: itemInfo[0], name: itemInfo[1], descri: itemInfo[2], type: itemInfo[3], count: itemInfo[4], leftCount: itemInfo[5])
     }
     
 }

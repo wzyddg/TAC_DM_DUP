@@ -13,7 +13,7 @@ class SettingTableView: UITableViewController, DMDelegate {
 // MARK:- TODO: CHANGE THE TEST DATA TO REAL
     var isBook = true
     var dmModel:DMModel!
-    var itemNameList:[String] = []
+    var itemList:[BorrowItem] = []
     
 // MARK:- CONFIGURE UI
     override func viewDidLoad() {
@@ -45,16 +45,13 @@ class SettingTableView: UITableViewController, DMDelegate {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("TextCell")! as UITableViewCell
         
-        if 0 == indexPath.row%2
-        {
+        if 0 == indexPath.row%2 {
             cell.backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(0.6)
             cell.textLabel?.backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(0.0)
             cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
             
-            cell.textLabel?.text = itemNameList[indexPath.row/2]
-        }
-        else
-        {
+            cell.textLabel?.text = itemList[indexPath.row/2].name
+        } else {
             cell.backgroundColor = UIColor.clearColor()
             cell.textLabel?.text = ""
         }
@@ -64,19 +61,22 @@ class SettingTableView: UITableViewController, DMDelegate {
     
 // MARK:- TODO: CHANGE THE DATA TO REAL NEED TO * 2
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return itemNameList.count * 2
+        return itemList.count * 2
     }
     
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if isBook {
-            let changeViewController = storyboard!.instantiateViewControllerWithIdentifier("SettingChangeViewController") as UIViewController
-            changeViewController.title = itemNameList [indexPath.row/2]
+            let changeViewController = storyboard!.instantiateViewControllerWithIdentifier("SettingChangeViewController") as! SettingChangeViewController
+            changeViewController.title = itemList[indexPath.row/2].name
+            changeViewController.itemId = itemList[indexPath.row/2].id
+            changeViewController.itemCount = itemList[indexPath.row/2].count
+            changeViewController.itemLeftCount = itemList[indexPath.row/2].leftCount
             self.navigationController?.pushViewController(changeViewController, animated: true)
         } else {
             let detailViewController = storyboard?.instantiateViewControllerWithIdentifier("SettingDeviceDetail") as! SettingDeviceDetailTableViewController
-            detailViewController.title = itemNameList [indexPath.row/2]
-            detailViewController.deviceType = itemNameList[indexPath.row/2]
+            detailViewController.title = itemList [indexPath.row/2].type
+            detailViewController.deviceType = itemList[indexPath.row/2].type
             self.navigationController?.pushViewController(detailViewController, animated: true)
         }
     }
@@ -118,12 +118,16 @@ class SettingTableView: UITableViewController, DMDelegate {
         if isBook {
             for item in items {
                 let itemInfo = item.componentsSeparatedByString(",")
-                itemNameList.append(itemInfo[1])
+                
+                let oneItem = BorrowItem(id: itemInfo[0], name: itemInfo[1], descri: itemInfo[2], type: itemInfo[3], count: itemInfo[4], leftCount: itemInfo[5])
+                
+                itemList.append(oneItem)
             }
         } else {
             for item in items {
                 if item.hasPrefix("apple_") {
-                    itemNameList.append(item)
+                    let oneItem = BorrowItem(id: "", name: item, descri: "", type: item, count: "", leftCount: "")
+                    itemList.append(oneItem)
                 }
             }
         }

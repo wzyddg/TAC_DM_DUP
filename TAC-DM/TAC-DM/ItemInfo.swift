@@ -6,15 +6,22 @@
 //  Copyright (c) 2015 TAC. All rights reserved.
 //
 
-import UIKit
 import Foundation
 
-class ItemInfo: NSObject {
-    var itemId: Int = 0
-    var itemName: String = ""
-    var itemDescription: String = ""
-    var itemType: String = ""
-    //umbrella apple book
-    var itemCount: Int = 0
-    var itemLeftCount: Int = 0
+struct BorrowItem {
+    var id:String
+    var name:String
+    var description:String
+    var type:String
+    var count:String
+    var leftCount:String
+    
+    init(id:String, name:String, descri:String, type:String, count:String, leftCount:String) {
+        self.id = id
+        self.name = name
+        self.description = descri
+        self.type = type
+        self.count = count
+        self.leftCount = leftCount
+    }
 }
