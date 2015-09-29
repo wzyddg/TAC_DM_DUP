@@ -8,46 +8,49 @@
 
 import UIKit
 
-class SettingDeviceDetailTableViewController: UITableViewController {
+class SettingDeviceDetailTableViewController: UITableViewController, DMDelegate {
 
 // MARK:- TODO: TEST DATA CHAGNE TO REAL
-    var testData = ["懵逼iPad","懵逼iPhone","懵逼Mac","懵逼watch"]
+//    var testData = ["懵逼iPad","懵逼iPhone","懵逼Mac","懵逼watch"]
+    var dmModel: DMModel!
+    var deviceType = ""
+    var deviceNameList:[String] = []
 
 // MARK:- CONFIGURE UI
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.backgroundView = UIImageView (image: UIImage(named: "setting background")!)
+        
+        dmModel = DMModel.getInstance()
+        dmModel.delegate = self
+        
+        print("deviceType:\(deviceType)")
+        dmModel.getDeviceList(deviceType)
     }
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         
-        if 0 == indexPath.row%2
-        {
+        if 0 == indexPath.row%2 {
             return 75
-        }
-        else
-        {
+        } else {
             return 5
         }
     }
 // MARK:- TODO: CHANGE TEST DATA EVERYWHERE
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return testData.count * 2
+        return deviceNameList.count * 2
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("deviceCell")! as UITableViewCell
         
-        if 0 == indexPath.row%2
-        {
+        if 0 == indexPath.row%2 {
             cell.backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(0.6)
             cell.textLabel?.backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(0.0)
             cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
             
-            cell.textLabel?.text = testData[indexPath.row/2]
-        }
-        else
-        {
+            cell.textLabel?.text = deviceNameList[indexPath.row/2]
+        } else {
             cell.backgroundColor = UIColor.clearColor()
             cell.textLabel?.text = ""
         }
@@ -57,7 +60,8 @@ class SettingDeviceDetailTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
         let nextVC = storyboard!.instantiateViewControllerWithIdentifier("SettingChangeViewController") as UIViewController
-        nextVC.title = testData[indexPath.row/2]
+        nextVC.title = deviceNameList[indexPath.row/2]
+        
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
     
@@ -65,4 +69,15 @@ class SettingDeviceDetailTableViewController: UITableViewController {
         self.navigationController?.popViewControllerAnimated(true)
     }
     
+    func getRequiredInfo(Info: String) {
+        print("DeviceList:\(Info)")
+        
+        let devices = Info.componentsSeparatedByString("|")
+        for device in devices {
+            let deviceInfo = device.componentsSeparatedByString(",")
+            deviceNameList.append(deviceInfo[1])
+        }
+        
+        self.tableView.reloadData()
+    }
 }

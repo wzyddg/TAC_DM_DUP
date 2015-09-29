@@ -36,12 +36,10 @@ class DMModel: NSObject, AsyncSocketDelegate {
         }
         do{
             try socket!.connectToHost("10.60.41.55", onPort: 8222)
-            
-            //测试连接
-            print("socket连接成功")
-        }
-        catch{
+            print("已发送连接请求")
+        } catch {
             delegate?.getRequiredInfo("failed")
+            print("连接失败")
         }
         
         
@@ -86,8 +84,6 @@ class DMModel: NSObject, AsyncSocketDelegate {
         let sendString = "[2]\r\n"
         sendData = sendString.dataUsingEncoding(NSUTF8StringEncoding)
         startConnectSocket()
-        
-//        print("RecordList:\(sendData!.description)")
     }
     
     //根据设备号得到设备详情
@@ -113,7 +109,6 @@ class DMModel: NSObject, AsyncSocketDelegate {
         startConnectSocket()
     }
     
-    //这个函数干嘛用的
     func returnItem(recordId:String){
         let sendString = "[6|"+recordId+"]\r\n"
         sendData = sendString.dataUsingEncoding(NSUTF8StringEncoding)

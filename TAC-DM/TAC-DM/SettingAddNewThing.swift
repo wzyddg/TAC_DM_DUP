@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SettingAddNewThing: UIViewController {
+class SettingAddNewThing: UIViewController, DMDelegate {
 
 // MARK:- DATA FROM SEGUE
     var name = ""
@@ -16,6 +16,7 @@ class SettingAddNewThing: UIViewController {
     var thrid = ""
     var fourth = ""
     var hasfourthLabel = true
+    var dmModel: DMModel!
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var secondLabel: UILabel!
@@ -36,8 +37,7 @@ class SettingAddNewThing: UIViewController {
         self.nameLabel.text = name
         self.secondLabel.text = second
         self.thridLabel.text = thrid
-        if !hasfourthLabel
-        {
+        if !hasfourthLabel {
             self.fourthLabel.text = ""
             fourthDeriText.userInteractionEnabled = false
             self.fourthDeriText.borderStyle = UITextBorderStyle.None
@@ -70,8 +70,11 @@ class SettingAddNewThing: UIViewController {
         self.navigationController?.popViewControllerAnimated(true)
     }
 // MARK:- TODO: UPDATE THE DATA 
-    func dealWithSubmit (alert:UIAlertAction!)
-    {
+    func dealWithSubmit (alert:UIAlertAction!) {
+        
+    }
+    
+    func getRequiredInfo(Info: String) {
         
     }
 }
