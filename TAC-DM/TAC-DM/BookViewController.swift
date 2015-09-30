@@ -27,8 +27,11 @@ class BookViewController:UITableViewController, DMDelegate {
         dmModel.delegate = self
         
         //向数据库发送得到所有书籍的请求
+        SVProgressHUD.show()
         dmModel.getDeviceList("book")
+        SVProgressHUD.dismiss()
     }
+    
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()

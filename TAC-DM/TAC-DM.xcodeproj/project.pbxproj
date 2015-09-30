@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		299296A2BFD95832163E53D5 /* libPods-TAC-DM.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A35742F1A30DCD8D1B3140D /* libPods-TAC-DM.a */; };
 		621C6C271B626E2F00120ED2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621C6C261B626E2F00120ED2 /* AppDelegate.swift */; };
 		621C6C291B626E2F00120ED2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621C6C281B626E2F00120ED2 /* ViewController.swift */; };
 		621C6C2C1B626E2F00120ED2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 621C6C2A1B626E2F00120ED2 /* Main.storyboard */; };
@@ -90,9 +91,11 @@
 		7BC6BC131B89E8A4001DE465 /* SettingDeviceDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingDeviceDetailTableViewController.swift; sourceTree = "<group>"; };
 		7BECB7291B82E46000C0D4B8 /* UmbrellaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UmbrellaViewController.swift; sourceTree = "<group>"; };
 		7BECB72B1B83203400C0D4B8 /* BookViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookViewController.swift; sourceTree = "<group>"; };
+		7BFEDBF61BBBCF4000018AB6 /* TAC-DM-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TAC-DM-Bridging-Header.h"; sourceTree = "<group>"; };
 		87071C221B8E437E00495EDB /* ItemInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemInfo.swift; sourceTree = "<group>"; };
 		87071C241B8E45AD00495EDB /* BorrowRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorrowRecord.swift; sourceTree = "<group>"; };
 		87E318EC1BAF8EF0001D0FD5 /* DMModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DMModel.swift; sourceTree = "<group>"; };
+		8A35742F1A30DCD8D1B3140D /* libPods-TAC-DM.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TAC-DM.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A455A4F71BA6E5ED00ABD68A /* Documentation.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Documentation.html; sourceTree = "<group>"; };
 		A455A4F81BA6E5ED00ABD68A /* GCDAsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncSocket.h; sourceTree = "<group>"; };
 		A455A4F91BA6E5ED00ABD68A /* GCDAsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncSocket.m; sourceTree = "<group>"; };
@@ -123,6 +126,8 @@
 		A455A5161BA6E5ED00ABD68A /* DDMultiFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDMultiFormatter.m; sourceTree = "<group>"; };
 		A455A5171BA6E5ED00ABD68A /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
 		A455A5281BA6E91E00ABD68A /* asyncSocket-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "asyncSocket-Bridging-Header.h"; sourceTree = "<group>"; };
+		B47F04204E4C1BF42EB8E6A5 /* Pods-TAC-DM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TAC-DM.release.xcconfig"; path = "Pods/Target Support Files/Pods-TAC-DM/Pods-TAC-DM.release.xcconfig"; sourceTree = "<group>"; };
+		D7D72411780105571E394294 /* Pods-TAC-DM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TAC-DM.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TAC-DM/Pods-TAC-DM.debug.xcconfig"; sourceTree = "<group>"; };
 		EF59C2761B8ABDEE00711A83 /* TAC-DM.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "TAC-DM.xcdatamodel"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -131,6 +136,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				299296A2BFD95832163E53D5 /* libPods-TAC-DM.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,12 +150,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		25971E81332D0ED9FE826DE4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D7D72411780105571E394294 /* Pods-TAC-DM.debug.xcconfig */,
+				B47F04204E4C1BF42EB8E6A5 /* Pods-TAC-DM.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		442285F6C0830A6F041D2A14 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8A35742F1A30DCD8D1B3140D /* libPods-TAC-DM.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		621C6C181B626E2F00120ED2 = {
 			isa = PBXGroup;
 			children = (
 				621C6C231B626E2F00120ED2 /* TAC-DM */,
 				621C6C391B626E2F00120ED2 /* TAC-DMTests */,
 				621C6C221B626E2F00120ED2 /* Products */,
+				25971E81332D0ED9FE826DE4 /* Pods */,
+				442285F6C0830A6F041D2A14 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -176,6 +201,7 @@
 				621C6C241B626E2F00120ED2 /* Supporting Files */,
 				EF59C2751B8ABDEE00711A83 /* TAC-DM.xcdatamodeld */,
 				A455A5281BA6E91E00ABD68A /* asyncSocket-Bridging-Header.h */,
+				7BFEDBF61BBBCF4000018AB6 /* TAC-DM-Bridging-Header.h */,
 			);
 			path = "TAC-DM";
 			sourceTree = "<group>";
@@ -330,9 +356,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 621C6C401B626E2F00120ED2 /* Build configuration list for PBXNativeTarget "TAC-DM" */;
 			buildPhases = (
+				0CF1D1AC60857314C5F365B5 /* Check Pods Manifest.lock */,
 				621C6C1D1B626E2F00120ED2 /* Sources */,
 				621C6C1E1B626E2F00120ED2 /* Frameworks */,
 				621C6C1F1B626E2F00120ED2 /* Resources */,
+				28224FC57D7271C3D379DA42 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -424,6 +452,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0CF1D1AC60857314C5F365B5 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		28224FC57D7271C3D379DA42 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TAC-DM/Pods-TAC-DM-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		621C6C1D1B626E2F00120ED2 /* Sources */ = {
@@ -591,6 +652,7 @@
 		};
 		621C6C411B626E2F00120ED2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D7D72411780105571E394294 /* Pods-TAC-DM.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -599,13 +661,14 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "TAC-DM/asyncSocket-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "TAC-DM/TAC-DM-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
 		621C6C421B626E2F00120ED2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B47F04204E4C1BF42EB8E6A5 /* Pods-TAC-DM.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -614,7 +677,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "TAC-DM/asyncSocket-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "TAC-DM/TAC-DM-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

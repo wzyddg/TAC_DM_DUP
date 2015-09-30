@@ -74,8 +74,11 @@ class BookDetail : UIViewController,UIAlertViewDelegate,UITextFieldDelegate,DMDe
     }
 
     func dealConfirmAction (alert:UIAlertAction!) {
-        
+        SVProgressHUD.show()
         dmModel.borrowItem(nameTextField.text!, tele: phoneTextField.text!, itemId: borrowBookId!, itemName: borrowBookName, itemDescription: borrowBookDescription!, number: 1)
+      //  SVProgressHUD.dismiss()
+        SVProgressHUD.showSuccessWithStatus("Now you can take the book with you !")
+        backAction(self)
     }
     
     func getRequiredInfo(Info: String) {

@@ -20,9 +20,13 @@ class UmbrellaViewController: UIViewController,UIAlertViewDelegate,UITextFieldDe
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
-        
         dmModel = DMModel.getInstance()
         dmModel.delegate = self
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(true)
+        refresh()
     }
     
     override func viewDidLayoutSubviews() {
@@ -68,10 +72,19 @@ class UmbrellaViewController: UIViewController,UIAlertViewDelegate,UITextFieldDe
     }
     
     func dealConfirmAction (alert:UIAlertAction!) {
-        
         if let borrowNum = Int(numberText.text!) {
             dmModel.borrowItem(nameText.text!, tele: phoneText.text!, itemId: "3", itemName: "Umbrella", itemDescription: "", number: borrowNum)
+            SVProgressHUD.showSuccessWithStatus("Now you can take an umbrella with you")
+            refresh()
+            (tabBarController as! TabBarController).sidebar.showInViewController(self, animated: true)
         }
+    }
+    
+    func refresh()
+    {
+        self.nameText.text = nil;
+        self.phoneText.text = nil;
+        self.numberText.text = nil;
     }
     
 // MARK:- Call Back Func

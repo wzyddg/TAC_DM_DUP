@@ -1,14 +1,9 @@
 {
-<<<<<<< HEAD
   "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "510EF6CEB8BEB4AA9E8A1C51720066D22338E10B+++01AFBB0",
-=======
-  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "510EF6CEB8BEB4AA9E8A1C51720066D22338E10B+++EF260D6",
->>>>>>> a86100b4a8384ece36a2349be1ed387b3323183a
   "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
 
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
-<<<<<<< HEAD
     "510EF6CEB8BEB4AA9E8A1C51720066D22338E10B+++7B11892" : 0,
     "510EF6CEB8BEB4AA9E8A1C51720066D22338E10B+++01AFBB0" : 0
   },
@@ -16,17 +11,6 @@
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
     "510EF6CEB8BEB4AA9E8A1C51720066D22338E10B+++7B11892" : "",
     "510EF6CEB8BEB4AA9E8A1C51720066D22338E10B+++01AFBB0" : "TAC-DM"
-=======
-    "510EF6CEB8BEB4AA9E8A1C51720066D22338E10B+++2A5FEF0" : 0,
-    "510EF6CEB8BEB4AA9E8A1C51720066D22338E10B+++EF260D6" : 0,
-    "510EF6CEB8BEB4AA9E8A1C51720066D22338E10B+++CF22B76" : 0
-  },
-  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "2D0FFC84-9CEC-4F09-B7E1-2234FA761784",
-  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
-    "510EF6CEB8BEB4AA9E8A1C51720066D22338E10B+++2A5FEF0" : "",
-    "510EF6CEB8BEB4AA9E8A1C51720066D22338E10B+++EF260D6" : "DM\/",
-    "510EF6CEB8BEB4AA9E8A1C51720066D22338E10B+++CF22B76" : "TAC-DM"
->>>>>>> a86100b4a8384ece36a2349be1ed387b3323183a
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "TAC-DM",
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,
@@ -35,25 +19,12 @@
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/anzhehong\/TAC-DM.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
-<<<<<<< HEAD
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "510EF6CEB8BEB4AA9E8A1C51720066D22338E10B+++01AFBB0"
-=======
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "510EF6CEB8BEB4AA9E8A1C51720066D22338E10B+++2A5FEF0"
->>>>>>> a86100b4a8384ece36a2349be1ed387b3323183a
     },
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/anzhehong\/TAC-DM.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
-<<<<<<< HEAD
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "510EF6CEB8BEB4AA9E8A1C51720066D22338E10B+++7B11892"
-=======
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "510EF6CEB8BEB4AA9E8A1C51720066D22338E10B+++CF22B76"
-    },
-    {
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/anzhehong\/TAC-DM.git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "510EF6CEB8BEB4AA9E8A1C51720066D22338E10B+++EF260D6"
->>>>>>> a86100b4a8384ece36a2349be1ed387b3323183a
     }
   ]
 }
