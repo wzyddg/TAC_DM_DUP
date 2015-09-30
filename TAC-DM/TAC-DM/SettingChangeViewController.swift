@@ -17,6 +17,10 @@ class SettingChangeViewController: UIViewController, DMDelegate {
     @IBOutlet weak var remainLabel: UILabel!
     
     var dmModel: DMModel!
+    var itemId:String?
+    var itemCount:String?
+    var itemLeftCount:String?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +29,7 @@ class SettingChangeViewController: UIViewController, DMDelegate {
         
         dmModel = DMModel.getInstance()
         dmModel.delegate = self
+        
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -35,14 +40,22 @@ class SettingChangeViewController: UIViewController, DMDelegate {
 // MARK:- TODO : you have to update the number of the text
     func updateUI()
     {
-        //update the text data here
+        if let count = itemCount, leftCount = itemLeftCount {
+            let borrowItemCount = Int(count)! - Int(leftCount)!
+            totalLabel.text? = "总数：\(count)"
+            borrowLabel.text? = "借出：\(borrowItemCount)"
+            remainLabel.text? = "未借：\(leftCount)"
+        }
     }
     
 // MARK:- TODO : Change action don't know do what
     @IBAction func changeAction() {
         
         //where is password come from
-        dmModel.editLeftNumber("itemID", newCount: 1, password: "password")
+        //如何获得newCount
+        if let id = itemId {
+            dmModel.editLeftNumber(id, newCount: 1000, password: "123123")
+        }
     }
     
     @IBAction func backAction(sender: AnyObject) {
