@@ -43,6 +43,8 @@ Harold Liu
     
     func editLeftNumber(itemId:String , newCount:Int , password:String)
     
+    func getDeviceType()
+    
 都很简单，初中英语都能看懂。
 唯一需要注意的是，在传值时候尽量不要传空值，实在要传也不要传nil，请传一个空串""。
 

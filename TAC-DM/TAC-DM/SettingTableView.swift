@@ -8,16 +8,26 @@
 
 import UIKit
 
-class SettingTableView: UITableViewController {
+class SettingTableView: UITableViewController, DMDelegate {
 
 // MARK:- TODO: CHANGE THE TEST DATA TO REAL
-    var testData = ["懵逼iPad","懵逼iPhone","懵逼Mac","懵逼watch"]
     var isBook = true
+    var dmModel:DMModel!
+    var itemNameList:[String] = []
     
 // MARK:- CONFIGURE UI
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.backgroundView = UIImageView (image: UIImage(named: "setting background")!)
+        
+        dmModel = DMModel.getInstance()
+        dmModel.delegate = self
+        
+        if isBook {
+            dmModel.getDeviceListAsAdmin("book")
+        } else {
+            dmModel.getDeviceType()
+        }
     }
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
@@ -41,7 +51,7 @@ class SettingTableView: UITableViewController {
             cell.textLabel?.backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(0.0)
             cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
             
-            cell.textLabel?.text = testData[indexPath.row/2]
+            cell.textLabel?.text = itemNameList[indexPath.row/2]
         }
         else
         {
@@ -54,47 +64,38 @@ class SettingTableView: UITableViewController {
     
 // MARK:- TODO: CHANGE THE DATA TO REAL NEED TO * 2
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return testData.count * 2
+        return itemNameList.count * 2
     }
     
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if isBook
-        {
+        if isBook {
             let changeViewController = storyboard!.instantiateViewControllerWithIdentifier("SettingChangeViewController") as UIViewController
-            changeViewController.title = testData [indexPath.row/2]
+            changeViewController.title = itemNameList [indexPath.row/2]
             self.navigationController?.pushViewController(changeViewController, animated: true)
-        }
-        else
-        {
-            let detailViewController = storyboard?.instantiateViewControllerWithIdentifier("SettingDeviceDetail") as! UITableViewController
-            detailViewController.title = testData [indexPath.row/2]
+        } else {
+            let detailViewController = storyboard?.instantiateViewControllerWithIdentifier("SettingDeviceDetail") as! SettingDeviceDetailTableViewController
+            detailViewController.title = itemNameList [indexPath.row/2]
+            detailViewController.deviceType = itemNameList[indexPath.row/2]
             self.navigationController?.pushViewController(detailViewController, animated: true)
         }
     }
 
 //MARK:- IF YOU WANT TO PASS DATA , CHANGE THE SEGUE
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if isBook
-        {
-        if segue.identifier == "addNewThing"
-        {
-            if let next = segue.destinationViewController as? SettingAddNewThing
-            {
-                next.title = "Add New Book"
-                next.name = "书名:"
-                next.second = "作者:"
-                next.thrid = "数量:"
-                next.hasfourthLabel = true
+        if isBook {
+            if segue.identifier == "addNewThing" {
+                if let next = segue.destinationViewController as? SettingAddNewThing {
+                    next.title = "Add New Book"
+                    next.name = "书名:"
+                    next.second = "作者:"
+                    next.thrid = "数量:"
+                    next.hasfourthLabel = true
+                }
             }
-        }
-        }
-        else
-        {
-            if segue.identifier == "addNewThing"
-            {
-                if let next = segue.destinationViewController as? SettingAddNewThing
-                {
+        } else {
+            if segue.identifier == "addNewThing" {
+                if let next = segue.destinationViewController as? SettingAddNewThing {
                     next.title = "Add New Device"
                     next.name = "设备名:"
                     next.second = "描述（颜色，型号等）:"
@@ -102,11 +103,31 @@ class SettingTableView: UITableViewController {
                     next.hasfourthLabel = false
                 }
             }
-
         }
     }
     
     @IBAction func backAction(sender: AnyObject) {
         self.navigationController?.popViewControllerAnimated(true)
+    }
+    
+    func getRequiredInfo(Info: String) {
+        print("Admin manage:\(Info)")
+        
+        let items = Info.componentsSeparatedByString("|")
+        
+        if isBook {
+            for item in items {
+                let itemInfo = item.componentsSeparatedByString(",")
+                itemNameList.append(itemInfo[1])
+            }
+        } else {
+            for item in items {
+                if item.hasPrefix("apple_") {
+                    itemNameList.append(item)
+                }
+            }
+        }
+        
+        self.tableView.reloadData()
     }
 }
