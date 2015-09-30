@@ -8,15 +8,19 @@
 
 import UIKit
 
-class SettingViewController: UIViewController {
+class SettingViewController: UIViewController, DMDelegate {
 
     @IBOutlet weak var passWord: UITextField!
     @IBOutlet weak var submitButton: UIButton!
     
+    var dmModel: DMModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
+        
+        dmModel = DMModel.getInstance()
+        dmModel.delegate = self
     }
     
     func configureUI ()
@@ -43,24 +47,33 @@ class SettingViewController: UIViewController {
     }
     
     @IBAction func submitAction() {
-       // MARK:- TODO: Change password
-        if passWord.text == "123"
-        {
-            let settingsEntryController = storyboard!.instantiateViewControllerWithIdentifier("SettingEntryScene")
-            self.navigationController?.pushViewController(settingsEntryController, animated: true)
-        }
-        else
-        {
-            let alertVC = UIAlertController(title: "密码错误",
-                message: "您输入的密码有误！",
-                preferredStyle: UIAlertControllerStyle.Alert)
-            alertVC.addAction(UIAlertAction(title: "确定", style: UIAlertActionStyle.Default, handler: nil))
-            self.presentViewController(alertVC, animated: true, completion: nil)
+        if let pass = passWord.text {
+            print("password is : \(pass)")
+            dmModel.adminLogin(pass)
+        } else {
+            print("text is nil")
         }
     }
 
     @IBAction func back(sender: AnyObject) {
         (tabBarController as! TabBarController).sidebar.showInViewController(self, animated: true)
         
+    }
+    
+    func getRequiredInfo(Info: String) {
+
+        print("Info are :\(Info)")
+        
+        if (Info == "1") {
+            let settingsEntryController = storyboard!.instantiateViewControllerWithIdentifier("SettingEntryScene")
+            self.navigationController?.pushViewController(settingsEntryController, animated: true)
+        } else {
+            let alertVC = UIAlertController(title: "密码错误",
+                message: "您输入的密码有误！",
+                preferredStyle: UIAlertControllerStyle.Alert)
+            alertVC.addAction(UIAlertAction(title: "确定", style: UIAlertActionStyle.Default, handler: nil))
+            self.presentViewController(alertVC, animated: true, completion: nil)
+        }
+
     }
 }

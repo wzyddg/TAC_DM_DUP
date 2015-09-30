@@ -8,9 +8,12 @@
 
 import UIKit
 
-class DeviceDetailBorrow:UIViewController , UITextFieldDelegate , UIAlertViewDelegate {
+class DeviceDetailBorrow:UIViewController , UITextFieldDelegate , UIAlertViewDelegate, DMDelegate {
     
-    var borrowDeviceName = ""
+    var borrowDeviceName:String?
+    var borrowDeviceID:String?
+    var borrowDeviceDescription:String?
+    var dmModel:DMModel!
     
     @IBOutlet weak var deviceName: UILabel!
     @IBOutlet weak var nameText: UITextField!
@@ -22,6 +25,9 @@ class DeviceDetailBorrow:UIViewController , UITextFieldDelegate , UIAlertViewDel
         super.viewDidLoad()
         configureUI()
         deviceName.text = borrowDeviceName
+        
+        dmModel = DMModel.getInstance()
+        dmModel.delegate = self
     }
     
     func configureUI ()
@@ -52,7 +58,7 @@ class DeviceDetailBorrow:UIViewController , UITextFieldDelegate , UIAlertViewDel
     
     @IBAction func submitAction() {
         let alertVC = UIAlertController(title: "确认信息",
-            message: "姓名:  \(nameText.text) \n 联系方式:  \(phoneText.text) \n 所借物品:  \(borrowDeviceName)",
+            message: "姓名:  \(nameText.text!) \n 联系方式:  \(phoneText.text!) \n 所借物品:  \(borrowDeviceName!)",
             preferredStyle: UIAlertControllerStyle.Alert)
         alertVC.addAction(UIAlertAction(title: "确认信息", style: UIAlertActionStyle.Default, handler: dealConfirmAction))
         alertVC.addAction(UIAlertAction(title: "取消", style: UIAlertActionStyle.Cancel, handler: nil))
@@ -60,9 +66,11 @@ class DeviceDetailBorrow:UIViewController , UITextFieldDelegate , UIAlertViewDel
 
     }
     
-// MARK:- TODO: Here
-    func dealConfirmAction (alert:UIAlertAction!)
-    {
-        print("action here")
+    func dealConfirmAction (alert:UIAlertAction!) {
+        dmModel.borrowItem(nameText.text!, tele: phoneText.text!, itemId: borrowDeviceID!, itemName: borrowDeviceName!, itemDescription: borrowDeviceDescription!, number: 1)
+    }
+    
+    func getRequiredInfo(Info: String) {
+        //设备借阅成功或者失败给出反馈
     }
 }

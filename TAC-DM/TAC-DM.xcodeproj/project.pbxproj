@@ -32,6 +32,7 @@
 		7BECB72C1B83203400C0D4B8 /* BookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BECB72B1B83203400C0D4B8 /* BookViewController.swift */; };
 		87071C231B8E437E00495EDB /* ItemInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87071C221B8E437E00495EDB /* ItemInfo.swift */; };
 		87071C251B8E45AD00495EDB /* BorrowRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87071C241B8E45AD00495EDB /* BorrowRecord.swift */; };
+		87E318ED1BAF8EF0001D0FD5 /* DMModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E318EC1BAF8EF0001D0FD5 /* DMModel.swift */; settings = {ASSET_TAGS = (); }; };
 		A455A5181BA6E5ED00ABD68A /* Documentation.html in Resources */ = {isa = PBXBuildFile; fileRef = A455A4F71BA6E5ED00ABD68A /* Documentation.html */; };
 		A455A5191BA6E5ED00ABD68A /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = A455A4F91BA6E5ED00ABD68A /* GCDAsyncSocket.m */; };
 		A455A51A1BA6E5ED00ABD68A /* GCDAsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = A455A4FB1BA6E5ED00ABD68A /* GCDAsyncUdpSocket.m */; };
@@ -49,8 +50,6 @@
 		A455A5261BA6E5ED00ABD68A /* DDMultiFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = A455A5161BA6E5ED00ABD68A /* DDMultiFormatter.m */; };
 		A455A5271BA6E5ED00ABD68A /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = A455A5171BA6E5ED00ABD68A /* README.txt */; };
 		EF59C2771B8ABDEE00711A83 /* TAC-DM.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EF59C2751B8ABDEE00711A83 /* TAC-DM.xcdatamodeld */; };
-		EF59C27A1B8ABE2D00711A83 /* DBModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF59C2791B8ABE2D00711A83 /* DBModel.swift */; };
-		EF59C27C1B8AC8FB00711A83 /* BorrowInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF59C27B1B8AC8FB00711A83 /* BorrowInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +92,7 @@
 		7BECB72B1B83203400C0D4B8 /* BookViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookViewController.swift; sourceTree = "<group>"; };
 		87071C221B8E437E00495EDB /* ItemInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemInfo.swift; sourceTree = "<group>"; };
 		87071C241B8E45AD00495EDB /* BorrowRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorrowRecord.swift; sourceTree = "<group>"; };
+		87E318EC1BAF8EF0001D0FD5 /* DMModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DMModel.swift; sourceTree = "<group>"; };
 		A455A4F71BA6E5ED00ABD68A /* Documentation.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Documentation.html; sourceTree = "<group>"; };
 		A455A4F81BA6E5ED00ABD68A /* GCDAsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncSocket.h; sourceTree = "<group>"; };
 		A455A4F91BA6E5ED00ABD68A /* GCDAsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncSocket.m; sourceTree = "<group>"; };
@@ -124,8 +124,6 @@
 		A455A5171BA6E5ED00ABD68A /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
 		A455A5281BA6E91E00ABD68A /* asyncSocket-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "asyncSocket-Bridging-Header.h"; sourceTree = "<group>"; };
 		EF59C2761B8ABDEE00711A83 /* TAC-DM.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "TAC-DM.xcdatamodel"; sourceTree = "<group>"; };
-		EF59C2791B8ABE2D00711A83 /* DBModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBModel.swift; sourceTree = "<group>"; };
-		EF59C27B1B8AC8FB00711A83 /* BorrowInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorrowInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -318,10 +316,9 @@
 		EF59C2781B8ABE0800711A83 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				EF59C27B1B8AC8FB00711A83 /* BorrowInfo.swift */,
-				EF59C2791B8ABE2D00711A83 /* DBModel.swift */,
 				87071C221B8E437E00495EDB /* ItemInfo.swift */,
 				87071C241B8E45AD00495EDB /* BorrowRecord.swift */,
+				87E318EC1BAF8EF0001D0FD5 /* DMModel.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -377,6 +374,7 @@
 				TargetAttributes = {
 					621C6C201B626E2F00120ED2 = {
 						CreatedOnToolsVersion = 6.3.2;
+						DevelopmentTeam = TT934WMMM9;
 					};
 					621C6C351B626E2F00120ED2 = {
 						CreatedOnToolsVersion = 6.3.2;
@@ -437,14 +435,13 @@
 				A455A5251BA6E5ED00ABD68A /* DDDispatchQueueLogFormatter.m in Sources */,
 				6266C75A1B65BCF30058EDC9 /* TabBarController.swift in Sources */,
 				7B37F17C1B8620D800A106C4 /* DeviceDetail.swift in Sources */,
-				EF59C27C1B8AC8FB00711A83 /* BorrowInfo.swift in Sources */,
 				7BECB72A1B82E46000C0D4B8 /* UmbrellaViewController.swift in Sources */,
 				A455A5191BA6E5ED00ABD68A /* GCDAsyncSocket.m in Sources */,
+				87E318ED1BAF8EF0001D0FD5 /* DMModel.swift in Sources */,
 				7BC6BC101B89946E001DE465 /* SettingTableView.swift in Sources */,
 				7B90B3001B87524F009A251F /* SettingViewController.swift in Sources */,
 				7BECB72C1B83203400C0D4B8 /* BookViewController.swift in Sources */,
 				A455A51F1BA6E5ED00ABD68A /* DDAbstractDatabaseLogger.m in Sources */,
-				EF59C27A1B8ABE2D00711A83 /* DBModel.swift in Sources */,
 				A455A5221BA6E5ED00ABD68A /* DDLog.m in Sources */,
 				87071C231B8E437E00495EDB /* ItemInfo.swift in Sources */,
 				A455A51C1BA6E5ED00ABD68A /* AsyncSocket.m in Sources */,
@@ -596,9 +593,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "TAC-DM/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "TAC-DM/asyncSocket-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -608,9 +608,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "TAC-DM/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "TAC-DM/asyncSocket-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

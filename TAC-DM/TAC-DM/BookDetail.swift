@@ -8,10 +8,13 @@
 
 import UIKit
 
-class BookDetail : UIViewController,UIAlertViewDelegate,UITextFieldDelegate
+class BookDetail : UIViewController,UIAlertViewDelegate,UITextFieldDelegate,DMDelegate
 {
     
-    var bookName = ""
+    var borrowBookName = ""
+    var borrowBookId:String?
+    var borrowBookDescription:String?
+    var dmModel:DMModel!
     
     @IBOutlet weak var submitButton: UIButton!
     @IBOutlet weak var selectedBookName: UILabel!
@@ -23,7 +26,10 @@ class BookDetail : UIViewController,UIAlertViewDelegate,UITextFieldDelegate
         super.viewDidLoad()
         self.navigationController?.navigationBarHidden = false
         configureUI()
-        selectedBookName.text = bookName
+        selectedBookName.text = borrowBookName
+        
+        dmModel = DMModel.getInstance()
+        dmModel.delegate = self
     }
     
     override func viewDidLayoutSubviews() {
@@ -55,7 +61,7 @@ class BookDetail : UIViewController,UIAlertViewDelegate,UITextFieldDelegate
 // MARK:- Button Action
     @IBAction func submitAction() {
         let alertVC = UIAlertController(title: "确认信息",
-            message: "姓名:  \(nameTextField.text) \n 联系方式:  \(phoneTextField.text) \n 所借物品:  \(bookName)",
+            message: "姓名:  \(nameTextField.text!) \n 联系方式:  \(phoneTextField.text!) \n 所借物品:  \(borrowBookName)",
             preferredStyle: UIAlertControllerStyle.Alert)
         alertVC.addAction(UIAlertAction(title: "确认信息", style: UIAlertActionStyle.Default, handler: dealConfirmAction))
         alertVC.addAction(UIAlertAction(title: "取消", style: UIAlertActionStyle.Cancel, handler: nil))
@@ -66,9 +72,14 @@ class BookDetail : UIViewController,UIAlertViewDelegate,UITextFieldDelegate
     @IBAction func backAction(sender: AnyObject) {
         self.navigationController?.popViewControllerAnimated(true)
     }
-// MARK:- TODO: Here
-    func dealConfirmAction (alert:UIAlertAction!)
-    {
-        print("action here")
+
+    func dealConfirmAction (alert:UIAlertAction!) {
+        
+        dmModel.borrowItem(nameTextField.text!, tele: phoneTextField.text!, itemId: borrowBookId!, itemName: borrowBookName, itemDescription: borrowBookDescription!, number: 1)
+    }
+    
+    func getRequiredInfo(Info: String) {
+        //得到服务器的返回值
+        print("借书时得到的服务器返回值: \(Info)")
     }
 }
