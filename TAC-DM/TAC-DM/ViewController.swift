@@ -19,7 +19,7 @@ class ViewController: UIViewController {
    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background")!)
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "Background")!)
     }
     
     @IBAction func onBurger() {
