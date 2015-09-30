@@ -52,8 +52,10 @@ class SettingChangeViewController: UIViewController, DMDelegate {
     @IBAction func changeAction() {
         
         //where is password come from
-        //umbrella
-        dmModel.editLeftNumber(itemId!, newCount: 1000, password: "123123")
+        //如何获得newCount
+        if let id = itemId {
+            dmModel.editLeftNumber(id, newCount: 1000, password: "123123")
+        }
     }
     
     @IBAction func backAction(sender: AnyObject) {

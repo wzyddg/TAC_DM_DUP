@@ -52,14 +52,20 @@ class UmbrellaViewController: UIViewController,UIAlertViewDelegate,UITextFieldDe
     }
     
     @IBAction func submitAction() {
-        let alertVC = UIAlertController(title: "确认信息",
-            message: "姓名:  \(nameText.text!) \n 联系方式:  \(phoneText.text!) \n 所借物品:  雨伞",
-            preferredStyle: UIAlertControllerStyle.Alert)
-        alertVC.addAction(UIAlertAction(title: "确认信息", style: UIAlertActionStyle.Default, handler: dealConfirmAction))
-        alertVC.addAction(UIAlertAction(title: "取消", style: UIAlertActionStyle.Cancel, handler: nil))
+        
+        let alertVC:UIAlertController
+        
+        //input judge with regex
+        if (nameText.text!.isName() && phoneText.text!.isNumber() && numberText.text!.isNumber()) {
+            alertVC = UIAlertController(title: "确认信息",
+                message: "姓名:  \(nameText.text!) \n 联系方式:  \(phoneText.text!) \n 所借物品:  雨伞", preferredStyle: .Alert)
+            alertVC.addAction(UIAlertAction(title: "确认信息", style: .Default, handler: dealConfirmAction))
+            alertVC.addAction(UIAlertAction(title: "取消", style: .Cancel, handler: nil))
+        } else {
+            alertVC = UIAlertController(title: "请输入正确的信息", message: nil, preferredStyle: .Alert)
+            alertVC.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+        }
         self.presentViewController(alertVC, animated: true, completion: nil)
-        
-        
     }
 // TODO:- Override Alert Delegate
     func textFieldShouldReturn(textField: UITextField) -> Bool {

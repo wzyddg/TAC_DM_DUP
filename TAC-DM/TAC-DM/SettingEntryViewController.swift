@@ -25,7 +25,7 @@ class SettingEntryViewController: UIViewController, DMDelegate {
         dmModel = DMModel.getInstance()
         dmModel.delegate = self
         
-        dmModel.getDevice("3")
+        dmModel.getDevice("3")//umbrella's id
     }
 
     func configureUI()
