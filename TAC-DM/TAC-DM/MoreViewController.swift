@@ -55,11 +55,19 @@ class MoreViewController: UIViewController ,UITextFieldDelegate,UIAlertViewDeleg
     }
     
     @IBAction func submitAction() {
-        let alertVC = UIAlertController(title: "确认信息",
-            message: "姓名:  \(nameText.text!) \n 联系方式:  \(phoneText.text!) \n 所借物品:  \(deviceName.text!)",
-            preferredStyle: UIAlertControllerStyle.Alert)
-        alertVC.addAction(UIAlertAction(title: "确认信息", style: UIAlertActionStyle.Default, handler: dealWithSubmit))
-        alertVC.addAction(UIAlertAction(title: "取消", style: UIAlertActionStyle.Cancel, handler: nil))
+        
+        let alertVC:UIAlertController
+        
+        if (nameText.text!.isName() && phoneText.text!.isNumber() && deviceName.text!.isName() && deviceDescri.text!.isName()) {
+            alertVC = UIAlertController(title: "确认信息",
+                message: "姓名:  \(nameText.text!) \n 联系方式:  \(phoneText.text!) \n 所借物品:  \(deviceName.text!)",
+                preferredStyle: UIAlertControllerStyle.Alert)
+            alertVC.addAction(UIAlertAction(title: "确认信息", style: UIAlertActionStyle.Default, handler: dealWithSubmit))
+            alertVC.addAction(UIAlertAction(title: "取消", style: UIAlertActionStyle.Cancel, handler: nil))
+        } else {
+            alertVC = UIAlertController(title: "请输入正确的信息", message: nil, preferredStyle: .Alert)
+            alertVC.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+        }
         self.presentViewController(alertVC, animated: true, completion: nil)
     }
 // MARK:-TODO: Here

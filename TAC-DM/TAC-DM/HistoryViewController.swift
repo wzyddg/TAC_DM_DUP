@@ -50,6 +50,7 @@ class HistoryViewController: UITableViewController,UIAlertViewDelegate, DMDelega
             if borrowRecords.count > 0 {
                 let recordInfo = borrowRecords[indexPath.row/2].componentsSeparatedByString(",")
                 
+                //run crash
                 cell.nameLabel?.text = recordInfo[1]
                 cell.typeLabel?.text = recordInfo[4]
                 cell.timeLabel?.text = recordInfo[6]
