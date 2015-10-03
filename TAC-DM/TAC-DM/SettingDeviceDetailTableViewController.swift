@@ -10,8 +10,6 @@ import UIKit
 
 class SettingDeviceDetailTableViewController: UITableViewController, DMDelegate {
 
-// MARK:- TODO: TEST DATA CHAGNE TO REAL
-//    var testData = ["懵逼iPad","懵逼iPhone","懵逼Mac","懵逼watch"]
     var dmModel: DMModel!
     var deviceType = ""
     var deviceNameList:[String] = []
@@ -36,7 +34,7 @@ class SettingDeviceDetailTableViewController: UITableViewController, DMDelegate 
             return 5
         }
     }
-// MARK:- TODO: CHANGE TEST DATA EVERYWHERE
+
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return deviceNameList.count * 2
     }

@@ -38,7 +38,7 @@ extension String {
     }
     
     func isName() -> Bool {
-        let regex = try! NSRegularExpression(pattern: "[^a-zA-Z0-9\\s,./<>?;':]+",
+        let regex = try! NSRegularExpression(pattern: "[^\\s,./<>?;':]+",
             options: [.CaseInsensitive])
         
         return regex.firstMatchInString(self, options:[],

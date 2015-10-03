@@ -96,5 +96,6 @@ class UmbrellaViewController: UIViewController,UIAlertViewDelegate,UITextFieldDe
 // MARK:- Call Back Func
     func getRequiredInfo(Info: String) {
         print("借伞时得到服务器的返回值:\(Info)")
+        
     }
 }

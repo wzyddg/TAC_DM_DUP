@@ -10,7 +10,7 @@ import UIKit
 
 class SettingTableView: UITableViewController, DMDelegate {
 
-// MARK:- TODO: CHANGE THE TEST DATA TO REAL
+// MARK:- TODO: CHANGE THE String Array to Struct
     var isBook = true
     var dmModel:DMModel!
     var itemList:[BorrowItem] = []
