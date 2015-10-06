@@ -12,7 +12,7 @@ class SettingDeviceDetailTableViewController: UITableViewController, DMDelegate 
 
     var dmModel: DMModel!
     var deviceType = ""
-    var deviceNameList:[String] = []
+    var devicesList:[BorrowItem] = []
 
 // MARK:- CONFIGURE UI
     override func viewDidLoad() {
@@ -25,9 +25,9 @@ class SettingDeviceDetailTableViewController: UITableViewController, DMDelegate 
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        deviceNameList = []
+        devicesList = []
         
-        dmModel.getDeviceList(deviceType)
+        dmModel.getDeviceListAsAdmin(deviceType)
     }
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
@@ -40,7 +40,7 @@ class SettingDeviceDetailTableViewController: UITableViewController, DMDelegate 
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return deviceNameList.count * 2
+        return devicesList.count * 2
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -51,7 +51,7 @@ class SettingDeviceDetailTableViewController: UITableViewController, DMDelegate 
             cell.textLabel?.backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(0.0)
             cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
             
-            cell.textLabel?.text = deviceNameList[indexPath.row/2]
+            cell.textLabel?.text = devicesList[indexPath.row/2].name
         } else {
             cell.backgroundColor = UIColor.clearColor()
             cell.textLabel?.text = ""
@@ -61,9 +61,12 @@ class SettingDeviceDetailTableViewController: UITableViewController, DMDelegate 
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
-        let nextVC = storyboard!.instantiateViewControllerWithIdentifier("SettingChangeViewController") as UIViewController
-        nextVC.title = deviceNameList[indexPath.row/2]
-        
+        let nextVC = storyboard!.instantiateViewControllerWithIdentifier("SettingChangeViewController") as! SettingChangeViewController
+        nextVC.title = devicesList[indexPath.row/2].name
+        nextVC.itemId = devicesList[indexPath.row/2].id
+        nextVC.itemCount = devicesList[indexPath.row/2].count
+        nextVC.itemLeftCount = devicesList[indexPath.row/2].leftCount
+                
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
     
@@ -77,7 +80,15 @@ class SettingDeviceDetailTableViewController: UITableViewController, DMDelegate 
         let devices = Info.componentsSeparatedByString("|")
         for device in devices {
             let deviceInfo = device.componentsSeparatedByString(",")
-            deviceNameList.append(deviceInfo[1])
+            
+            if deviceInfo.count > 1 {
+                
+                let oneDevice = BorrowItem(id: deviceInfo[0], name: deviceInfo[1], descri: deviceInfo[2], type: deviceInfo[3], count: deviceInfo[4], leftCount: deviceInfo[5])
+                
+                devicesList.append(oneDevice)
+            } else {
+                print("there is no device")
+            }
         }
         
         self.tableView.reloadData()
