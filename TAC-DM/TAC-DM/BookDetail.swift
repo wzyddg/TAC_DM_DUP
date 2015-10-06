@@ -91,5 +91,13 @@ class BookDetail : UIViewController,UIAlertViewDelegate,UITextFieldDelegate,DMDe
     func getRequiredInfo(Info: String) {
         //得到服务器的返回值
         print("借书时得到的服务器返回值: \(Info)")
+        switch Info {
+        case "1":
+            print("借书成功")
+        case "0":
+            print("借书失败")
+        default:
+            print("book borrow other")
+        }
     }
 }

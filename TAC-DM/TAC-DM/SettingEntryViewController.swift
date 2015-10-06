@@ -24,6 +24,10 @@ class SettingEntryViewController: UIViewController, DMDelegate {
         
         dmModel = DMModel.getInstance()
         dmModel.delegate = self
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
         
         dmModel.getDevice("3")//umbrella's id
     }
@@ -74,8 +78,6 @@ class SettingEntryViewController: UIViewController, DMDelegate {
                 nextVC.isBook = false
             }
         }
-        
-        
     }
     
     func getRequiredInfo(Info: String) {
@@ -85,5 +87,4 @@ class SettingEntryViewController: UIViewController, DMDelegate {
         
         umbrellaInfo = BorrowItem(id: itemInfo[0], name: itemInfo[1], descri: itemInfo[2], type: itemInfo[3], count: itemInfo[4], leftCount: itemInfo[5])
     }
-    
 }

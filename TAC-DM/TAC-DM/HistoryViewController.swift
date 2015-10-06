@@ -25,6 +25,12 @@ class HistoryViewController: UITableViewController,UIAlertViewDelegate, DMDelega
         dmModel = DMModel.getInstance()
         dmModel.delegate = self
         
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        borrowRecords = []
+        
         dmModel.getRecordList()
     }
     
@@ -46,11 +52,10 @@ class HistoryViewController: UITableViewController,UIAlertViewDelegate, DMDelega
             cell.nameLabel?.backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(0.0)
             cell.typeLabel?.backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(0.0)
             cell.timeLabel?.backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(0.0)
-
-            if borrowRecords.count > 0 {
-                let recordInfo = borrowRecords[indexPath.row/2].componentsSeparatedByString(",")
-                
-                //run crash
+            
+            let recordInfo = borrowRecords[indexPath.row/2].componentsSeparatedByString(",")
+            
+            if recordInfo.count > 1 {
                 cell.nameLabel?.text = recordInfo[1]
                 cell.typeLabel?.text = recordInfo[4]
                 cell.timeLabel?.text = recordInfo[6]
@@ -59,7 +64,14 @@ class HistoryViewController: UITableViewController,UIAlertViewDelegate, DMDelega
                 } else {
                     cell.statusImg.image = UIImage(named: "unchecked icon")
                 }
+            } else {
+                print("there is no history")
+                
+                //没有历史，给用户提示
+                //最好还是把页面上的懵逼删掉好了。。。
             }
+            
+
         }
         else
         {
@@ -75,12 +87,9 @@ class HistoryViewController: UITableViewController,UIAlertViewDelegate, DMDelega
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         
-        if 0 == indexPath.row%2
-        {
+        if 0 == indexPath.row%2 {
             return 75
-        }
-        else
-        {
+        } else {
             return 5
         }
     }
@@ -126,10 +135,13 @@ class HistoryViewController: UITableViewController,UIAlertViewDelegate, DMDelega
     
     func getRequiredInfo(Info: String) {
         
-        if (Info == "1" || Info == "0") {
-            //归还物品成功或者失败action
-            
-        } else {
+        
+        switch Info {
+        case "1":
+            print("归还物品成功")
+        case "0":
+            print("归还物品失败")
+        default:
             borrowRecords = Info.componentsSeparatedByString("|")
             
             for record in borrowRecords {

@@ -79,7 +79,7 @@ class UmbrellaViewController: UIViewController,UIAlertViewDelegate,UITextFieldDe
     
     func dealConfirmAction (alert:UIAlertAction!) {
         if let borrowNum = Int(numberText.text!) {
-            dmModel.borrowItem(nameText.text!, tele: phoneText.text!, itemId: "3", itemName: "Umbrella", itemDescription: "", number: borrowNum)
+            dmModel.borrowItem(nameText.text!, tele: phoneText.text!, itemId: "3"/*umbrella id*/, itemName: "Umbrella", itemDescription: "", number: borrowNum)
             SVProgressHUD.showSuccessWithStatus("Now you can take an umbrella with you")
             refresh()
             (tabBarController as! TabBarController).sidebar.showInViewController(self, animated: true)
@@ -95,7 +95,15 @@ class UmbrellaViewController: UIViewController,UIAlertViewDelegate,UITextFieldDe
     
 // MARK:- Call Back Func
     func getRequiredInfo(Info: String) {
-        print("借伞时得到服务器的返回值:\(Info)")
+        
+        switch Info {
+        case "1":
+            print("借伞成功")
+        case "2":
+            print("借伞失败")
+        default:
+            print("other")
+        }
         
     }
 }

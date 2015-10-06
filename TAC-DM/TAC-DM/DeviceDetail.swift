@@ -12,10 +12,10 @@ class DeviceDetail: UITableViewController, DMDelegate {
     
 //MARK:-TODO: ADD REAL DATA
     
-    var ipadNameArray:[String] = []
+    var devicesNameArray:[String] = []
     var deviceName = ""
     var dmModel: DMModel!
-    var ipadList:[String]?
+    var devicesList:[String]?
     
 //MARK:- Configure UI
     override func viewDidLoad() {
@@ -26,45 +26,43 @@ class DeviceDetail: UITableViewController, DMDelegate {
         
         dmModel = DMModel.getInstance()
         dmModel.delegate = self
-
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        devicesNameArray = []
+        devicesList = nil
+        
         dmModel.getDeviceList(deviceName)
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("DetailCell")! as UITableViewCell
         
-        if 0 == indexPath.row % 2
-        {
+        if 0 == indexPath.row % 2 {
             cell.backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(0.6)
             cell.textLabel?.backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(0.0)
-            cell.textLabel?.text = ipadNameArray[indexPath.row/2]
+            cell.textLabel?.text = devicesNameArray[indexPath.row/2]
             cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
-        }
-        else
-        {
+        } else {
             cell.textLabel?.text = ""
             cell.backgroundColor = UIColor.clearColor()
         }
-        
-        
         return cell
     }
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         
-        if 0 == indexPath.row % 2
-        {
+        if 0 == indexPath.row % 2 {
             return 75
-        }
-        else
-        {
+        } else {
             return 5
         }
     }
 
 //MARK:-TODO: ADD DATA *2 ATTENTION
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return ipadNameArray.count*2
+        return devicesNameArray.count*2
     }
     
     
@@ -78,7 +76,7 @@ class DeviceDetail: UITableViewController, DMDelegate {
         if segue.identifier == "deviceDetailBorrow"
         {
             if let destinationVC = segue.destinationViewController as? DeviceDetailBorrow {
-                let borrowDevice = ipadList![selectedIndex!.row/2].componentsSeparatedByString(",")
+                let borrowDevice = devicesList![selectedIndex!.row/2].componentsSeparatedByString(",")
                 destinationVC.borrowDeviceID = borrowDevice[0]
                 destinationVC.borrowDeviceName = borrowDevice[1]
                 destinationVC.borrowDeviceDescription = borrowDevice[2]
@@ -88,13 +86,21 @@ class DeviceDetail: UITableViewController, DMDelegate {
 
     func getRequiredInfo(Info: String) {
         print("DeviceList返回值:\(Info)")
-        ipadList = Info.componentsSeparatedByString("|")
-        print("数量\(ipadList!.count)")
+        devicesList = Info.componentsSeparatedByString("|")
+        print("数量\(devicesList!.count)")
         
-        for ipad in ipadList! {
-            print("ipad:\(ipad)")
-            let ipadName = ipad.componentsSeparatedByString(",")
-            ipadNameArray.append(ipadName[1])
+        for device in devicesList! {
+            print("device:\(device)")
+            
+            let deviceInfo = device.componentsSeparatedByString(",")
+            
+            if deviceInfo.count > 1 {
+                devicesNameArray.append(deviceInfo[1])
+            } else {
+                print("there is no device")
+                
+                //tableView为空，给用户提示
+            }
         }
         
         self.tableView.reloadData()

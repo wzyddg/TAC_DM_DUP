@@ -80,5 +80,14 @@ class DeviceDetailBorrow:UIViewController , UITextFieldDelegate , UIAlertViewDel
     
     func getRequiredInfo(Info: String) {
         //设备借阅成功或者失败给出反馈
+        print("借设备时得到的服务器返回值: \(Info)")
+        switch Info {
+        case "1":
+            print("借设备成功")
+        case "0":
+            print("借设备失败")
+        default:
+            print("device borrow other")
+        }
     }
 }

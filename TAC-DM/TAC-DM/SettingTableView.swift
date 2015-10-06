@@ -22,6 +22,11 @@ class SettingTableView: UITableViewController, DMDelegate {
         
         dmModel = DMModel.getInstance()
         dmModel.delegate = self
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        itemList = []
         
         if isBook {
             dmModel.getDeviceListAsAdmin("book")
@@ -32,12 +37,9 @@ class SettingTableView: UITableViewController, DMDelegate {
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         
-        if 0 == indexPath.row%2
-        {
+        if 0 == indexPath.row%2 {
             return 75
-        }
-        else
-        {
+        } else {
             return 5
         }
     }

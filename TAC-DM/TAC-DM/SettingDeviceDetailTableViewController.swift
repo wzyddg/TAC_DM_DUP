@@ -21,8 +21,12 @@ class SettingDeviceDetailTableViewController: UITableViewController, DMDelegate 
         
         dmModel = DMModel.getInstance()
         dmModel.delegate = self
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        deviceNameList = []
         
-        print("deviceType:\(deviceType)")
         dmModel.getDeviceList(deviceType)
     }
     

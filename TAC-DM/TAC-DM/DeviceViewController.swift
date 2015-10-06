@@ -23,9 +23,14 @@ class DeviceViewController: UITableViewController, DMDelegate {
         dmModel = DMModel.getInstance()
         dmModel.delegate = self
         
-        dmModel.getDeviceType()
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        deviceTypeList = []
+        
+        dmModel.getDeviceType()
+    }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()

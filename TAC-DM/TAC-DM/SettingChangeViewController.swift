@@ -64,5 +64,13 @@ class SettingChangeViewController: UIViewController, DMDelegate {
     
     func getRequiredInfo(Info: String) {
         print("EditLeftNumber:\(Info)")
+        switch Info {
+        case "1":
+            print("修改成功")
+        case "0":
+            print("修改失败")
+        default:
+            print("修改物品数量")
+        }
     }
 }

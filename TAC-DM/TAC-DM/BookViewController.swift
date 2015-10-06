@@ -11,7 +11,7 @@ import UIKit
 class BookViewController:UITableViewController, DMDelegate {
 
     var dmModel: DMModel!    
-    var bookList:[String]?
+    var bookList:[String]? = nil
     var bookNameArray:[String] = []
  
 // MARK:- Configure UI
@@ -25,6 +25,14 @@ class BookViewController:UITableViewController, DMDelegate {
         
         dmModel = DMModel.getInstance()
         dmModel.delegate = self
+        
+        
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        bookList = nil
+        bookNameArray = []
         
         //向数据库发送得到所有书籍的请求
         SVProgressHUD.show()
@@ -100,14 +108,24 @@ class BookViewController:UITableViewController, DMDelegate {
     
     //请求图书列表
     func getRequiredInfo(Info: String) {
-        //将图书列表放入tableView
+        //put book list in tableView
         print("图书列表:\(Info)")
         
         bookList = Info.componentsSeparatedByString("|")
         
         for book in bookList! {
             let bookName = book.componentsSeparatedByString(",")
-            bookNameArray.append(bookName[1])
+
+            //check Info is empty
+            if bookName.count > 1 {
+                bookNameArray.append(bookName[1])
+            } else {
+                print("there is no book")
+                
+                //tableView为空，给用户提示
+                
+                break;
+            }
         }
         
         self.tableView.reloadData()

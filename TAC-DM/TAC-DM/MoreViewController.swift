@@ -78,6 +78,14 @@ class MoreViewController: UIViewController ,UITextFieldDelegate,UIAlertViewDeleg
     
     func getRequiredInfo(Info: String) {
         //借阅成功或者失败做出响应
+        print("借其他物品时得到的服务器返回值: \(Info)")
+        switch Info {
+        case "1":
+            print("借其他成功")
+        case "0":
+            print("借其他失败")
+        default:
+            print("other borrow")
+        }
     }
-    
 }
