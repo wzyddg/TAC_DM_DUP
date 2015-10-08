@@ -25,6 +25,9 @@ class BookViewController:UITableViewController, DMDelegate {
         
         dmModel = DMModel.getInstance()
         dmModel.delegate = self
+        
+        self.refreshControl = UIRefreshControl()
+        self.refreshControl!.addTarget(self, action: Selector("refresh"), forControlEvents: UIControlEvents.ValueChanged)
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -33,6 +36,14 @@ class BookViewController:UITableViewController, DMDelegate {
         updateUI()
         tableView.reloadData()
         SVProgressHUD.show()
+    }
+    
+    func refresh() {
+        SVProgressHUD.show()
+        updateUI()
+        print("data is refresh")
+        tableView.reloadData()
+        refreshControl?.endRefreshing()
     }
     
     //更新所有书籍

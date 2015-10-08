@@ -25,6 +25,16 @@ class HistoryViewController: UITableViewController,UIAlertViewDelegate, DMDelega
         dmModel = DMModel.getInstance()
         dmModel.delegate = self
         
+        self.refreshControl = UIRefreshControl()
+        self.refreshControl!.addTarget(self, action: Selector("refresh"), forControlEvents: .ValueChanged)
+    }
+    
+    func refresh() {
+        SVProgressHUD.show()
+        updateUI()
+        print("data is refresh")
+        tableView.reloadData()
+        refreshControl?.endRefreshing()
     }
     
     override func viewWillAppear(animated: Bool) {
