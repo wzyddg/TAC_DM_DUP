@@ -25,6 +25,13 @@ class SettingDeviceDetailTableViewController: UITableViewController, DMDelegate 
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        
+        updateUI()
+        SVProgressHUD.show()
+    }
+    
+    //更新设备列表
+    func updateUI() {
         devicesList = []
         
         dmModel.getDeviceListAsAdmin(deviceType)
@@ -92,5 +99,6 @@ class SettingDeviceDetailTableViewController: UITableViewController, DMDelegate 
         }
         
         self.tableView.reloadData()
+        SVProgressHUD.dismiss()
     }
 }

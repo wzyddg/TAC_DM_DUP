@@ -10,7 +10,6 @@ import UIKit
 
 class SettingTableView: UITableViewController, DMDelegate {
 
-// MARK:- TODO: CHANGE THE String Array to Struct
     var isBook = true
     var dmModel:DMModel!
     var itemList:[BorrowItem] = []
@@ -26,6 +25,13 @@ class SettingTableView: UITableViewController, DMDelegate {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        
+        SVProgressHUD.show()
+        updateUI()
+    }
+    
+    //更新书或者设备种类列表
+    func updateUI() {
         itemList = []
         
         if isBook {
@@ -135,5 +141,6 @@ class SettingTableView: UITableViewController, DMDelegate {
         }
         
         self.tableView.reloadData()
+        SVProgressHUD.dismiss()
     }
 }

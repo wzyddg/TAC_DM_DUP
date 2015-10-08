@@ -53,6 +53,7 @@ class DeviceDetailBorrow:UIViewController , UITextFieldDelegate , UIAlertViewDel
 
     
     @IBAction func backAction(sender: AnyObject) {
+        SVProgressHUD.dismiss()
         self.navigationController?.popViewControllerAnimated(true)
     }
     
@@ -76,6 +77,7 @@ class DeviceDetailBorrow:UIViewController , UITextFieldDelegate , UIAlertViewDel
     
     func dealConfirmAction (alert:UIAlertAction!) {
         dmModel.borrowItem(nameText.text!, tele: phoneText.text!, itemId: borrowDeviceID!, itemName: borrowDeviceName!, itemDescription: borrowDeviceDescription!, number: 1)
+        SVProgressHUD.show()
     }
     
     func getRequiredInfo(Info: String) {
@@ -84,10 +86,13 @@ class DeviceDetailBorrow:UIViewController , UITextFieldDelegate , UIAlertViewDel
         switch Info {
         case "1":
             print("借设备成功")
+            SVProgressHUD.showSuccessWithStatus("Now you can take the device with you", maskType: .Black)
+            (tabBarController as! TabBarController).sidebar.showInViewController(self, animated: true)
         case "0":
             print("借设备失败")
+            SVProgressHUD.showErrorWithStatus("Sorry,there are some troubles,please contact with TAC member", maskType: .Black)
         default:
-            print("device borrow other")
+            print("device borrow other:\(Info)")
         }
     }
 }

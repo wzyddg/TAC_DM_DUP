@@ -80,9 +80,7 @@ class UmbrellaViewController: UIViewController,UIAlertViewDelegate,UITextFieldDe
     func dealConfirmAction (alert:UIAlertAction!) {
         if let borrowNum = Int(numberText.text!) {
             dmModel.borrowItem(nameText.text!, tele: phoneText.text!, itemId: "3"/*umbrella id*/, itemName: "Umbrella", itemDescription: "", number: borrowNum)
-            SVProgressHUD.showSuccessWithStatus("Now you can take an umbrella with you")
             refresh()
-            (tabBarController as! TabBarController).sidebar.showInViewController(self, animated: true)
         }
     }
     
@@ -99,10 +97,13 @@ class UmbrellaViewController: UIViewController,UIAlertViewDelegate,UITextFieldDe
         switch Info {
         case "1":
             print("借伞成功")
-        case "2":
+            SVProgressHUD.showSuccessWithStatus("Now you can take an umbrella with you", maskType: .Black)
+            (tabBarController as! TabBarController).sidebar.showInViewController(self, animated: true)
+        case "0":
             print("借伞失败")
+            SVProgressHUD.showErrorWithStatus("Sorry,there are some troubles,please contact with TAC member")
         default:
-            print("other")
+            print("other:\(Info)")
         }
         
     }

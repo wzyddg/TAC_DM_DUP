@@ -39,7 +39,6 @@ class BookDetail : UIViewController,UIAlertViewDelegate,UITextFieldDelegate,DMDe
     
     func configureUI ()
     {
-       
         self.submitButton.layer.cornerRadius = 8.0
         self.nameTextField.delegate = self
         self.phoneTextField.delegate = self
@@ -83,9 +82,6 @@ class BookDetail : UIViewController,UIAlertViewDelegate,UITextFieldDelegate,DMDe
     func dealConfirmAction (alert:UIAlertAction!) {
         SVProgressHUD.show()
         dmModel.borrowItem(nameTextField.text!, tele: phoneTextField.text!, itemId: borrowBookId!, itemName: borrowBookName, itemDescription: borrowBookDescription!, number: 1)
-      //  SVProgressHUD.dismiss()
-        SVProgressHUD.showSuccessWithStatus("Now you can take the book with you !")
-        backAction(self)
     }
     
     func getRequiredInfo(Info: String) {
@@ -94,10 +90,13 @@ class BookDetail : UIViewController,UIAlertViewDelegate,UITextFieldDelegate,DMDe
         switch Info {
         case "1":
             print("借书成功")
+            SVProgressHUD.showSuccessWithStatus("Now you can take the book with you", maskType: .Black)
+            backAction(self)
         case "0":
             print("借书失败")
+            SVProgressHUD.showErrorWithStatus("Sorry,there are some troubles,please contact with TAC member", maskType: .Black)
         default:
-            print("book borrow other")
+            print("book borrow other:\(Info)")
         }
     }
 }

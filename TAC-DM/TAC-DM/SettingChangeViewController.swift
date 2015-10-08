@@ -37,7 +37,7 @@ class SettingChangeViewController: UIViewController, DMDelegate {
         updateUI()
     }
 
-// MARK:- TODO : you have to update the number of the text
+    //更新借出状况
     func updateUI()
     {
         if let count = itemCount, leftCount = itemLeftCount {
@@ -67,10 +67,12 @@ class SettingChangeViewController: UIViewController, DMDelegate {
         switch Info {
         case "1":
             print("修改成功")
+            //UI boy:action here
         case "0":
             print("修改失败")
+            //UI boy:action here
         default:
-            print("修改物品数量")
+            print("change item number other:\(Info)")
         }
     }
 }

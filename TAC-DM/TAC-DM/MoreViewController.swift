@@ -51,6 +51,7 @@ class MoreViewController: UIViewController ,UITextFieldDelegate,UIAlertViewDeleg
     }
 // MARK:- ButtonAction
     @IBAction func backButtonAction() {
+        SVProgressHUD.dismiss()
         (tabBarController as! TabBarController).sidebar.showInViewController(self, animated: true)
     }
     
@@ -82,10 +83,13 @@ class MoreViewController: UIViewController ,UITextFieldDelegate,UIAlertViewDeleg
         switch Info {
         case "1":
             print("借其他成功")
+            SVProgressHUD.showSuccessWithStatus("Now you can take it with you")
+            (tabBarController as! TabBarController).sidebar.showInViewController(self, animated: true)
         case "0":
             print("借其他失败")
+            SVProgressHUD.showErrorWithStatus("Sorry,there are some troubles,please contact with TAC member")
         default:
-            print("other borrow")
+            print("other borrow:\(Info)")
         }
     }
 }

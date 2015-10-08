@@ -25,19 +25,22 @@ class BookViewController:UITableViewController, DMDelegate {
         
         dmModel = DMModel.getInstance()
         dmModel.delegate = self
-        
-        
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        
+        updateUI()
+        tableView.reloadData()
+        SVProgressHUD.show()
+    }
+    
+    //更新所有书籍
+    func updateUI() {
         bookList = nil
         bookNameArray = []
         
-        //向数据库发送得到所有书籍的请求
-        SVProgressHUD.show()
         dmModel.getDeviceList("book")
-        SVProgressHUD.dismiss()
     }
     
     
@@ -97,7 +100,6 @@ class BookViewController:UITableViewController, DMDelegate {
         if segue.identifier == "showDetial" {
             if let destinationVC = segue.destinationViewController as? BookDetail
             {
-//                destinationVC.bookName = bookNameArray[selectedIndex!.row/2]
                 let book = bookList![selectedIndex!.row/2].componentsSeparatedByString(",")
                 destinationVC.borrowBookId = book[0]
                 destinationVC.borrowBookName = book[1]
@@ -106,7 +108,6 @@ class BookViewController:UITableViewController, DMDelegate {
         }
     }
     
-    //请求图书列表
     func getRequiredInfo(Info: String) {
         //put book list in tableView
         print("图书列表:\(Info)")
@@ -121,13 +122,14 @@ class BookViewController:UITableViewController, DMDelegate {
                 bookNameArray.append(bookName[1])
             } else {
                 print("there is no book")
-                
+                tableView.reloadData()
                 //tableView为空，给用户提示
-                
-                break;
+                SVProgressHUD.showErrorWithStatus("Sorry,there is no book for borrowing")
+                return
             }
         }
         
         self.tableView.reloadData()
+        SVProgressHUD.dismiss()
     }
 }

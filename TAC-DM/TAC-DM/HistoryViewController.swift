@@ -29,6 +29,13 @@ class HistoryViewController: UITableViewController,UIAlertViewDelegate, DMDelega
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        
+        updateUI()
+        SVProgressHUD.show()
+    }
+    
+    //更新历史列表
+    func updateUI() {
         borrowRecords = []
         
         dmModel.getRecordList()
@@ -70,11 +77,7 @@ class HistoryViewController: UITableViewController,UIAlertViewDelegate, DMDelega
                 //没有历史，给用户提示
                 //最好还是把页面上的懵逼删掉好了。。。
             }
-            
-
-        }
-        else
-        {
+        } else {
             cell.backgroundColor = UIColor.clearColor()
             cell.nameLabel?.text = ""
             cell.typeLabel?.text = ""
@@ -139,8 +142,10 @@ class HistoryViewController: UITableViewController,UIAlertViewDelegate, DMDelega
         switch Info {
         case "1":
             print("归还物品成功")
+            SVProgressHUD.showSuccessWithStatus("Your borrowed thing has been return")
         case "0":
             print("归还物品失败")
+            SVProgressHUD.showErrorWithStatus("Sorry,there are some troubles,please contact with TAC member")
         default:
             borrowRecords = Info.componentsSeparatedByString("|")
             
@@ -149,6 +154,7 @@ class HistoryViewController: UITableViewController,UIAlertViewDelegate, DMDelega
             }
             
             self.tableView.reloadData()
+            SVProgressHUD.dismiss()
         }
     }
 }

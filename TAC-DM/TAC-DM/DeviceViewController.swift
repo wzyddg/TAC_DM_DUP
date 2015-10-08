@@ -9,8 +9,8 @@
 import UIKit
 
 class DeviceViewController: UITableViewController, DMDelegate {
-// MARK:-TODO: TEST DATA
-//    var testArray = ["iPad","Mac","Apple watch","iPhone","iPod"]
+
+    //    var testArray = ["iPad","Mac","Apple watch","iPhone","iPod"]
     var dmModel:DMModel!
     var deviceTypeList:[String] = []
     
@@ -27,6 +27,13 @@ class DeviceViewController: UITableViewController, DMDelegate {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        
+        updateUI()
+        SVProgressHUD.show()
+    }
+    
+    //更新所有设备种类列表
+    func updateUI() {
         deviceTypeList = []
         
         dmModel.getDeviceType()
@@ -48,33 +55,25 @@ class DeviceViewController: UITableViewController, DMDelegate {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("DeviceCell")! as UITableViewCell
         
-        if 0 == indexPath.row % 2
-        {
+        if 0 == indexPath.row % 2 {
             cell.backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(0.6)
             cell.textLabel?.backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(0.0)
             // TODO: ADD DATA
             cell.textLabel?.text = deviceTypeList[indexPath.row/2 ]
             // -----end----
             cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
-        }
-        else
-        {
+        } else {
             cell.textLabel?.text = ""
             cell.backgroundColor = UIColor.clearColor()
         }
-        
-        
         return cell
     }
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
     
-        if 0 == indexPath.row % 2
-        {
+        if 0 == indexPath.row % 2 {
             return 75
-        }
-        else
-        {
+        } else {
             return 5
         }
     }
@@ -112,6 +111,7 @@ class DeviceViewController: UITableViewController, DMDelegate {
         }
         
         self.tableView.reloadData()
+        SVProgressHUD.dismiss()
     }
     
 }

@@ -30,6 +30,13 @@ class DeviceDetail: UITableViewController, DMDelegate {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        
+        updateUI()
+        SVProgressHUD.show()
+    }
+    
+    //更新设备列表
+    func updateUI() {
         devicesNameArray = []
         devicesList = nil
         
@@ -67,6 +74,7 @@ class DeviceDetail: UITableViewController, DMDelegate {
     
     
     @IBAction func backAction(sender: AnyObject) {
+        SVProgressHUD.dismiss()
         self.navigationController?.popViewControllerAnimated(true)
     }
         
@@ -87,11 +95,9 @@ class DeviceDetail: UITableViewController, DMDelegate {
     func getRequiredInfo(Info: String) {
         print("DeviceList返回值:\(Info)")
         devicesList = Info.componentsSeparatedByString("|")
-        print("数量\(devicesList!.count)")
         
         for device in devicesList! {
             print("device:\(device)")
-            
             let deviceInfo = device.componentsSeparatedByString(",")
             
             if deviceInfo.count > 1 {
@@ -100,9 +106,12 @@ class DeviceDetail: UITableViewController, DMDelegate {
                 print("there is no device")
                 
                 //tableView为空，给用户提示
+                SVProgressHUD.showErrorWithStatus("Sorry,there is no device for borrowing")
+                return
             }
         }
         
         self.tableView.reloadData()
+        SVProgressHUD.dismiss()
     }
 }
