@@ -12,8 +12,6 @@ class HistoryViewController: UITableViewController,UIAlertViewDelegate, DMDelega
 
 // MARK:-TODO: change the test data to real
 // 建议将每条记录写成一个struct， 里面有它的属性
-//    var testData = ["懵逼","懵逼","懵逼"]
-    var status = false
     var dmModel: DMModel!
     var borrowRecords:[String] = []
 
@@ -78,8 +76,10 @@ class HistoryViewController: UITableViewController,UIAlertViewDelegate, DMDelega
                 cell.timeLabel?.text = recordInfo[6]
                 if recordInfo[7] != "0" {
                     cell.statusImg.image = UIImage(named: "checked icon")
+                    cell.status = true
                 } else {
                     cell.statusImg.image = UIImage(named: "unchecked icon")
+                    cell.status = false
                 }
             } else {
                 print("there is no history")
@@ -113,14 +113,14 @@ class HistoryViewController: UITableViewController,UIAlertViewDelegate, DMDelega
     
     @IBAction func backAction(sender: AnyObject) {
        // self.navigationController?.navigationBarHidden = true
+        SVProgressHUD.dismiss()
         (tabBarController as! TabBarController).sidebar.showInViewController(self, animated: true)
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
        
         let cell = tableView.cellForRowAtIndexPath(indexPath) as! HistoryTableViewCell
-        if status == false
-        {
+        if cell.status == false {
             let recordInfo = borrowRecords[indexPath.row/2].componentsSeparatedByString(",")
         
             let alert = UIAlertController(title: "确认归还？",
@@ -129,7 +129,10 @@ class HistoryViewController: UITableViewController,UIAlertViewDelegate, DMDelega
         
             alert.addAction(UIAlertAction(title: "确认",
                 style: UIAlertActionStyle.Default,
-                handler: {(alert: UIAlertAction) in cell.statusImg.image = UIImage(named: "checked icon"); self.dealWithAction(recordInfo[0])}))
+                handler: {(alert: UIAlertAction) in
+                    cell.statusImg.image = UIImage(named: "checked icon")
+                    cell.status = true
+                    self.dealWithAction(recordInfo[0])}))
             alert.addAction(UIAlertAction(title: "取消",
                 style: UIAlertActionStyle.Cancel,
                 handler: nil))
@@ -140,9 +143,7 @@ class HistoryViewController: UITableViewController,UIAlertViewDelegate, DMDelega
     }
     
 // MARK:-TODO: update the status of database
-    func dealWithAction(recordId:String) {
-        status  == true
-        
+    func dealWithAction(recordId:String) {        
         dmModel.returnItem(recordId)
     }
     

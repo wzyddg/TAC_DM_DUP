@@ -88,7 +88,7 @@ class DMModel: NSObject, AsyncSocketDelegate {
     
     //根据设备号得到设备详情
     func getDevice(itemId:String){
-        let sendString = "[3|"+itemId+"]\r\n"
+        let sendString = "[3|\(itemId)]\r\n"
         sendData = sendString.dataUsingEncoding(NSUTF8StringEncoding)
         startConnectSocket()
     }
@@ -128,7 +128,7 @@ class DMModel: NSObject, AsyncSocketDelegate {
     }
     
     func editLeftNumber(itemId:String , newCount:Int , password:String){
-        let sendString = "[9|"+itemId+",\(newCount)]\r\n"
+        let sendString = "[9|\(itemId),\(newCount)]\r\n"
         sendData = sendString.dataUsingEncoding(NSUTF8StringEncoding)
         startConnectSocket()
     }
@@ -136,6 +136,13 @@ class DMModel: NSObject, AsyncSocketDelegate {
     func getDeviceType() {
         let sendString = "[A]\r\n"
         sendData = sendString.dataUsingEncoding(NSUTF8StringEncoding)
+        startConnectSocket()
+    }
+    
+    func addNewItem(itemName:String, discription itemDesc:String, type itemType:String, count itemCount:String) {
+        let sendString = "[B|\(itemName),\(itemDesc),\(itemType),\(itemCount)]\r\n"
+        sendData = sendString.dataUsingEncoding(NSUTF8StringEncoding)
+        
         startConnectSocket()
     }
     

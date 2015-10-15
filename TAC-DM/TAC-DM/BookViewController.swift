@@ -20,14 +20,14 @@ class BookViewController:UITableViewController, DMDelegate {
         configureNavBar()
         
         self.navigationController?.navigationBarHidden = false
-        self.tableView.delegate = self
-        self.tableView.dataSource = self
+//        self.tableView.delegate = self
+//        self.tableView.dataSource = self
         
         dmModel = DMModel.getInstance()
         dmModel.delegate = self
         
         self.refreshControl = UIRefreshControl()
-        self.refreshControl!.addTarget(self, action: Selector("refresh"), forControlEvents: UIControlEvents.ValueChanged)
+        self.refreshControl!.addTarget(self, action: Selector("refresh"), forControlEvents: .ValueChanged)
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -103,6 +103,7 @@ class BookViewController:UITableViewController, DMDelegate {
  
     @IBAction func backButton(sender: UIBarButtonItem) {
   //      self.navigationController?.navigationBarHidden = true
+        SVProgressHUD.dismiss()
         (tabBarController as! TabBarController).sidebar.showInViewController(self, animated: true)
     }
     

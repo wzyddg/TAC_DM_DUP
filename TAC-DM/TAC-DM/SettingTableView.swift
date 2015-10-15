@@ -96,9 +96,9 @@ class SettingTableView: UITableViewController, DMDelegate {
                 if let next = segue.destinationViewController as? SettingAddNewThing {
                     next.title = "Add New Book"
                     next.name = "书名:"
-                    next.second = "作者:"
+                    next.second = "描述:"
                     next.thrid = "数量:"
-                    next.hasfourthLabel = true
+                    next.hasfourthLabel = false
                 }
             }
         } else {
@@ -108,7 +108,7 @@ class SettingTableView: UITableViewController, DMDelegate {
                     next.name = "设备名:"
                     next.second = "描述（颜色，型号等）:"
                     next.thrid = "数量:"
-                    next.hasfourthLabel = false
+                    next.hasfourthLabel = true
                 }
             }
         }

@@ -76,6 +76,7 @@ class BookDetail : UIViewController,UIAlertViewDelegate,UITextFieldDelegate,DMDe
     }
     
     @IBAction func backAction(sender: AnyObject) {
+        SVProgressHUD.dismiss()
         self.navigationController?.popViewControllerAnimated(true)
     }
 

@@ -52,6 +52,7 @@ class UmbrellaViewController: UIViewController,UIAlertViewDelegate,UITextFieldDe
     
 // MARK:- Button Action
     @IBAction func backButton(sender: UIButton) {
+        SVProgressHUD.dismiss()
         (tabBarController as! TabBarController).sidebar.showInViewController(self, animated: true)
     }
     

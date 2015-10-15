@@ -4,7 +4,7 @@
 //
 //  Created by Harold Liu on 8/23/15.
 //  Copyright (c) 2015 TAC. All rights reserved.
-//
+//  未完成
 
 import UIKit
 
@@ -29,7 +29,6 @@ class SettingChangeViewController: UIViewController, DMDelegate {
         
         dmModel = DMModel.getInstance()
         dmModel.delegate = self
-        
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -37,25 +36,48 @@ class SettingChangeViewController: UIViewController, DMDelegate {
         updateUI()
     }
 
-    //更新借出状况
-    func updateUI()
-    {
+    func updateUI() {
+        print("1")
         if let count = itemCount, leftCount = itemLeftCount {
+            print("2")
             let borrowItemCount = Int(count)! - Int(leftCount)!
-            totalLabel.text? = "总数：\(count)"
-            borrowLabel.text? = "借出：\(borrowItemCount)"
-            remainLabel.text? = "未借：\(leftCount)"
+            totalLabel.text = "总数：\(count)"
+            borrowLabel.text = "借出：\(borrowItemCount)"
+            remainLabel.text = "未借：\(leftCount)"
         }
+    }
+    
+    //更新借出状况
+    func getNewCount() {
+        dmModel.getDevice("3")//为什么第二次发送消息就无法得到回调？？？？？？？？
     }
     
 // MARK:- TODO : Change action don't know do what
     @IBAction func changeAction() {
         
-        //where is password come from
-        //如何获得newCount
-        if let id = itemId {
-            dmModel.editLeftNumber(id, newCount: 1000, password: "123123")
+        let alertVC = UIAlertController(title: "修改数量", message: "请输入现在的剩余数量", preferredStyle: .Alert)
+        
+        var numberBeChangedField:UITextField?
+        alertVC.addTextFieldWithConfigurationHandler(){ (textField) in
+            numberBeChangedField = textField
+            numberBeChangedField?.placeholder = "Left Number"
         }
+        
+        alertVC.addAction(UIAlertAction(title: "确认", style: .Default, handler: { (alert:UIAlertAction) in
+            let leftNum = Int(numberBeChangedField!.text!)
+
+            if let id = self.itemId, number = leftNum {
+                print("id:\(id),number:\(number)")
+                self.dmModel.editLeftNumber(id, newCount: number, password: "123123")
+                
+//                self.dmModel.getDevice("3")
+            } else {
+                print("not get itemId or number")
+            }
+        }))
+        alertVC.addAction(UIAlertAction(title: "取消", style: .Default, handler: nil))
+        
+        self.presentViewController(alertVC, animated: true, completion: nil)
     }
     
     @IBAction func backAction(sender: AnyObject) {
@@ -63,16 +85,25 @@ class SettingChangeViewController: UIViewController, DMDelegate {
     }
     
     func getRequiredInfo(Info: String) {
-        print("EditLeftNumber:\(Info)")
+        print("EditLeftNumberInfo:\(Info)")
         switch Info {
         case "1":
             print("修改成功")
-            //UI boy:action here
+//            getNewCount()
         case "0":
             print("修改失败")
-            //UI boy:action here
+            SVProgressHUD.showErrorWithStatus("Sorry, there are some problems, the number of item has not been changed...")
         default:
             print("change item number other:\(Info)")
+            let itemInfo = Info.componentsSeparatedByString(",")
+            if itemInfo.count > 1 {
+                let item = BorrowItem(id: itemInfo[0], name: itemInfo[1], descri: itemInfo[2], type: itemInfo[3], count: itemInfo[4], leftCount: itemInfo[5])
+                self.itemCount = item.count
+                self.itemLeftCount = item.leftCount
+                updateUI()
+            } else {
+                print("没有得到itemInfo")
+            }
         }
     }
 }

@@ -95,6 +95,7 @@ class DeviceViewController: UITableViewController, DMDelegate {
     
     @IBAction func backAction(sender: AnyObject) {
 //        self.navigationController?.navigationBarHidden = true
+        SVProgressHUD.dismiss()
         (tabBarController as! TabBarController).sidebar.showInViewController(self, animated: true)
     }
     
