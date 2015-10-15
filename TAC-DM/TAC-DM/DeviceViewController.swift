@@ -49,7 +49,7 @@ class DeviceViewController: UITableViewController, DMDelegate {
         self.navigationController?.navigationBar.barTintColor = UIColor(patternImage: UIImage(named: "device background")!)
         self.navigationController?.navigationBar.titleTextAttributes =
             [NSForegroundColorAttributeName : UIColor.whiteColor(),
-             NSFontAttributeName : UIFont(name: "Hiragino Kaku Gothic ProN", size: 36)!]
+             NSFontAttributeName : UIFont(name: "Hiragino Kaku Gothic ProN", size: 30)!]
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
