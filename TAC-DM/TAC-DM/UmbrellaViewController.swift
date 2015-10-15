@@ -31,7 +31,13 @@ class UmbrellaViewController: UIViewController,UIAlertViewDelegate,UITextFieldDe
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "umbrella background")!)
+        
+        UIGraphicsBeginImageContext(self.view.frame.size)
+        UIImage(named: "umbrella background")?.drawInRect(self.view.bounds)
+        let image:UIImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+
+        self.view.backgroundColor = UIColor(patternImage:image)
     }
 // MARK:- UI configure
     private func configureUI ()
@@ -44,7 +50,7 @@ class UmbrellaViewController: UIViewController,UIAlertViewDelegate,UITextFieldDe
     }
 // MARK:- KeyBoard
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        if let touch = touches.first {
+        if let _ = touches.first {
             self.view.endEditing(true)
         }
         super.touchesBegan(touches , withEvent:event)
