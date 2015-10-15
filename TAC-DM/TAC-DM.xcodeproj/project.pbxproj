@@ -361,6 +361,7 @@
 				621C6C1E1B626E2F00120ED2 /* Frameworks */,
 				621C6C1F1B626E2F00120ED2 /* Resources */,
 				28224FC57D7271C3D379DA42 /* Copy Pods Resources */,
+				7250594B8AF396C2A132126E /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -482,6 +483,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TAC-DM/Pods-TAC-DM-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7250594B8AF396C2A132126E /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TAC-DM/Pods-TAC-DM-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
