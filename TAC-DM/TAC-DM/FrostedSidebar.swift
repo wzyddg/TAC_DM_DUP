@@ -309,7 +309,7 @@ public class FrostedSidebar: UIViewController {
             if didEnable{
                 if isSingleSelect{
                     selectedIndices.removeAllIndexes()
-                    for (index, item) in itemViews.enumerate(){
+                    for (_, item) in itemViews.enumerate(){
                         item.layer.borderColor = UIColor.clearColor().CGColor
                     }
                 }

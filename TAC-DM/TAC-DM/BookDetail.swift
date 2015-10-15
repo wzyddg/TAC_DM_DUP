@@ -46,7 +46,7 @@ class BookDetail : UIViewController,UIAlertViewDelegate,UITextFieldDelegate,DMDe
     
 // MARK:- Keyboard Dismiss
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        if let touch = touches.first  {
+        if let _ = touches.first  {
             self.view.endEditing(true)
         }
         super.touchesBegan(touches , withEvent:event)

@@ -19,7 +19,6 @@ class HistoryViewController: UITableViewController,UIAlertViewDelegate, DMDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
-        
         dmModel = DMModel.getInstance()
         dmModel.delegate = self
         
@@ -41,21 +40,20 @@ class HistoryViewController: UITableViewController,UIAlertViewDelegate, DMDelega
         updateUI()
         SVProgressHUD.show()
     }
-    
     //更新历史列表
     func updateUI() {
         borrowRecords = []
-        
         dmModel.getRecordList()
     }
-    
     func configureUI ()
     {
         self.tableView.backgroundView = UIImageView(image: UIImage(named: "history background"))
+        
         self.navigationController?.navigationBar.barTintColor = UIColor(patternImage:UIImage(named: "history background")!)
+        
         self.navigationController?.navigationBar.titleTextAttributes =
             [NSForegroundColorAttributeName : UIColor.whiteColor() ,
-                NSFontAttributeName :UIFont(name: "Hiragino Kaku Gothic ProN", size: 36)!]
+                NSFontAttributeName :UIFont(name: "Hiragino Kaku Gothic ProN", size: 30)!]
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
