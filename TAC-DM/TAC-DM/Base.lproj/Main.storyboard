@@ -1436,7 +1436,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tqt-UV-813" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1685" y="2561"/>
+            <point key="canvasLocation" x="1645" y="2521"/>
         </scene>
         <!--设置-->
         <scene sceneID="S7s-Te-hMk">
@@ -1522,31 +1522,55 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Cw-Oo-Dy9">
-                                <rect key="frame" x="212.5" y="28" width="175" height="176.5"/>
+                                <rect key="frame" x="212.5" y="28" width="175" height="182.5"/>
                                 <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="176.5" id="LL5-X0-el2"/>
+                                </constraints>
                                 <state key="normal" image="umbrella icon in brown">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="LL5-X0-el2"/>
+                                    </mask>
+                                </variation>
                                 <connections>
                                     <segue destination="6qj-hm-BK8" kind="show" identifier="toSettingChangeVC" id="9jn-fc-e13"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5BI-B9-M0A">
-                                <rect key="frame" x="212.5" y="212.5" width="175" height="175"/>
+                                <rect key="frame" x="212.5" y="218.5" width="175" height="183"/>
                                 <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="175" id="wdI-8z-f3u"/>
+                                </constraints>
                                 <state key="normal" image="book icon in brown">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="wdI-8z-f3u"/>
+                                    </mask>
+                                </variation>
                                 <connections>
                                     <segue destination="rQL-wz-AJU" kind="show" identifier="bookSettingTableVC" id="1Eo-89-pVW"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O6m-L2-Ix7">
-                                <rect key="frame" x="212.5" y="395.5" width="175" height="196.5"/>
+                                <rect key="frame" x="212.5" y="409.5" width="175" height="182.5"/>
                                 <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="196.5" id="Fca-7I-HrD"/>
+                                </constraints>
                                 <state key="normal" image="device icon in brown">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Fca-7I-HrD"/>
+                                    </mask>
+                                </variation>
                                 <connections>
                                     <segue destination="rQL-wz-AJU" kind="show" identifier="deviceSettingTableVC" id="27f-HO-Qfh"/>
                                 </connections>
@@ -1562,8 +1586,15 @@
                             <constraint firstItem="5BI-B9-M0A" firstAttribute="top" secondItem="4Cw-Oo-Dy9" secondAttribute="bottom" constant="8" symbolic="YES" id="Skx-wh-3xu"/>
                             <constraint firstAttribute="centerX" secondItem="5BI-B9-M0A" secondAttribute="centerX" id="Xak-IK-XGw"/>
                             <constraint firstItem="5BI-B9-M0A" firstAttribute="centerX" secondItem="4Cw-Oo-Dy9" secondAttribute="centerX" id="dmh-pB-hpJ"/>
+                            <constraint firstItem="5BI-B9-M0A" firstAttribute="height" secondItem="4Cw-Oo-Dy9" secondAttribute="height" id="eU2-Jr-Lix"/>
+                            <constraint firstItem="O6m-L2-Ix7" firstAttribute="height" secondItem="4Cw-Oo-Dy9" secondAttribute="height" id="mbI-kA-VDG"/>
                             <constraint firstItem="0IY-im-RRw" firstAttribute="top" secondItem="O6m-L2-Ix7" secondAttribute="bottom" constant="8" symbolic="YES" id="zaO-h6-i2a"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="GKU-vo-s4a"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="设置" id="aiA-jR-L41">
                         <barButtonItem key="leftBarButtonItem" image="back icon in brown-1" id="80h-dJ-VYx">
