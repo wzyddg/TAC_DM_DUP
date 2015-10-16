@@ -30,7 +30,7 @@ class SettingViewController: UIViewController, DMDelegate {
         self.navigationController?.navigationBar.barTintColor = UIColor(patternImage: UIImage(named: "setting background")!)
         self.navigationController?.navigationBar.titleTextAttributes =
          [NSForegroundColorAttributeName : UIColor.brownColor(),
-            NSFontAttributeName : UIFont (name: "Hiragino Kaku Gothic ProN", size: 36)!]
+            NSFontAttributeName : UIFont (name: "Hiragino Kaku Gothic ProN", size: 30)!]
     }
     
 // MARK:- KeyBoard Dismiss

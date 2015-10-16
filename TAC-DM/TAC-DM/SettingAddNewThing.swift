@@ -32,7 +32,6 @@ class SettingAddNewThing: UIViewController, DMDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.submitButton.layer.cornerRadius = 8.0
-        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "setting background")!)
         self.nameLabel.text = name
         self.secondLabel.text = second
         self.thridLabel.text = thrid
@@ -46,6 +45,15 @@ class SettingAddNewThing: UIViewController, DMDelegate {
         
         dmModel = DMModel.getInstance()
         dmModel.delegate = self
+    }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        UIGraphicsBeginImageContext(self.view.frame.size)
+        UIImage(named: "setting background")?.drawInRect(self.view.bounds)
+        let image :UIImage = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext()
+        self.view.backgroundColor = UIColor(patternImage:image)
     }
     
 // MARK:- KeyBoard Dismiss

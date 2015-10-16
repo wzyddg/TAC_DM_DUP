@@ -33,7 +33,12 @@ class MoreViewController: UIViewController ,UITextFieldDelegate,UIAlertViewDeleg
     
     func configureUI ()
     {
-        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "more background")!)
+        UIGraphicsBeginImageContext(self.view.frame.size)
+        
+        UIImage(named: "more background")?.drawInRect(self.view.bounds)
+        let image:UIImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        self.view.backgroundColor = UIColor(patternImage:image)
         submitButton.layer.cornerRadius = 8.0
     }
     

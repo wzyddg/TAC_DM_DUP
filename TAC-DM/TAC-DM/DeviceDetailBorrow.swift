@@ -32,7 +32,11 @@ class DeviceDetailBorrow:UIViewController , UITextFieldDelegate , UIAlertViewDel
     
     func configureUI ()
     {
-        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "device background")!)
+        UIGraphicsBeginImageContext(self.view.frame.size)
+        UIImage(named: "device background")?.drawInRect(self.view.bounds)
+        let image :UIImage = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext()
+        self.view.backgroundColor = UIColor(patternImage: image)
         self.submitButton.layer.cornerRadius = 8.0
         self.nameText.delegate = self
         self.phoneText.delegate = self

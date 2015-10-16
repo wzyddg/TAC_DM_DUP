@@ -34,7 +34,11 @@ class BookDetail : UIViewController,UIAlertViewDelegate,UITextFieldDelegate,DMDe
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "book background")!)
+        UIGraphicsBeginImageContext(self.view.frame.size)
+        UIImage(named: "book background")?.drawInRect(self.view.bounds)
+        let image:UIImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        self.view.backgroundColor = UIColor(patternImage: image)
     }
     
     func configureUI ()

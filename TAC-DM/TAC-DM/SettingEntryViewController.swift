@@ -40,7 +40,11 @@ class SettingEntryViewController: UIViewController, DMDelegate {
 
     func configureUI()
     {
-        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "setting background")!)
+        UIGraphicsBeginImageContext(self.view.frame.size)
+        UIImage(named: "setting background")?.drawInRect(self.view.bounds)
+        let image :UIImage = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext()
+        self.view.backgroundColor = UIColor(patternImage: image)
         for  button:UIButton in typeButtons {
             button.layer.cornerRadius = button.frame.height/2
         }

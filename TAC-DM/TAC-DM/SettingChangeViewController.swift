@@ -24,9 +24,7 @@ class SettingChangeViewController: UIViewController, DMDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "setting background")!)
         self.changeButton.layer.cornerRadius = 8.0
-        
         dmModel = DMModel.getInstance()
         dmModel.delegate = self
     }
@@ -34,6 +32,16 @@ class SettingChangeViewController: UIViewController, DMDelegate {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
         updateUI()
+    }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        UIGraphicsBeginImageContext(self.view.frame.size)
+        UIImage(named: "setting background")?.drawInRect(self.view.bounds)
+        let image :UIImage = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext()
+        self.view.backgroundColor = UIColor(patternImage:image)
+
     }
 
     func updateUI() {
