@@ -26,6 +26,30 @@ struct BorrowItem {
     }
 }
 
+struct HistoryRecord {
+    var historyId:String
+    var borrowerName:String
+    var borrowerPhone:String
+    var borrowItemId:String
+    var borrowItemName:String
+    var borrowItemInfo:String
+    var borrowTime:String
+    var returnTime:String
+    var borrowNumber:String
+    
+    init(historyId:String, borrowerName:String, borrowerPhone:String, borrowItemId:String, borrowItemName:String, borrowItemInfo:String, borrowTime:String, returnTime:String, borrowNumber:String) {
+        self.historyId = historyId
+        self.borrowerName = borrowerName
+        self.borrowerPhone = borrowerPhone
+        self.borrowItemId = borrowItemId
+        self.borrowItemName = borrowItemName
+        self.borrowItemInfo = borrowItemInfo
+        self.borrowTime = borrowTime
+        self.returnTime = returnTime
+        self.borrowNumber = borrowNumber
+    }
+}
+
 
 //judge input text
 extension String {

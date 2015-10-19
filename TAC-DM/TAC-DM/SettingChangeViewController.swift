@@ -20,6 +20,7 @@ class SettingChangeViewController: UIViewController, DMDelegate {
     var itemId:String?
     var itemCount:String?
     var itemLeftCount:String?
+    var newItemLeftCount:String!
     
     
     override func viewDidLoad() {
@@ -45,7 +46,6 @@ class SettingChangeViewController: UIViewController, DMDelegate {
     }
 
     func updateUI() {
-        print("1")
         if let count = itemCount, leftCount = itemLeftCount {
             print("2")
             let borrowItemCount = Int(count)! - Int(leftCount)!
@@ -76,9 +76,9 @@ class SettingChangeViewController: UIViewController, DMDelegate {
 
             if let id = self.itemId, number = leftNum {
                 print("id:\(id),number:\(number)")
+                SVProgressHUD.show()
                 self.dmModel.editLeftNumber(id, newCount: number, password: "123123")
-                
-//                self.dmModel.getDevice("3")
+                self.newItemLeftCount = "\(number)"
             } else {
                 print("not get itemId or number")
             }
@@ -97,7 +97,9 @@ class SettingChangeViewController: UIViewController, DMDelegate {
         switch Info {
         case "1":
             print("修改成功")
-//            getNewCount()
+            SVProgressHUD.dismiss()
+            self.itemLeftCount = newItemLeftCount
+            updateUI()
         case "0":
             print("修改失败")
             SVProgressHUD.showErrorWithStatus("Sorry, there are some problems, the number of item has not been changed...")

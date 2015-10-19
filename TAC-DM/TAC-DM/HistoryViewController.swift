@@ -6,14 +6,14 @@
 //  Copyright (c) 2015 TAC. All rights reserved.
 //
 
-import  UIKit
+import UIKit
 
 class HistoryViewController: UITableViewController,UIAlertViewDelegate, DMDelegate{
 
 // MARK:-TODO: change the test data to real
 // 建议将每条记录写成一个struct， 里面有它的属性
     var dmModel: DMModel!
-    var borrowRecords:[String] = []
+    var borrowRecords:[HistoryRecord] = []
 
 // MARK:- Custom Nav
     
@@ -76,25 +76,19 @@ class HistoryViewController: UITableViewController,UIAlertViewDelegate, DMDelega
             cell.typeLabel?.backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(0.0)
             cell.timeLabel?.backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(0.0)
             
-            let recordInfo = borrowRecords[indexPath.row/2].componentsSeparatedByString(",")
-            
-            if recordInfo.count > 1 {
-                cell.nameLabel?.text = recordInfo[1]
-                cell.typeLabel?.text = recordInfo[4]
-                cell.timeLabel?.text = recordInfo[6]
-                if recordInfo[7] != "0" {
+            if !borrowRecords.isEmpty {
+                cell.nameLabel?.text = borrowRecords[indexPath.row/2].borrowerName
+                cell.typeLabel?.text = borrowRecords[indexPath.row/2].borrowItemName
+                cell.timeLabel?.text = borrowRecords[indexPath.row/2].borrowTime
+                if borrowRecords[indexPath.row/2].returnTime != "0" {
                     cell.statusImg.image = UIImage(named: "checked icon")
                     cell.status = true
                 } else {
                     cell.statusImg.image = UIImage(named: "unchecked icon")
                     cell.status = false
                 }
-            } else {
-                print("there is no history")
-                
-                //没有历史，给用户提示
-                //最好还是把页面上的懵逼删掉好了。。。
             }
+
         } else {
             cell.backgroundColor = UIColor.clearColor()
             cell.nameLabel?.text = ""
@@ -129,10 +123,9 @@ class HistoryViewController: UITableViewController,UIAlertViewDelegate, DMDelega
        
         let cell = tableView.cellForRowAtIndexPath(indexPath) as! HistoryTableViewCell
         if cell.status == false {
-            let recordInfo = borrowRecords[indexPath.row/2].componentsSeparatedByString(",")
         
             let alert = UIAlertController(title: "确认归还？",
-            message: "姓名:\(cell.nameLabel.text!) \n 电话号码: \(recordInfo[2]) \n 设备: \(cell.typeLabel.text!) \n ",
+            message: "姓名:\(cell.nameLabel.text!) \n 电话号码: \(borrowRecords[indexPath.row/2].borrowerPhone) \n 设备: \(cell.typeLabel.text!) \n ",
             preferredStyle: UIAlertControllerStyle.Alert)
         
             alert.addAction(UIAlertAction(title: "确认",
@@ -140,7 +133,7 @@ class HistoryViewController: UITableViewController,UIAlertViewDelegate, DMDelega
                 handler: {(alert: UIAlertAction) in
                     cell.statusImg.image = UIImage(named: "checked icon")
                     cell.status = true
-                    self.dealWithAction(recordInfo[0])}))
+                    self.dealWithAction(self.borrowRecords[indexPath.row/2].historyId)}))
             alert.addAction(UIAlertAction(title: "取消",
                 style: UIAlertActionStyle.Cancel,
                 handler: nil))
@@ -166,14 +159,43 @@ class HistoryViewController: UITableViewController,UIAlertViewDelegate, DMDelega
             print("归还物品失败")
             SVProgressHUD.showErrorWithStatus("Sorry,there are some troubles,please contact with TAC member")
         default:
-            borrowRecords = Info.componentsSeparatedByString("|")
+            let borrowHistoryList = Info.componentsSeparatedByString("|")
+            let dateFormatter = NSDateFormatter()
+            dateFormatter.dateFormat = "yyyy/MM/dd"
             
-            for record in borrowRecords {
-                print("Record:\(record)")
+            
+            for record in borrowHistoryList {
+                print("RECORD:\(record)")
+                
+                //判断历史是否为空
+                if "" == record {
+                    //历史数据为空
+                    break
+                } else {
+                    let oneRecord = record.componentsSeparatedByString(",")
+                    
+                    let oneHistoryRecord = HistoryRecord(historyId: oneRecord[0], borrowerName: oneRecord[1],
+                        borrowerPhone: oneRecord[2], borrowItemId: oneRecord[3],
+                        borrowItemName: oneRecord[4], borrowItemInfo: oneRecord[5],
+                        borrowTime: getReallytime(oneRecord[6], dateFormatter: dateFormatter),
+                        returnTime: oneRecord[7], borrowNumber: oneRecord[8])
+                    
+                    borrowRecords.append(oneHistoryRecord)
+                }
             }
             
             self.tableView.reloadData()
             SVProgressHUD.dismiss()
         }
     }
+    
+    //时间戳转换
+    func getReallytime(timeStringFrom1970Millisecond:String, dateFormatter:NSDateFormatter) -> String {
+        let timeNSString:NSString = (timeStringFrom1970Millisecond as NSString).substringToIndex(10)
+        let date = NSDate(timeIntervalSince1970: timeNSString.doubleValue)
+        
+        return dateFormatter.stringFromDate(date)
+    }
 }
+
+
