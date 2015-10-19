@@ -15,10 +15,18 @@ class HistoryViewController: UITableViewController,UIAlertViewDelegate, DMDelega
     var dmModel: DMModel!
     var borrowRecords:[String] = []
 
+// MARK:- Custom Nav
+    
+    @IBAction func back() {
+        SVProgressHUD.dismiss()
+        (tabBarController as! TabBarController).sidebar.showInViewController(self, animated: true)
+    }
+    @IBOutlet weak var navView: UIView!
+
 // MARK:- Configure UI
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureUI()
+        
         dmModel = DMModel.getInstance()
         dmModel.delegate = self
         
@@ -36,7 +44,9 @@ class HistoryViewController: UITableViewController,UIAlertViewDelegate, DMDelega
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        
+        configureUI()
+        self.navView.backgroundColor = UIColor.clearColor()
+        self.navigationController?.navigationBarHidden = true
         updateUI()
         SVProgressHUD.show()
     }

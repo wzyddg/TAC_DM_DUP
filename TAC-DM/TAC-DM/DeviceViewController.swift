@@ -13,12 +13,18 @@ class DeviceViewController: UITableViewController, DMDelegate {
     //    var testArray = ["iPad","Mac","Apple watch","iPhone","iPod"]
     var dmModel:DMModel!
     var deviceTypeList:[String] = []
-    
+
+    @IBAction func back() {
+        SVProgressHUD.dismiss()
+        (tabBarController as! TabBarController).sidebar.showInViewController(self, animated: true)
+    }
+    @IBOutlet weak var navView: UIView!
+// MARK:- Custom Nav
+
 // MARK:-Configure UI
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
-        self.navigationController?.navigationBarHidden = false
         
         dmModel = DMModel.getInstance()
         dmModel.delegate = self
@@ -29,7 +35,8 @@ class DeviceViewController: UITableViewController, DMDelegate {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        
+        self.navView.backgroundColor = UIColor.clearColor()
+        self.navigationController?.navigationBarHidden = true
         updateUI()
         SVProgressHUD.show()
     }

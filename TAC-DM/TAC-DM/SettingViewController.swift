@@ -14,13 +14,27 @@ class SettingViewController: UIViewController, DMDelegate {
     @IBOutlet weak var submitButton: UIButton!
     
     var dmModel: DMModel!
+ 
+//MARK:- Custom Nav
     
+    @IBAction func back() {
+        (tabBarController as! TabBarController).sidebar.showInViewController(self, animated: true)
+        
+    }
+    @IBOutlet weak var navView: UIView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureUI()
         
         dmModel = DMModel.getInstance()
         dmModel.delegate = self
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(true)
+        configureUI()
+        self.navigationController?.navigationBarHidden = true
+        self.navView.backgroundColor = UIColor.clearColor()
     }
     
     func configureUI ()

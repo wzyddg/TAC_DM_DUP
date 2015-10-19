@@ -13,16 +13,23 @@ class BookViewController:UITableViewController, DMDelegate {
     var dmModel: DMModel!    
     var bookList:[String]? = nil
     var bookNameArray:[String] = []
- 
+//MARK:- Custom Nav 
+    
+    @IBOutlet weak var navView: UIView!
+    @IBAction func back() {
+        SVProgressHUD.dismiss()
+        (tabBarController as! TabBarController).sidebar.showInViewController(self, animated: true)
+    }
+    
+    
 // MARK:- Configure UI
     override func viewDidLoad() {
         super.viewDidLoad()
         configureNavBar()
         
-        self.navigationController?.navigationBarHidden = false
-//        self.tableView.delegate = self
-//        self.tableView.dataSource = self
-        
+        self.navigationController?.navigationBarHidden = true
+        //self.navView.backgroundColor = UIColor(patternImage:UIImage(named: "book background")!)
+        self.navView.backgroundColor = UIColor.clearColor()
         dmModel = DMModel.getInstance()
         dmModel.delegate = self
         
@@ -32,11 +39,13 @@ class BookViewController:UITableViewController, DMDelegate {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        
+        self.navigationController?.navigationBarHidden = true
         updateUI()
         tableView.reloadData()
         SVProgressHUD.show()
     }
+    
+    
     
     func refresh() {
         SVProgressHUD.show()
