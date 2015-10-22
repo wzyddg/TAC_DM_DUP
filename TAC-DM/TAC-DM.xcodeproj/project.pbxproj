@@ -125,7 +125,6 @@
 		A455A5151BA6E5ED00ABD68A /* DDMultiFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDMultiFormatter.h; sourceTree = "<group>"; };
 		A455A5161BA6E5ED00ABD68A /* DDMultiFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDMultiFormatter.m; sourceTree = "<group>"; };
 		A455A5171BA6E5ED00ABD68A /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
-		A455A5281BA6E91E00ABD68A /* asyncSocket-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "asyncSocket-Bridging-Header.h"; sourceTree = "<group>"; };
 		B47F04204E4C1BF42EB8E6A5 /* Pods-TAC-DM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TAC-DM.release.xcconfig"; path = "Pods/Target Support Files/Pods-TAC-DM/Pods-TAC-DM.release.xcconfig"; sourceTree = "<group>"; };
 		D7D72411780105571E394294 /* Pods-TAC-DM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TAC-DM.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TAC-DM/Pods-TAC-DM.debug.xcconfig"; sourceTree = "<group>"; };
 		EF59C2761B8ABDEE00711A83 /* TAC-DM.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "TAC-DM.xcdatamodel"; sourceTree = "<group>"; };
@@ -200,7 +199,6 @@
 				621C6C2F1B626E2F00120ED2 /* LaunchScreen.xib */,
 				621C6C241B626E2F00120ED2 /* Supporting Files */,
 				EF59C2751B8ABDEE00711A83 /* TAC-DM.xcdatamodeld */,
-				A455A5281BA6E91E00ABD68A /* asyncSocket-Bridging-Header.h */,
 				7BFEDBF61BBBCF4000018AB6 /* TAC-DM-Bridging-Header.h */,
 			);
 			path = "TAC-DM";
@@ -676,7 +674,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "TAC-DM/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.huoteng;
+				PRODUCT_BUNDLE_IDENTIFIER = com.huoteng.dm;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "TAC-DM/TAC-DM-Bridging-Header.h";
@@ -693,7 +691,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "TAC-DM/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.huoteng;
+				PRODUCT_BUNDLE_IDENTIFIER = com.huoteng.dm;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "TAC-DM/TAC-DM-Bridging-Header.h";

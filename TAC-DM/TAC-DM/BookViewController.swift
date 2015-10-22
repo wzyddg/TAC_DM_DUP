@@ -10,7 +10,7 @@ import UIKit
 
 class BookViewController:UITableViewController, DMDelegate {
 
-    var dmModel: DMModel!    
+    var dmModel: DatabaseModel!
     var bookList:[String]? = nil
     var bookNameArray:[String] = []
 //MARK:- Custom Nav 
@@ -30,7 +30,7 @@ class BookViewController:UITableViewController, DMDelegate {
         self.navigationController?.navigationBarHidden = true
         //self.navView.backgroundColor = UIColor(patternImage:UIImage(named: "book background")!)
         self.navView.backgroundColor = UIColor.clearColor()
-        dmModel = DMModel.getInstance()
+        dmModel = DatabaseModel.getInstance()
         dmModel.delegate = self
         
         self.refreshControl = UIRefreshControl()
@@ -140,7 +140,8 @@ class BookViewController:UITableViewController, DMDelegate {
 
             //check Info is empty
             if bookName.count > 1 {
-                bookNameArray.append(bookName[1])
+                let tmpName = "\(bookName[0]),\(bookName[1])"
+                bookNameArray.append(tmpName)
             } else {
                 print("there is no book")
                 tableView.reloadData()

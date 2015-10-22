@@ -12,7 +12,7 @@ class HistoryViewController: UITableViewController,UIAlertViewDelegate, DMDelega
 
 // MARK:-TODO: change the test data to real
 // 建议将每条记录写成一个struct， 里面有它的属性
-    var dmModel: DMModel!
+    var dmModel: DatabaseModel!
     var borrowRecords:[HistoryRecord] = []
 
 // MARK:- Custom Nav
@@ -27,7 +27,7 @@ class HistoryViewController: UITableViewController,UIAlertViewDelegate, DMDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        dmModel = DMModel.getInstance()
+        dmModel = DatabaseModel.getInstance()
         dmModel.delegate = self
         
         self.refreshControl = UIRefreshControl()

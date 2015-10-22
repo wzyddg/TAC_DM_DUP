@@ -13,7 +13,7 @@ class SettingViewController: UIViewController, DMDelegate {
     @IBOutlet weak var passWord: UITextField!
     @IBOutlet weak var submitButton: UIButton!
     
-    var dmModel: DMModel!
+    var dmModel: DatabaseModel!
  
 //MARK:- Custom Nav
     
@@ -26,7 +26,7 @@ class SettingViewController: UIViewController, DMDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        dmModel = DMModel.getInstance()
+        dmModel = DatabaseModel.getInstance()
         dmModel.delegate = self
     }
     

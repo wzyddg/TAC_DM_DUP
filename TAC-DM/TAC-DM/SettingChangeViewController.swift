@@ -16,7 +16,7 @@ class SettingChangeViewController: UIViewController, DMDelegate {
     @IBOutlet weak var borrowLabel: UILabel!
     @IBOutlet weak var remainLabel: UILabel!
     
-    var dmModel: DMModel!
+    var dmModel: DatabaseModel!
     var itemId:String?
     var itemCount:String?
     var itemLeftCount:String?
@@ -26,7 +26,7 @@ class SettingChangeViewController: UIViewController, DMDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.changeButton.layer.cornerRadius = 8.0
-        dmModel = DMModel.getInstance()
+        dmModel = DatabaseModel.getInstance()
         dmModel.delegate = self
     }
     

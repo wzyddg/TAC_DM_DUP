@@ -15,12 +15,14 @@ class UmbrellaViewController: UIViewController,UIAlertViewDelegate,UITextFieldDe
     @IBOutlet weak var phoneText: UITextField!
     @IBOutlet weak var numberText: UITextField!
     
-    var dmModel: DMModel!
+    var dmModel: DatabaseModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
-        dmModel = DMModel.getInstance()
+//        dmModel = DMModel.getInstance()
+//        dmModel.delegate = self
+        dmModel = DatabaseModel.getInstance()
         dmModel.delegate = self
     }
     

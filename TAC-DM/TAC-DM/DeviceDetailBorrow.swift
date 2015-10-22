@@ -13,7 +13,7 @@ class DeviceDetailBorrow:UIViewController , UITextFieldDelegate , UIAlertViewDel
     var borrowDeviceName:String?
     var borrowDeviceID:String?
     var borrowDeviceDescription:String?
-    var dmModel:DMModel!
+    var dmModel:DatabaseModel!
     
     @IBOutlet weak var deviceName: UILabel!
     @IBOutlet weak var nameText: UITextField!
@@ -26,7 +26,7 @@ class DeviceDetailBorrow:UIViewController , UITextFieldDelegate , UIAlertViewDel
         configureUI()
         deviceName.text = borrowDeviceName
         
-        dmModel = DMModel.getInstance()
+        dmModel = DatabaseModel.getInstance()
         dmModel.delegate = self
     }
     

@@ -15,7 +15,7 @@ class SettingAddNewThing: UIViewController, DMDelegate {
     var second = ""
     var thrid = ""
     var hasfourthLabel = true
-    var dmModel: DMModel!
+    var dmModel: DatabaseModel!
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var secondLabel: UILabel!
@@ -43,7 +43,7 @@ class SettingAddNewThing: UIViewController, DMDelegate {
             self.fourthLabel.text = "设备类型："
         }
         
-        dmModel = DMModel.getInstance()
+        dmModel = DatabaseModel.getInstance()
         dmModel.delegate = self
     }
     

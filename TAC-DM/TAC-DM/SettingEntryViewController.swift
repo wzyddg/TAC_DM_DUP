@@ -15,14 +15,14 @@ class SettingEntryViewController: UIViewController, DMDelegate {
     
     @IBOutlet var typeButtons: [UIButton]!
 
-    var dmModel:DMModel!
+    var dmModel:DatabaseModel!
     var umbrellaInfo:BorrowItem?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
         
-        dmModel = DMModel.getInstance()
+        dmModel = DatabaseModel.getInstance()
         dmModel.delegate = self
     }
     

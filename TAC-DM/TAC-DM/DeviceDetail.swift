@@ -14,7 +14,7 @@ class DeviceDetail: UITableViewController, DMDelegate {
     
     var devicesNameArray:[String] = []
     var deviceName = ""
-    var dmModel: DMModel!
+    var dmModel: DatabaseModel!
     var devicesList:[String]?
     
 //MARK:- Configure UI
@@ -24,7 +24,7 @@ class DeviceDetail: UITableViewController, DMDelegate {
         self.title = deviceName
         self.tableView.backgroundView = UIImageView (image: UIImage(named: "device background"))
         
-        dmModel = DMModel.getInstance()
+        dmModel = DatabaseModel.getInstance()
         dmModel.delegate = self
         
         self.refreshControl = UIRefreshControl()

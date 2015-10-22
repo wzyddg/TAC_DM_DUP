@@ -14,7 +14,7 @@ class BookDetail : UIViewController,UIAlertViewDelegate,UITextFieldDelegate,DMDe
     var borrowBookName = ""
     var borrowBookId:String?
     var borrowBookDescription:String?
-    var dmModel:DMModel!
+    var dmModel:DatabaseModel!
     
     @IBOutlet weak var submitButton: UIButton!
     @IBOutlet weak var selectedBookName: UILabel!
@@ -28,7 +28,7 @@ class BookDetail : UIViewController,UIAlertViewDelegate,UITextFieldDelegate,DMDe
         configureUI()
         selectedBookName.text = borrowBookName
         
-        dmModel = DMModel.getInstance()
+        dmModel = DatabaseModel.getInstance()
         dmModel.delegate = self
     }
     

@@ -11,7 +11,7 @@ import UIKit
 class DeviceViewController: UITableViewController, DMDelegate {
 
     //    var testArray = ["iPad","Mac","Apple watch","iPhone","iPod"]
-    var dmModel:DMModel!
+    var dmModel:DatabaseModel!
     var deviceTypeList:[String] = []
 
     @IBAction func back() {
@@ -26,7 +26,7 @@ class DeviceViewController: UITableViewController, DMDelegate {
         super.viewDidLoad()
         configureUI()
         
-        dmModel = DMModel.getInstance()
+        dmModel = DatabaseModel.getInstance()
         dmModel.delegate = self
         
         self.refreshControl = UIRefreshControl()

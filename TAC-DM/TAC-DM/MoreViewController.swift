@@ -16,7 +16,7 @@ class MoreViewController: UIViewController ,UITextFieldDelegate,UIAlertViewDeleg
     @IBOutlet weak var nameText: UITextField!
     @IBOutlet weak var phoneText: UITextField!
     
-    var dmModel:DMModel!
+    var dmModel:DatabaseModel!
  
 // MARK:- Configure UI
     override func viewDidLoad() {
@@ -27,7 +27,7 @@ class MoreViewController: UIViewController ,UITextFieldDelegate,UIAlertViewDeleg
         nameText.delegate =     self
         phoneText.delegate =    self
         
-        dmModel = DMModel.getInstance()
+        dmModel = DatabaseModel.getInstance()
         dmModel.delegate = self
     }
     

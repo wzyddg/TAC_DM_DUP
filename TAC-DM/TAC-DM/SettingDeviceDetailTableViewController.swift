@@ -10,7 +10,7 @@ import UIKit
 
 class SettingDeviceDetailTableViewController: UITableViewController, DMDelegate {
 
-    var dmModel: DMModel!
+    var dmModel: DatabaseModel!
     var deviceType = ""
     var devicesList:[BorrowItem] = []
 
@@ -19,7 +19,7 @@ class SettingDeviceDetailTableViewController: UITableViewController, DMDelegate 
         super.viewDidLoad()
         self.tableView.backgroundView = UIImageView (image: UIImage(named: "setting background")!)
         
-        dmModel = DMModel.getInstance()
+        dmModel = DatabaseModel.getInstance()
         dmModel.delegate = self
     }
     

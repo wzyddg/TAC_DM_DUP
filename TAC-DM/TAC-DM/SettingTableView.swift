@@ -11,7 +11,7 @@ import UIKit
 class SettingTableView: UITableViewController, DMDelegate {
 
     var isBook = true
-    var dmModel:DMModel!
+    var dmModel:DatabaseModel!
     var itemList:[BorrowItem] = []
     
 // MARK:- CONFIGURE UI
@@ -19,7 +19,7 @@ class SettingTableView: UITableViewController, DMDelegate {
         super.viewDidLoad()
         self.tableView.backgroundView = UIImageView (image: UIImage(named: "setting background")!)
         
-        dmModel = DMModel.getInstance()
+        dmModel = DatabaseModel.getInstance()
         dmModel.delegate = self
     }
     
