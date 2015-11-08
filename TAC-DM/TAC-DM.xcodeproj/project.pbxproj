@@ -33,7 +33,7 @@
 		7BECB72C1B83203400C0D4B8 /* BookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BECB72B1B83203400C0D4B8 /* BookViewController.swift */; };
 		87071C231B8E437E00495EDB /* ItemInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87071C221B8E437E00495EDB /* ItemInfo.swift */; };
 		87071C251B8E45AD00495EDB /* BorrowRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87071C241B8E45AD00495EDB /* BorrowRecord.swift */; };
-		87E318ED1BAF8EF0001D0FD5 /* DMModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E318EC1BAF8EF0001D0FD5 /* DMModel.swift */; settings = {ASSET_TAGS = (); }; };
+		87E318ED1BAF8EF0001D0FD5 /* DMModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E318EC1BAF8EF0001D0FD5 /* DMModel.swift */; };
 		A455A5181BA6E5ED00ABD68A /* Documentation.html in Resources */ = {isa = PBXBuildFile; fileRef = A455A4F71BA6E5ED00ABD68A /* Documentation.html */; };
 		A455A5191BA6E5ED00ABD68A /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = A455A4F91BA6E5ED00ABD68A /* GCDAsyncSocket.m */; };
 		A455A51A1BA6E5ED00ABD68A /* GCDAsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = A455A4FB1BA6E5ED00ABD68A /* GCDAsyncUdpSocket.m */; };
@@ -401,7 +401,7 @@
 				TargetAttributes = {
 					621C6C201B626E2F00120ED2 = {
 						CreatedOnToolsVersion = 6.3.2;
-						DevelopmentTeam = XPXAPTEPJX;
+						DevelopmentTeam = 6QNQ63R334;
 					};
 					621C6C351B626E2F00120ED2 = {
 						CreatedOnToolsVersion = 6.3.2;
@@ -674,7 +674,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "TAC-DM/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.huoteng.dm;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Fowafolo.TAC-DM";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "TAC-DM/TAC-DM-Bridging-Header.h";
@@ -691,7 +691,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "TAC-DM/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.huoteng.dm;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Fowafolo.TAC-DM";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "TAC-DM/TAC-DM-Bridging-Header.h";
