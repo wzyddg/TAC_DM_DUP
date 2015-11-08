@@ -35,7 +35,12 @@ class SettingEntryViewController: UIViewController, DMDelegate {
     
     //更新雨伞的借出情况
     func updateUI() {
-        dmModel.getDevice("3")//umbrella's id
+        if let id = umbrellaId {
+            dmModel.getDevice(id)
+        } else {
+            print("unget umbrella id")
+            SVProgressHUD.showErrorWithStatus("无法获得雨伞信息，请后退刷新界面")
+        }
     }
 
     func configureUI()

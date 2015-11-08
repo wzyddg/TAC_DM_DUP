@@ -20,8 +20,7 @@ class UmbrellaViewController: UIViewController,UIAlertViewDelegate,UITextFieldDe
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
-//        dmModel = DMModel.getInstance()
-//        dmModel.delegate = self
+
         dmModel = DatabaseModel.getInstance()
         dmModel.delegate = self
     }
@@ -87,10 +86,17 @@ class UmbrellaViewController: UIViewController,UIAlertViewDelegate,UITextFieldDe
     }
     
     func dealConfirmAction (alert:UIAlertAction!) {
-        if let borrowNum = Int(numberText.text!) {
-            dmModel.borrowItem(nameText.text!, tele: phoneText.text!, itemId: "3"/*umbrella id*/, itemName: "Umbrella", itemDescription: "", number: borrowNum)
-            refresh()
+        
+        if let id = umbrellaId {
+            if let borrowNum = Int(numberText.text!) {
+                dmModel.borrowItem(nameText.text!, tele: phoneText.text!, itemId: id, itemName: "Umbrella", itemDescription: "", number: borrowNum)
+                refresh()
+            } else {
+                print("unget umbrella id")
+                SVProgressHUD.showErrorWithStatus("无法获得雨伞信息，请后退刷新界面")
+            }
         }
+        
     }
     
     func refresh()

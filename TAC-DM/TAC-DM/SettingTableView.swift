@@ -14,10 +14,14 @@ class SettingTableView: UITableViewController, DMDelegate {
     var dmModel:DatabaseModel!
     var itemList:[BorrowItem] = []
     
+    @IBOutlet weak var navView: UIView!
+    @IBOutlet weak var navTitle: UILabel!
 // MARK:- CONFIGURE UI
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.backgroundView = UIImageView (image: UIImage(named: "setting background")!)
+        
+        self.navView.backgroundColor = UIColor.clearColor()
         
         dmModel = DatabaseModel.getInstance()
         dmModel.delegate = self
@@ -30,14 +34,19 @@ class SettingTableView: UITableViewController, DMDelegate {
         updateUI()
     }
     
+    @IBAction func backAction(sender: AnyObject) {
+        self.navigationController?.popViewControllerAnimated(true)
+    }
     //更新书或者设备种类列表
     func updateUI() {
         itemList = []
         
         if isBook {
             dmModel.getDeviceListAsAdmin("book")
+            self.navTitle.text = "Book"
         } else {
             dmModel.getDeviceType()
+            self.navTitle.text = "Devices"
         }
     }
     
@@ -113,11 +122,7 @@ class SettingTableView: UITableViewController, DMDelegate {
             }
         }
     }
-    
-    @IBAction func backAction(sender: AnyObject) {
-        self.navigationController?.popViewControllerAnimated(true)
-    }
-    
+        
     func getRequiredInfo(Info: String) {
         print("Admin manage:\(Info)")
         

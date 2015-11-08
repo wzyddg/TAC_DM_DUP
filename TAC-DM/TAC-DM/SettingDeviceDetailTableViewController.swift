@@ -14,10 +14,14 @@ class SettingDeviceDetailTableViewController: UITableViewController, DMDelegate 
     var deviceType = ""
     var devicesList:[BorrowItem] = []
 
+    @IBOutlet weak var navView: UIView!
+    @IBOutlet weak var navTitle: UILabel!
 // MARK:- CONFIGURE UI
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.backgroundView = UIImageView (image: UIImage(named: "setting background")!)
+        
+        self.navView.backgroundColor = UIColor.clearColor()
         
         dmModel = DatabaseModel.getInstance()
         dmModel.delegate = self
@@ -25,11 +29,15 @@ class SettingDeviceDetailTableViewController: UITableViewController, DMDelegate 
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        self.navTitle.text = deviceType
         
         updateUI()
         SVProgressHUD.show()
     }
     
+    @IBAction func backAction(sender: AnyObject) {
+        self.navigationController?.popViewControllerAnimated(true)
+    }
     //更新设备列表
     func updateUI() {
         devicesList = []
@@ -75,10 +83,6 @@ class SettingDeviceDetailTableViewController: UITableViewController, DMDelegate 
         nextVC.itemLeftCount = devicesList[indexPath.row/2].leftCount
                 
         self.navigationController?.pushViewController(nextVC, animated: true)
-    }
-    
-    @IBAction func backAction(sender: AnyObject) {
-        self.navigationController?.popViewControllerAnimated(true)
     }
     
     func getRequiredInfo(Info: String) {
