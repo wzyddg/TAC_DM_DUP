@@ -20,6 +20,7 @@ class DatabaseModel:NSObject, GCDAsyncSocketDelegate {
     var delegate:DMDelegate? = nil
     var sendData:NSData? = nil
     var needConnect = true
+    static var serverIP = "115.28.74.242"
     
     static func getInstance() -> DatabaseModel {
         let instance = DatabaseModel()
@@ -32,7 +33,7 @@ class DatabaseModel:NSObject, GCDAsyncSocketDelegate {
             gcdSocket = GCDAsyncSocket(delegate: self, delegateQueue: dispatch_get_main_queue())
         }
         do {
-            try gcdSocket!.connectToHost("10.60.41.55", onPort: 8222)
+            try gcdSocket!.connectToHost(DatabaseModel.serverIP , onPort: 8222)
             print("GCD请求已发送")
         } catch {
             delegate?.getRequiredInfo("GCD failed")
