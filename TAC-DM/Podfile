@@ -4,6 +4,7 @@
 target 'TAC-DM' do
 
 pod 'SVProgressHUD'
+pod 'DTCoreText'
 
 end
 

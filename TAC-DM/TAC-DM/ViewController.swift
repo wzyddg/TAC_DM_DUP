@@ -7,20 +7,32 @@
 //
 
 import UIKit
+import CoreText
+
 
 var umbrellaId:String? = nil
-class ViewController: UIViewController, DMDelegate {
+class ViewController: UIViewController, DMDelegate,UITextViewDelegate {
     
     @IBOutlet weak var menuButton: UIButton!
-    @IBOutlet weak var textBody: UITextView!
-    @IBOutlet weak var backgroundImage: UIImageView!
+
+    @IBOutlet weak var rulesView: DTAttributedTextView!
 
     var dmModel: DatabaseModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         menuButton.tintColor = UIColor(patternImage: UIImage(named: "menu icon")!)
-        textBody.text = "1.   借还书本和雨伞请自觉登记一卡通号，姓名，手机号等相关信息，借还设备必须通过内部人员登记信息。\n\n 2. 借阅图书期限： 1个学期；\n 借用雨伞期限： 5天；\n 借用设备期限： 2周；\n 所有物品可续借，逾期不还我们将进行通知。\n\n"
+        
+        let filePath = NSBundle.mainBundle().pathForResource("rules", ofType: "html")
+        let fileData = NSData(contentsOfFile: filePath!)
+        let builderOptions = [DTDefaultFontFamily:"Helvetica",DTUseiOS6Attributes:true]
+        
+        let stringBuilder = DTHTMLAttributedStringBuilder(HTML: fileData, options: builderOptions, documentAttributes: nil)
+        
+        rulesView.attributedString = stringBuilder.generatedAttributedString()
+        
+        self.rulesView.delegate = self
+        rulesView.backgroundColor = UIColor.clearColor()
         
         
         dmModel = DatabaseModel.getInstance()
@@ -31,13 +43,12 @@ class ViewController: UIViewController, DMDelegate {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-//        UIGraphicsBeginImageContext(self.view.frame.size)
-//        UIImage(named: "background")?.drawInRect(self.view.bounds)
-//        let image:UIImage = UIGraphicsGetImageFromCurrentImageContext()
-//        UIGraphicsEndImageContext()
-//        
-//        
-        self.backgroundImage.image = UIImage(named: "background")
+        UIGraphicsBeginImageContext(self.view.frame.size)
+        UIImage(named: "background-bright")?.drawInRect(self.view.bounds)
+        let image:UIImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        self.view.backgroundColor = UIColor(patternImage:image)
     }
     
     @IBAction func onBurger() {

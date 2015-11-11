@@ -20,25 +20,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="1.   借还书本和雨伞请自觉登记一卡通号，姓名，手机号等相关信息，借还设备必须通过内部人员登记信息。          " textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="5YO-JT-uB0">
-                                <rect key="frame" x="20" y="81" width="560" height="62"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qsr-2e-uTM" customClass="DTAttributedTextView">
+                                <rect key="frame" x="0.0" y="28" width="600" height="572"/>
                                 <animations/>
-                                <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="17"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oIM-TD-Enl">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <animations/>
-                            </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" editable="NO" text="Tongji  Apple Club  设备借还须知             " textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="M3i-rt-Jfd">
-                                <rect key="frame" x="20" y="28" width="560" height="45"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="27"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
-                                    <rect key="frame" x="20" y="69" width="360" height="86"/>
-                                </variation>
-                            </textView>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ga2-fH-dL5">
                                 <rect key="frame" x="20" y="28" width="55" height="45"/>
                                 <animations/>
@@ -70,48 +56,33 @@
                         <color key="backgroundColor" red="0.44705882349999998" green="0.63137254899999995" blue="0.53725490200000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="Ga2-fH-dL5" firstAttribute="top" secondItem="pZU-Ga-muE" secondAttribute="bottom" constant="8" symbolic="YES" id="3Mf-ig-KFT"/>
-                            <constraint firstItem="oIM-TD-Enl" firstAttribute="top" secondItem="pZU-Ga-muE" secondAttribute="bottom" constant="-20" id="40Z-9s-sJJ"/>
-                            <constraint firstItem="NIS-Do-OVh" firstAttribute="top" secondItem="oIM-TD-Enl" secondAttribute="bottom" id="42M-aM-ZdI"/>
-                            <constraint firstItem="NIS-Do-OVh" firstAttribute="top" secondItem="M3i-rt-Jfd" secondAttribute="bottom" constant="8" symbolic="YES" id="7tt-Nz-emV"/>
                             <constraint firstItem="Ga2-fH-dL5" firstAttribute="top" secondItem="pZU-Ga-muE" secondAttribute="bottom" constant="8" id="Bnh-aU-b8O"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="oIM-TD-Enl" secondAttribute="trailing" constant="-20" id="H1J-rm-Z5a"/>
                             <constraint firstItem="Ga2-fH-dL5" firstAttribute="leading" secondItem="yDk-x3-j44" secondAttribute="leadingMargin" id="Ktd-5e-Xhg"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="M3i-rt-Jfd" secondAttribute="trailing" id="XJC-K3-XNR"/>
+                            <constraint firstItem="Ga2-fH-dL5" firstAttribute="top" secondItem="Qsr-2e-uTM" secondAttribute="top" id="LH9-mZ-bi3"/>
+                            <constraint firstAttribute="trailing" secondItem="Qsr-2e-uTM" secondAttribute="trailing" id="YJp-FY-duR"/>
+                            <constraint firstItem="Qsr-2e-uTM" firstAttribute="leading" secondItem="yDk-x3-j44" secondAttribute="leading" id="aBg-4E-be8"/>
+                            <constraint firstItem="Qsr-2e-uTM" firstAttribute="top" secondItem="pZU-Ga-muE" secondAttribute="bottom" id="bOb-Hi-m8L"/>
                             <constraint firstItem="Ga2-fH-dL5" firstAttribute="leading" secondItem="yDk-x3-j44" secondAttribute="leadingMargin" id="c4c-dL-diW"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="M3i-rt-Jfd" secondAttribute="leading" id="gCe-Lp-0zl"/>
-                            <constraint firstItem="M3i-rt-Jfd" firstAttribute="top" secondItem="pZU-Ga-muE" secondAttribute="bottom" constant="8" symbolic="YES" id="jdi-eP-qoT"/>
-                            <constraint firstItem="M3i-rt-Jfd" firstAttribute="top" secondItem="Ga2-fH-dL5" secondAttribute="bottom" constant="8" id="k1G-IZ-Dwb">
-                                <variation key="heightClass=regular-widthClass=compact" constant="8" symbolic="YES"/>
-                            </constraint>
-                            <constraint firstItem="oIM-TD-Enl" firstAttribute="leading" secondItem="yDk-x3-j44" secondAttribute="leadingMargin" constant="-20" id="to6-eI-m8I"/>
+                            <constraint firstItem="Qsr-2e-uTM" firstAttribute="bottom" secondItem="NIS-Do-OVh" secondAttribute="top" id="faf-P3-Ue3"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="bOb-Hi-m8L"/>
                                 <exclude reference="Bnh-aU-b8O"/>
                                 <exclude reference="Ktd-5e-Xhg"/>
-                                <exclude reference="k1G-IZ-Dwb"/>
-                                <exclude reference="7tt-Nz-emV"/>
-                            </mask>
-                        </variation>
-                        <variation key="heightClass=regular-widthClass=compact">
-                            <mask key="constraints">
-                                <exclude reference="jdi-eP-qoT"/>
-                                <include reference="k1G-IZ-Dwb"/>
-                                <exclude reference="7tt-Nz-emV"/>
                             </mask>
                         </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="Zot-PB-MBy"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="backgroundImage" destination="oIM-TD-Enl" id="Cet-dm-hAX"/>
                         <outlet property="menuButton" destination="Ga2-fH-dL5" id="8qP-ed-cRn"/>
-                        <outlet property="textBody" destination="5YO-JT-uB0" id="t2I-Ns-rDo"/>
+                        <outlet property="rulesView" destination="Qsr-2e-uTM" id="IKE-eI-rw2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ExX-tJ-IpG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1488" y="-1925"/>
+            <point key="canvasLocation" x="-1707" y="-2000"/>
         </scene>
         <!--Item-->
         <scene sceneID="pPH-cI-YRc">
@@ -152,7 +123,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" clipsSubviews="YES" alpha="0.80000001192092896" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" clearsOnBeginEditing="YES" minimumFontSize="30" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Ykh-6X-2lp">
-                                        <rect key="frame" x="20" y="44" width="520" height="30"/>
+                                        <rect key="frame" x="20" y="45" width="520" height="30"/>
                                         <animations/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="nt6-O4-gGu"/>
@@ -184,10 +155,10 @@
                                 </variation>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tzt-oS-Ccr">
-                                <rect key="frame" x="20" y="169" width="560" height="75"/>
+                                <rect key="frame" x="20" y="170" width="560" height="74"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="手机号码：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fMu-1T-dWL">
-                                        <rect key="frame" x="20" y="17" width="100" height="20"/>
+                                        <rect key="frame" x="20" y="16" width="100" height="20"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="20"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -252,7 +223,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pXI-HP-qOs">
-                                <rect key="frame" x="20" y="334" width="560" height="75"/>
+                                <rect key="frame" x="20" y="335" width="560" height="74"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="82" id="hGN-zZ-lXh"/>
@@ -264,14 +235,14 @@
                                 </variation>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lw7-QK-HIg">
-                                <rect key="frame" x="20" y="499" width="560" height="75"/>
+                                <rect key="frame" x="20" y="500" width="560" height="74"/>
                                 <animations/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2hK-Oq-n2z">
                                 <rect key="frame" x="20" y="417" width="560" height="75"/>
                                 <subviews>
                                     <button opaque="NO" alpha="0.79999999999999982" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M5P-g8-TQF">
-                                        <rect key="frame" x="234" y="22" width="93" height="32"/>
+                                        <rect key="frame" x="233" y="22" width="94" height="32"/>
                                         <animations/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="20"/>
@@ -375,18 +346,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="66j-rv-jie">
-                                <rect key="frame" x="20" y="72" width="560" height="82"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="66j-rv-jie">
+                                <rect key="frame" x="20" y="72" width="560" height="73"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mQM-TM-Mut">
-                                        <rect key="frame" x="20" y="61" width="53" height="20"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mQM-TM-Mut">
+                                        <rect key="frame" x="20" y="53" width="53" height="20"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="20"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="书名：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cMi-ns-BCj">
-                                        <rect key="frame" x="20" y="33" width="60" height="20"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="书名：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cMi-ns-BCj">
+                                        <rect key="frame" x="20" y="25" width="60" height="20"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="20"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -401,17 +372,17 @@
                                     <constraint firstItem="mQM-TM-Mut" firstAttribute="leading" secondItem="66j-rv-jie" secondAttribute="leading" constant="20" symbolic="YES" id="yqJ-Hg-iNr"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yc8-0K-06n">
-                                <rect key="frame" x="20" y="161" width="560" height="82"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yc8-0K-06n">
+                                <rect key="frame" x="20" y="153" width="560" height="73"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Uu1-yV-0KW">
-                                        <rect key="frame" x="20" y="51" width="520" height="30"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Uu1-yV-0KW">
+                                        <rect key="frame" x="20" y="43" width="520" height="30"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="姓名：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bJ9-oe-dA9">
-                                        <rect key="frame" x="20" y="23" width="60" height="20"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="姓名：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bJ9-oe-dA9">
+                                        <rect key="frame" x="20" y="15" width="60" height="20"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="20"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -427,18 +398,18 @@
                                     <constraint firstAttribute="trailing" secondItem="Uu1-yV-0KW" secondAttribute="trailing" constant="20" symbolic="YES" id="h24-wZ-360"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MgW-uG-4ni">
-                                <rect key="frame" x="20" y="251" width="560" height="82"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MgW-uG-4ni">
+                                <rect key="frame" x="20" y="234" width="560" height="74"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="手机号码：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q3c-Lv-qin">
-                                        <rect key="frame" x="20" y="23" width="100" height="20"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="手机号码：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q3c-Lv-qin">
+                                        <rect key="frame" x="20" y="16" width="100" height="20"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="20"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hKI-O0-xlI">
-                                        <rect key="frame" x="20" y="51" width="520" height="30"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hKI-O0-xlI">
+                                        <rect key="frame" x="20" y="44" width="520" height="30"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
@@ -453,15 +424,15 @@
                                     <constraint firstItem="hKI-O0-xlI" firstAttribute="leading" secondItem="MgW-uG-4ni" secondAttribute="leading" constant="20" symbolic="YES" id="vm4-Vj-2BM"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tPB-gu-xFQ">
-                                <rect key="frame" x="20" y="340" width="560" height="81"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tPB-gu-xFQ">
+                                <rect key="frame" x="20" y="316" width="560" height="73"/>
                                 <animations/>
                             </view>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BjS-eF-umb">
-                                <rect key="frame" x="20" y="430" width="560" height="81"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BjS-eF-umb">
+                                <rect key="frame" x="20" y="397" width="560" height="73"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fUe-cY-Mwd">
-                                        <rect key="frame" x="250" y="25" width="60" height="32"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fUe-cY-Mwd">
+                                        <rect key="frame" x="250" y="21" width="60" height="32"/>
                                         <animations/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="20"/>
@@ -480,8 +451,8 @@
                                     <constraint firstItem="fUe-cY-Mwd" firstAttribute="centerX" secondItem="BjS-eF-umb" secondAttribute="centerX" id="ltv-oc-b8v"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Q9Q-n8-US5">
-                                <rect key="frame" x="20" y="519" width="560" height="81"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q9Q-n8-US5">
+                                <rect key="frame" x="20" y="478" width="560" height="73"/>
                                 <animations/>
                             </view>
                         </subviews>
@@ -842,10 +813,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EyG-ip-i7X">
-                                <rect key="frame" x="20" y="146" width="560" height="75"/>
+                                <rect key="frame" x="20" y="147" width="560" height="74"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="姓名：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kac-qB-wlz">
-                                        <rect key="frame" x="20" y="17" width="60" height="20"/>
+                                        <rect key="frame" x="20" y="16" width="60" height="20"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="20"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -871,7 +842,7 @@
                                 <rect key="frame" x="20" y="229" width="560" height="75"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kDD-KG-wc9">
-                                        <rect key="frame" x="20" y="44" width="520" height="30"/>
+                                        <rect key="frame" x="20" y="45" width="520" height="30"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
@@ -921,11 +892,11 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xgd-tE-Zcp">
-                                <rect key="frame" x="20" y="476" width="560" height="75"/>
+                                <rect key="frame" x="20" y="477" width="560" height="74"/>
                                 <animations/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7G7-Uc-eFQ">
-                                <rect key="frame" x="20" y="311" width="560" height="75"/>
+                                <rect key="frame" x="20" y="312" width="560" height="74"/>
                                 <animations/>
                             </view>
                         </subviews>
@@ -1226,7 +1197,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aFt-cM-zZ8">
-                                <rect key="frame" x="20" y="71" width="560" height="74"/>
+                                <rect key="frame" x="20" y="71" width="560" height="73"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ELw-46-rzk">
                                         <rect key="frame" x="20" y="43" width="520" height="30"/>
@@ -1252,17 +1223,17 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6NV-Mc-Eqz">
-                                <rect key="frame" x="20" y="152" width="560" height="73"/>
+                                <rect key="frame" x="20" y="152" width="560" height="74"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="物品描述：（型号、颜色等）" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uo0-5f-uxI">
-                                        <rect key="frame" x="20" y="15" width="260" height="20"/>
+                                        <rect key="frame" x="20" y="16" width="260" height="20"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="20"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vCq-J4-Qkp">
-                                        <rect key="frame" x="20" y="43" width="520" height="30"/>
+                                        <rect key="frame" x="20" y="44" width="520" height="30"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -1278,7 +1249,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IsF-kh-Hi3">
-                                <rect key="frame" x="20" y="233" width="560" height="74"/>
+                                <rect key="frame" x="20" y="234" width="560" height="73"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="swh-4Q-YQd">
                                         <rect key="frame" x="20" y="43" width="520" height="30"/>
@@ -1310,10 +1281,10 @@
                                 </variation>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T8h-ZT-RHm">
-                                <rect key="frame" x="20" y="396" width="560" height="73"/>
+                                <rect key="frame" x="20" y="396" width="560" height="74"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b6X-j5-BUv">
-                                        <rect key="frame" x="250" y="20" width="60" height="32"/>
+                                        <rect key="frame" x="250" y="21" width="60" height="32"/>
                                         <animations/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="20"/>
@@ -1333,11 +1304,11 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bZ9-ux-DHM">
-                                <rect key="frame" x="20" y="477" width="560" height="74"/>
+                                <rect key="frame" x="20" y="478" width="560" height="73"/>
                                 <animations/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ucx-F4-aEe">
-                                <rect key="frame" x="20" y="315" width="560" height="74"/>
+                                <rect key="frame" x="20" y="315" width="560" height="73"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9AS-zN-1nT">
                                         <rect key="frame" x="20" y="43" width="520" height="30"/>
@@ -1450,17 +1421,17 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xds-5O-gXi">
-                                <rect key="frame" x="20" y="125" width="560" height="89"/>
+                                <rect key="frame" x="20" y="125" width="560" height="88"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="作者：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Pz-9r-TtR">
-                                        <rect key="frame" x="20" y="31" width="60" height="20"/>
+                                        <rect key="frame" x="20" y="30" width="60" height="20"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="20"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="400-AN-42Z">
-                                        <rect key="frame" x="20" y="59" width="520" height="30"/>
+                                        <rect key="frame" x="20" y="58" width="520" height="30"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -1476,7 +1447,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5z5-iK-kqA">
-                                <rect key="frame" x="20" y="222" width="560" height="88"/>
+                                <rect key="frame" x="20" y="221" width="560" height="89"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vnv-VS-nFi">
                                         <rect key="frame" x="20" y="59" width="520" height="30"/>
@@ -1528,10 +1499,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q6y-yJ-BJP">
-                                <rect key="frame" x="20" y="415" width="560" height="89"/>
+                                <rect key="frame" x="20" y="415" width="560" height="88"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m77-hO-SaC">
-                                        <rect key="frame" x="255" y="29" width="51" height="32"/>
+                                        <rect key="frame" x="254" y="28" width="52" height="32"/>
                                         <animations/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="20"/>
@@ -1551,7 +1522,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mtD-n6-uJ0">
-                                <rect key="frame" x="20" y="512" width="560" height="88"/>
+                                <rect key="frame" x="20" y="511" width="560" height="89"/>
                                 <animations/>
                             </view>
                         </subviews>
@@ -1759,7 +1730,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5BI-B9-M0A">
-                                <rect key="frame" x="213" y="219" width="175" height="183"/>
+                                <rect key="frame" x="213" y="219" width="175" height="182"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="175" id="wdI-8z-f3u"/>
@@ -1777,7 +1748,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O6m-L2-Ix7">
-                                <rect key="frame" x="213" y="410" width="175" height="182"/>
+                                <rect key="frame" x="213" y="409" width="175" height="183"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="196.5" id="Fca-7I-HrD"/>
@@ -1795,7 +1766,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bu8-0w-61V">
-                                <rect key="frame" x="20" y="28" width="43" height="43"/>
+                                <rect key="frame" x="0.0" y="0.0" width="43" height="43"/>
                                 <animations/>
                                 <state key="normal" image="back icon in brown-1"/>
                                 <connections>

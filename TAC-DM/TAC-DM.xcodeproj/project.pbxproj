@@ -31,6 +31,8 @@
 		7BC6BC141B89E8A4001DE465 /* SettingDeviceDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC6BC131B89E8A4001DE465 /* SettingDeviceDetailTableViewController.swift */; };
 		7BECB72A1B82E46000C0D4B8 /* UmbrellaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BECB7291B82E46000C0D4B8 /* UmbrellaViewController.swift */; };
 		7BECB72C1B83203400C0D4B8 /* BookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BECB72B1B83203400C0D4B8 /* BookViewController.swift */; };
+		7F355F411BF37E3100388638 /* rules.html in Resources */ = {isa = PBXBuildFile; fileRef = 7F355F401BF37E3100388638 /* rules.html */; };
+		7F66BB511BF36E0B00675AA9 /* RulesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F66BB501BF36E0B00675AA9 /* RulesView.swift */; };
 		87071C231B8E437E00495EDB /* ItemInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87071C221B8E437E00495EDB /* ItemInfo.swift */; };
 		87071C251B8E45AD00495EDB /* BorrowRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87071C241B8E45AD00495EDB /* BorrowRecord.swift */; };
 		87E318ED1BAF8EF0001D0FD5 /* DMModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E318EC1BAF8EF0001D0FD5 /* DMModel.swift */; };
@@ -92,6 +94,8 @@
 		7BECB7291B82E46000C0D4B8 /* UmbrellaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UmbrellaViewController.swift; sourceTree = "<group>"; };
 		7BECB72B1B83203400C0D4B8 /* BookViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookViewController.swift; sourceTree = "<group>"; };
 		7BFEDBF61BBBCF4000018AB6 /* TAC-DM-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TAC-DM-Bridging-Header.h"; sourceTree = "<group>"; };
+		7F355F401BF37E3100388638 /* rules.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = rules.html; sourceTree = "<group>"; };
+		7F66BB501BF36E0B00675AA9 /* RulesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RulesView.swift; sourceTree = "<group>"; };
 		87071C221B8E437E00495EDB /* ItemInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemInfo.swift; sourceTree = "<group>"; };
 		87071C241B8E45AD00495EDB /* BorrowRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorrowRecord.swift; sourceTree = "<group>"; };
 		87E318EC1BAF8EF0001D0FD5 /* DMModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DMModel.swift; sourceTree = "<group>"; };
@@ -189,9 +193,10 @@
 		621C6C231B626E2F00120ED2 /* TAC-DM */ = {
 			isa = PBXGroup;
 			children = (
+				7F355F401BF37E3100388638 /* rules.html */,
+				7F66BB521BF36E1200675AA9 /* View */,
 				A455A4F41BA6E5ED00ABD68A /* asyncSocket */,
 				EF59C2781B8ABE0800711A83 /* Model */,
-				6266C75D1B65BD990058EDC9 /* FrostedSidebar */,
 				7B37F17A1B86203600A106C4 /* ViewController */,
 				621C6C261B626E2F00120ED2 /* AppDelegate.swift */,
 				621C6C2A1B626E2F00120ED2 /* Main.storyboard */,
@@ -259,6 +264,15 @@
 				7BC6BC0D1B8985EA001DE465 /* SettingChangeViewController.swift */,
 			);
 			name = ViewController;
+			sourceTree = "<group>";
+		};
+		7F66BB521BF36E1200675AA9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6266C75D1B65BD990058EDC9 /* FrostedSidebar */,
+				7F66BB501BF36E0B00675AA9 /* RulesView.swift */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 		A455A4F41BA6E5ED00ABD68A /* asyncSocket */ = {
@@ -434,6 +448,7 @@
 			files = (
 				621C6C2C1B626E2F00120ED2 /* Main.storyboard in Resources */,
 				A455A51E1BA6E5ED00ABD68A /* Documentation.html in Resources */,
+				7F355F411BF37E3100388638 /* rules.html in Resources */,
 				621C6C311B626E2F00120ED2 /* LaunchScreen.xib in Resources */,
 				621C6C2E1B626E2F00120ED2 /* Images.xcassets in Resources */,
 				A455A51B1BA6E5ED00ABD68A /* Info.plist in Resources */,
@@ -536,6 +551,7 @@
 				7BC6BC0E1B8985EA001DE465 /* SettingChangeViewController.swift in Sources */,
 				7B90B3021B875EAE009A251F /* SettingEntryViewController.swift in Sources */,
 				621C6C271B626E2F00120ED2 /* AppDelegate.swift in Sources */,
+				7F66BB511BF36E0B00675AA9 /* RulesView.swift in Sources */,
 				A455A51A1BA6E5ED00ABD68A /* GCDAsyncUdpSocket.m in Sources */,
 				87071C251B8E45AD00495EDB /* BorrowRecord.swift in Sources */,
 				A455A51D1BA6E5ED00ABD68A /* AsyncUdpSocket.m in Sources */,

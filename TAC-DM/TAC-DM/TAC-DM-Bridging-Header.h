@@ -26,5 +26,5 @@ FOUNDATION_EXPORT const unsigned char cocoaAsyncSocketVersionString[];
 
 #endif
 
-
+#import <DTCoreText/DTCoreText.h>
 #import <SVProgressHUD/SVProgressHUD.h>
