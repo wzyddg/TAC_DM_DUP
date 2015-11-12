@@ -415,6 +415,7 @@
 				TargetAttributes = {
 					621C6C201B626E2F00120ED2 = {
 						CreatedOnToolsVersion = 6.3.2;
+						DevelopmentTeam = 62D9VYM54C;
 					};
 					621C6C351B626E2F00120ED2 = {
 						CreatedOnToolsVersion = 6.3.2;
@@ -689,7 +690,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "TAC-DM/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.Fowafolo.TAC-D";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.liuxudong.-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "TAC-DM/TAC-DM-Bridging-Header.h";
@@ -706,7 +707,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "TAC-DM/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.Fowafolo.TAC-D";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.liuxudong.-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "TAC-DM/TAC-DM-Bridging-Header.h";
