@@ -50,7 +50,6 @@ struct HistoryRecord {
     }
 }
 
-
 //judge input text
 extension String {
     func isNumber() -> Bool {

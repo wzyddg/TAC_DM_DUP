@@ -34,6 +34,7 @@ class DatabaseModel:NSObject, GCDAsyncSocketDelegate {
         }
         do {
             try gcdSocket!.connectToHost(DatabaseModel.serverIP , onPort: 8222)
+//            try gcdSocket!.connectToHost("10.60.41.55", onPort: 8222)
             print("GCD请求已发送")
         } catch {
             delegate?.getRequiredInfo("GCD failed")
@@ -177,7 +178,7 @@ class DatabaseModel:NSObject, GCDAsyncSocketDelegate {
         gcdSocket?.writeData(sendData, withTimeout: 20, tag: 1)
     }
     
-    func editLeftNumber(itemId:String , newCount:Int , password:String){
+    func editLeftNumber(itemId:String , newCount:Int){
         self.getGCDConnection()
 
         let sendString = "[9|\(itemId),\(newCount)]\r\n"
@@ -204,6 +205,14 @@ class DatabaseModel:NSObject, GCDAsyncSocketDelegate {
         gcdSocket?.writeData(sendData, withTimeout: 20, tag: 1)
     }
     
+    func editTotalNumber(itemId:String, newCount:Int) {
+        self.getGCDConnection()
+        
+        let sendString = "[C|\(itemId),\(newCount)]\r\n"
+        sendData = sendString.dataUsingEncoding(NSUTF8StringEncoding)
+        
+        gcdSocket?.writeData(sendData, withTimeout: 20, tag: 1)
+    }
 
     
 }

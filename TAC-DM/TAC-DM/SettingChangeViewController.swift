@@ -25,13 +25,20 @@ class SettingChangeViewController: UIViewController, DMDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.changeButton.layer.cornerRadius = 8.0
+        
         dmModel = DatabaseModel.getInstance()
         dmModel.delegate = self
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
-        updateUI()
+
+        if itemId == umbrellaId {
+            dmModel.getDeviceListAsAdmin("umbrella")
+        } else {
+            updateUI()
+        }
+        
     }
     
     override func viewWillLayoutSubviews() {
@@ -43,10 +50,9 @@ class SettingChangeViewController: UIViewController, DMDelegate {
         self.view.backgroundColor = UIColor(patternImage:image)
 
     }
-
+    
     func updateUI() {
         if let count = itemCount, leftCount = itemLeftCount {
-            print("2")
             let borrowItemCount = Int(count)! - Int(leftCount)!
             totalLabel.text = "总数：\(count)"
             borrowLabel.text = "借出：\(borrowItemCount)"
@@ -76,7 +82,7 @@ class SettingChangeViewController: UIViewController, DMDelegate {
             if let id = self.itemId, number = leftNum {
                 print("id:\(id),number:\(number)")
                 SVProgressHUD.show()
-                self.dmModel.editLeftNumber(id, newCount: number, password: "123123")
+                self.dmModel.editLeftNumber(id, newCount: number)
                 self.newItemLeftCount = "\(number)"
             } else {
                 print("not get itemId or number")
@@ -111,6 +117,7 @@ class SettingChangeViewController: UIViewController, DMDelegate {
                 self.itemLeftCount = item.leftCount
                 updateUI()
             } else {
+                print(umbrellaId)
                 print("没有得到itemInfo")
             }
         }

@@ -10,37 +10,14 @@ import UIKit
 
 // MARK:- NO NEED TO CHAGNE THIS CONTROLLER
 
-class SettingEntryViewController: UIViewController, DMDelegate {
+class SettingEntryViewController: UIViewController {
    
     
     @IBOutlet var typeButtons: [UIButton]!
-
-    var dmModel:DatabaseModel!
-    var umbrellaInfo:BorrowItem?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
-        
-        dmModel = DatabaseModel.getInstance()
-        dmModel.delegate = self
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        updateUI()
-        SVProgressHUD.show()
-    }
-    
-    //更新雨伞的借出情况
-    func updateUI() {
-        if let id = umbrellaId {
-            dmModel.getDevice(id)
-        } else {
-            print("unget umbrella id")
-            SVProgressHUD.showErrorWithStatus("无法获得雨伞信息，请后退刷新界面")
-        }
     }
 
     func configureUI()
@@ -61,46 +38,29 @@ class SettingEntryViewController: UIViewController, DMDelegate {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "toSettingChangeVC" {
-            if let nextVC = segue.destinationViewController as? SettingChangeViewController {
-                
-                if let umbrella = umbrellaInfo {
-                    nextVC.title = "Setting Umbrella"
-                    nextVC.itemId = umbrella.id
-                    nextVC.itemCount = umbrella.count
-                    nextVC.itemLeftCount = umbrella.leftCount
+        if let identifier = segue.identifier{
+            switch identifier {
+            case "toSettingChangeVC":
+                if let nextVC = segue.destinationViewController as? SettingChangeViewController {
                     
-                } else {
-                    nextVC.title = "无法获得雨伞信息，请后退刷新界面"
+                    
+                    nextVC.title = "Setting Umbrella"
+                    nextVC.itemId = umbrellaId
                 }
+            case "bookSettingTableVC":
+                if let nextVC = segue.destinationViewController as? SettingTableView {
+                    nextVC.title = "Setting Book"
+                    nextVC.isBook = true
+                }
+            case "deviceSettingTableVC":
+                if let nextVC = segue.destinationViewController as? SettingTableView {
+                    nextVC.title = "Setting Device"
+                    nextVC.isBook = false
+                }
+            default:
+                print("others")
             }
         }
         
-        if segue.identifier == "bookSettingTableVC"
-        {
-            if let nextVC = segue.destinationViewController as? SettingTableView
-            {
-                nextVC.title = "Setting Book"
-                nextVC.isBook = true
-            }
-        }
-        
-        if segue.identifier == "deviceSettingTableVC"
-        {
-            if let nextVC = segue.destinationViewController as? SettingTableView
-            {
-                nextVC.title = "Setting Device"
-                nextVC.isBook = false
-            }
-        }
-    }
-    
-    func getRequiredInfo(Info: String) {
-        print("umbrella:\(Info)")
-        
-        let itemInfo = Info.componentsSeparatedByString(",")
-        
-        umbrellaInfo = BorrowItem(id: itemInfo[0], name: itemInfo[1], descri: itemInfo[2], type: itemInfo[3], count: itemInfo[4], leftCount: itemInfo[5])
-        SVProgressHUD.dismiss()
     }
 }

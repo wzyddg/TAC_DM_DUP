@@ -28,6 +28,15 @@ class UmbrellaViewController: UIViewController,UIAlertViewDelegate,UITextFieldDe
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(true)
         refresh()
+        
+        guard let _ = umbrellaId else {
+            print("unget umbrella id")
+            SVProgressHUD.showErrorWithStatus("Sorry,all umbrellas has been borrowed!")
+            
+            //考虑将text变为不可输入状态
+            
+            return
+        }
     }
     
     override func viewDidLayoutSubviews() {
@@ -40,6 +49,7 @@ class UmbrellaViewController: UIViewController,UIAlertViewDelegate,UITextFieldDe
 
         self.view.backgroundColor = UIColor(patternImage:image)
     }
+    
 // MARK:- UI configure
     private func configureUI ()
     {
@@ -89,12 +99,14 @@ class UmbrellaViewController: UIViewController,UIAlertViewDelegate,UITextFieldDe
         
         if let id = umbrellaId {
             if let borrowNum = Int(numberText.text!) {
+                print("borrowNum:\(borrowNum)")
+
                 dmModel.borrowItem(nameText.text!, tele: phoneText.text!, itemId: id, itemName: "Umbrella", itemDescription: "", number: borrowNum)
                 refresh()
-            } else {
-                print("unget umbrella id")
-                SVProgressHUD.showErrorWithStatus("无法获得雨伞信息，请后退刷新界面")
             }
+        } else {
+            print("unget umbrella id")
+            SVProgressHUD.showErrorWithStatus("Sorry,all umbrellas has been borrowed!")
         }
         
     }

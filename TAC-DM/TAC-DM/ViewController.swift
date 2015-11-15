@@ -37,7 +37,7 @@ class ViewController: UIViewController, DMDelegate,UITextViewDelegate {
         
         dmModel = DatabaseModel.getInstance()
         dmModel.delegate = self
-        dmModel.getDeviceList("umbrella")
+        dmModel.getDeviceListAsAdmin("umbrella")
     }
    
     override func viewDidLayoutSubviews() {
@@ -59,7 +59,10 @@ class ViewController: UIViewController, DMDelegate,UITextViewDelegate {
         print("Umbrella List:\(Info)")
         
         let umbrellaDetail = Info.componentsSeparatedByString(",")
-        umbrellaId = umbrellaDetail[0]
+        if "" != umbrellaDetail[0] {
+            umbrellaId = umbrellaDetail[0]
+        }
+        print("ID::\(umbrellaId)")
     }
 }
 
