@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="dLI-4i-FYF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="dLI-4i-FYF">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -355,7 +355,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="66j-rv-jie">
                                 <rect key="frame" x="20" y="72" width="560" height="73"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mQM-TM-Mut">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="mQM-TM-Mut">
                                         <rect key="frame" x="20" y="53" width="53" height="20"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="20"/>
@@ -379,16 +379,16 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yc8-0K-06n">
-                                <rect key="frame" x="20" y="153" width="560" height="74"/>
+                                <rect key="frame" x="20" y="153" width="560" height="73.5"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Uu1-yV-0KW">
-                                        <rect key="frame" x="20" y="44" width="520" height="30"/>
+                                        <rect key="frame" x="20" y="43.5" width="520" height="30"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="姓名：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bJ9-oe-dA9">
-                                        <rect key="frame" x="20" y="16" width="60" height="20"/>
+                                        <rect key="frame" x="20" y="15.5" width="60" height="20"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="20"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -405,7 +405,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MgW-uG-4ni">
-                                <rect key="frame" x="20" y="235" width="560" height="73"/>
+                                <rect key="frame" x="20" y="234.5" width="560" height="73"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="手机号码：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q3c-Lv-qin">
                                         <rect key="frame" x="20" y="15" width="100" height="20"/>
@@ -431,11 +431,11 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tPB-gu-xFQ">
-                                <rect key="frame" x="20" y="316" width="560" height="73"/>
+                                <rect key="frame" x="20" y="315.5" width="560" height="73"/>
                                 <animations/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BjS-eF-umb">
-                                <rect key="frame" x="20" y="397" width="560" height="73"/>
+                                <rect key="frame" x="20" y="396.5" width="560" height="73.5"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fUe-cY-Mwd">
                                         <rect key="frame" x="250" y="22" width="60" height="32"/>
@@ -481,6 +481,7 @@
                             <constraint firstItem="Q9Q-n8-US5" firstAttribute="width" secondItem="BjS-eF-umb" secondAttribute="width" id="ZgJ-B3-RqE"/>
                             <constraint firstAttribute="leadingMargin" secondItem="66j-rv-jie" secondAttribute="leading" id="ZwV-Bv-mpx"/>
                             <constraint firstItem="MgW-uG-4ni" firstAttribute="height" secondItem="66j-rv-jie" secondAttribute="height" id="ab0-Ra-0MH"/>
+                            <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="mQM-TM-Mut" secondAttribute="trailing" constant="20" id="bH2-nP-Jat"/>
                             <constraint firstItem="Q9Q-n8-US5" firstAttribute="leading" secondItem="BjS-eF-umb" secondAttribute="leading" id="cTr-ky-OJE"/>
                             <constraint firstItem="tPB-gu-xFQ" firstAttribute="height" secondItem="66j-rv-jie" secondAttribute="height" id="cuN-Ac-Bsg"/>
                             <constraint firstItem="66j-rv-jie" firstAttribute="top" secondItem="wHo-uv-H8c" secondAttribute="bottom" constant="8" symbolic="YES" id="dhq-iK-Ekq"/>
@@ -564,13 +565,13 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="97"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="VMF-j0-Iyn">
+                                        <label multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="VMF-j0-Iyn">
                                             <rect key="frame" x="15" y="0.0" width="570" height="97"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <animations/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                            <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="20"/>
+                                            <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="19"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>

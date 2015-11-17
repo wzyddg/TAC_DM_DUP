@@ -37,6 +37,10 @@ class SettingViewController: UIViewController, DMDelegate {
         self.navView.backgroundColor = UIColor.clearColor()
     }
     
+    override func viewDidDisappear(animated: Bool) {
+        passWord.text = ""
+    }
+    
     func configureUI ()
     {
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "setting background")!)
