@@ -180,7 +180,9 @@ class HistoryViewController: UITableViewController,UIAlertViewDelegate, DMDelega
                         borrowTime: getReallytime(oneRecord[6], dateFormatter: dateFormatter),
                         returnTime: oneRecord[7], borrowNumber: oneRecord[8])
                     
-                    borrowRecords.append(oneHistoryRecord)
+                    if "0" == oneHistoryRecord.returnTime {
+                        borrowRecords.append(oneHistoryRecord)
+                    }
                 }
             }
             
